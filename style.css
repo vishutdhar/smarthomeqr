@@ -1,14 +1,18 @@
 /* SmartHomeQR Landing Page Styles */
+/* Colors matched to app icon gradient: blue (#4A9FE8) to purple (#8B5CF6) */
 
 :root {
-    --bg-primary: #0a0a0a;
-    --bg-secondary: #1a1a1a;
+    --gradient-start: #4A9FE8;
+    --gradient-end: #8B5CF6;
+    --bg-primary: #1a1a2e;
+    --bg-secondary: rgba(255, 255, 255, 0.08);
+    --bg-card: rgba(255, 255, 255, 0.1);
     --text-primary: #ffffff;
-    --text-secondary: #a0a0a0;
-    --accent: #007AFF;
-    --accent-hover: #0056b3;
-    --highlight-bg: #1a2a1a;
-    --highlight-border: #2d5a2d;
+    --text-secondary: rgba(255, 255, 255, 0.7);
+    --accent: #4A9FE8;
+    --accent-hover: #3a8fd8;
+    --highlight-bg: rgba(74, 159, 232, 0.15);
+    --highlight-border: rgba(74, 159, 232, 0.4);
 }
 
 * {
@@ -19,9 +23,11 @@
 
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background-color: var(--bg-primary);
+    background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+    background-attachment: fixed;
     color: var(--text-primary);
     line-height: 1.6;
+    min-height: 100vh;
 }
 
 .container {
@@ -139,15 +145,19 @@ body {
 }
 
 .feature {
-    background: var(--bg-secondary);
+    background: var(--bg-card);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 20px;
     padding: 32px 24px;
     text-align: center;
-    transition: transform 0.2s ease;
+    transition: transform 0.2s ease, background 0.2s ease;
 }
 
 .feature:hover {
     transform: translateY(-4px);
+    background: rgba(255, 255, 255, 0.15);
 }
 
 .feature-icon {
@@ -169,7 +179,10 @@ body {
 .brands {
     padding: 60px 20px;
     text-align: center;
-    background: var(--bg-secondary);
+    background: var(--bg-card);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 24px;
     margin: 40px 20px;
 }
@@ -222,7 +235,7 @@ body {
 footer {
     text-align: center;
     padding: 40px 20px;
-    border-top: 1px solid #333;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .footer-links {
