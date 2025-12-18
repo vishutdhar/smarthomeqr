@@ -508,7 +508,7 @@ footer {
 
 @media (max-width: 734px) {
     .hero {
-        padding: 80px 20px 50px;
+        padding: 60px 20px 40px;
     }
 
     .hero h1 {
@@ -519,6 +519,10 @@ footer {
         font-size: 22px;
     }
 
+    .screenshots {
+        padding: 20px 0 30px;
+    }
+
     .screenshot-scroll {
         justify-content: flex-start;
         padding: 20px;
@@ -527,6 +531,10 @@ footer {
     .phone-frame img {
         height: 360px;
         border-radius: 28px;
+    }
+
+    .features {
+        padding: 40px 20px;
     }
 
     .features h2,
@@ -545,6 +553,22 @@ footer {
     .feature-icon-wrapper {
         margin-left: auto;
         margin-right: auto;
+    }
+
+    .brands {
+        padding: 30px 20px;
+    }
+
+    .cta {
+        padding: 40px 20px 30px;
+    }
+
+    .about {
+        padding: 0 20px 40px;
+    }
+
+    .about h2 {
+        font-size: 26px;
     }
 }
 
