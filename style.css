@@ -1,9 +1,9 @@
 /* SmartHomeQR Landing Page - Premium Polish */
-/* Purple gradient: light (#A78BFA) to deep (#7C3AED) */
+/* Purple gradient: deep (#7C3AED) to light (#A78BFA) */
 
 :root {
-    --gradient-start: #A78BFA;
-    --gradient-end: #7C3AED;
+    --gradient-start: #7C3AED;
+    --gradient-end: #A78BFA;
     --text-primary: #ffffff;
     --text-secondary: rgba(255, 255, 255, 0.85);
     --text-muted: rgba(255, 255, 255, 0.6);
