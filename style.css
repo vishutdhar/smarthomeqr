@@ -1,0 +1,302 @@
+/* SmartHomeQR Landing Page Styles */
+
+:root {
+    --bg-primary: #0a0a0a;
+    --bg-secondary: #1a1a1a;
+    --text-primary: #ffffff;
+    --text-secondary: #a0a0a0;
+    --accent: #007AFF;
+    --accent-hover: #0056b3;
+    --highlight-bg: #1a2a1a;
+    --highlight-border: #2d5a2d;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Hero */
+.hero {
+    text-align: center;
+    padding: 80px 20px 60px;
+}
+
+.app-icon {
+    width: 120px;
+    height: 120px;
+    border-radius: 27px;
+    box-shadow: 0 10px 40px rgba(0, 122, 255, 0.3);
+    margin-bottom: 24px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    background: linear-gradient(135deg, #ffffff 0%, #a0a0a0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.tagline {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    margin-bottom: 16px;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 32px;
+}
+
+.badge-container {
+    margin-bottom: 24px;
+}
+
+.app-store-badge img {
+    height: 54px;
+    transition: transform 0.2s ease;
+}
+
+.app-store-badge:hover img {
+    transform: scale(1.05);
+}
+
+.highlight-box {
+    display: inline-block;
+    background: var(--highlight-bg);
+    border: 1px solid var(--highlight-border);
+    border-radius: 12px;
+    padding: 12px 24px;
+}
+
+.highlight {
+    color: #4ade80;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+/* Screenshots */
+.screenshots {
+    padding: 40px 0 60px;
+    overflow-x: auto;
+}
+
+.screenshot-scroll {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 20px;
+}
+
+.screenshot-scroll img {
+    height: 500px;
+    border-radius: 24px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    flex-shrink: 0;
+}
+
+.screenshot-scroll .watch-screenshot {
+    height: 300px;
+    border-radius: 40px;
+}
+
+/* Features */
+.features {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.features h2 {
+    font-size: 2.5rem;
+    margin-bottom: 48px;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 32px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.feature {
+    background: var(--bg-secondary);
+    border-radius: 20px;
+    padding: 32px 24px;
+    text-align: center;
+    transition: transform 0.2s ease;
+}
+
+.feature:hover {
+    transform: translateY(-4px);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 16px;
+}
+
+.feature h3 {
+    font-size: 1.25rem;
+    margin-bottom: 12px;
+}
+
+.feature p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+/* Brands */
+.brands {
+    padding: 60px 20px;
+    text-align: center;
+    background: var(--bg-secondary);
+    border-radius: 24px;
+    margin: 40px 20px;
+}
+
+.brands h2 {
+    font-size: 2rem;
+    margin-bottom: 16px;
+}
+
+.brand-list {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+
+/* CTA */
+.cta {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.cta h2 {
+    font-size: 2.5rem;
+    margin-bottom: 16px;
+}
+
+.cta p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    margin-bottom: 32px;
+}
+
+.cta-button {
+    display: inline-block;
+    background: var(--accent);
+    color: white;
+    text-decoration: none;
+    padding: 16px 32px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.cta-button:hover {
+    background: var(--accent-hover);
+    transform: scale(1.02);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    border-top: 1px solid #333;
+}
+
+.footer-links {
+    margin-bottom: 16px;
+}
+
+.footer-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    margin: 0 16px;
+    transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+    color: var(--text-primary);
+}
+
+.copyright {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-top: 8px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.25rem;
+    }
+
+    .subtitle {
+        font-size: 1.25rem;
+    }
+
+    .screenshot-scroll img {
+        height: 400px;
+    }
+
+    .screenshot-scroll .watch-screenshot {
+        height: 240px;
+    }
+
+    .features h2,
+    .cta h2 {
+        font-size: 2rem;
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 60px 16px 40px;
+    }
+
+    .app-icon {
+        width: 100px;
+        height: 100px;
+    }
+
+    .hero h1 {
+        font-size: 1.75rem;
+    }
+
+    .highlight {
+        font-size: 0.95rem;
+    }
+
+    .screenshot-scroll img {
+        height: 320px;
+    }
+
+    .screenshot-scroll .watch-screenshot {
+        height: 200px;
+    }
+}
