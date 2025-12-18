@@ -152,8 +152,7 @@ body {
 /* Screenshots */
 .screenshots {
     padding: 50px 0 90px;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
+    overflow: visible;
 }
 
 .screenshot-scroll {
@@ -161,39 +160,22 @@ body {
     gap: 24px;
     justify-content: center;
     align-items: center;
-    padding: 30px 24px;
-    perspective: 1200px;
+    padding: 30px 60px;
 }
 
 .phone-frame {
     flex-shrink: 0;
-    transition: transform 0.4s ease;
-}
-
-.phone-frame:nth-child(1) {
-    transform: rotateY(5deg);
-}
-
-.phone-frame:nth-child(2) {
-    transform: rotateY(2deg);
-}
-
-.phone-frame:nth-child(3) {
-    transform: rotateY(-2deg);
-}
-
-.phone-frame:nth-child(4) {
-    transform: rotateY(-5deg);
+    transition: transform 0.3s ease;
 }
 
 .phone-frame:hover {
-    transform: scale(1.03) rotateY(0deg) !important;
+    transform: scale(1.02);
     z-index: 10;
 }
 
 .phone-frame img {
-    height: 540px;
-    border-radius: 36px;
+    height: 440px;
+    border-radius: 30px;
     box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
@@ -407,7 +389,7 @@ footer {
     }
 
     .phone-frame img {
-        height: 480px;
+        height: 400px;
     }
 }
 
@@ -429,15 +411,8 @@ footer {
         padding: 20px;
     }
 
-    .phone-frame:nth-child(1),
-    .phone-frame:nth-child(2),
-    .phone-frame:nth-child(3),
-    .phone-frame:nth-child(4) {
-        transform: none;
-    }
-
     .phone-frame img {
-        height: 420px;
+        height: 360px;
         border-radius: 28px;
     }
 
@@ -476,7 +451,7 @@ footer {
     }
 
     .phone-frame img {
-        height: 360px;
+        height: 300px;
         border-radius: 24px;
     }
 
