@@ -9,33 +9,44 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- Open Graph -->
     <meta property="og:title" content="SmartHomeQR - Smart Home QR Code Manager">
     <meta property="og:description" content="Store and organize QR codes for all your smart home devices. No subscription.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://vishutdhar.github.io/smarthomeqr/">
+    <meta property="og:image" content="https://vishutdhar.github.io/smarthomeqr/images/icon.png">
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="images/icon.png">
 </head>
 <body>
+    <!-- Animated background shapes -->
+    <div class="bg-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+
     <div class="container">
         <!-- Hero Section -->
         <header class="hero">
-            <img src="images/icon.png" alt="SmartHomeQR App Icon" class="app-icon">
+            <div class="icon-glow">
+                <img src="images/icon.png" alt="SmartHomeQR App Icon" class="app-icon">
+            </div>
             <h1>SmartHomeQR</h1>
             <p class="tagline">Smart Home QR Code Manager</p>
             <p class="subtitle">Never lose a smart home setup code again.</p>
 
             <div class="badge-container">
-                <a href="https://apps.apple.com/app/smarthomeqr/id6738029702" class="app-store-badge">
+                <a href="https://apps.apple.com/app/id6740243377" class="app-store-badge">
                     <img src="images/app-store-badge.svg" alt="Download on the App Store">
                 </a>
             </div>
 
             <div class="highlight-box">
+                <span class="highlight-icon">✨</span>
                 <span class="highlight">One-time purchase. No subscription. No ads. Ever.</span>
             </div>
         </header>
@@ -43,10 +54,18 @@
         <!-- Screenshots -->
         <section class="screenshots">
             <div class="screenshot-scroll">
-                <img src="images/iphone-homes.png" alt="Organize by home and room">
-                <img src="images/iphone-devices.png" alt="All your QR codes in one place">
-                <img src="images/iphone-detail.png" alt="Fullscreen QR with zoom">
-                <img src="images/watch-list.png" alt="Apple Watch app" class="watch-screenshot">
+                <div class="phone-frame">
+                    <img src="images/iphone-homes.png" alt="Organize by home and room">
+                </div>
+                <div class="phone-frame">
+                    <img src="images/iphone-devices.png" alt="All your QR codes in one place">
+                </div>
+                <div class="phone-frame">
+                    <img src="images/iphone-detail.png" alt="Fullscreen QR with zoom">
+                </div>
+                <div class="watch-frame">
+                    <img src="images/watch-list.png" alt="Apple Watch app" class="watch-screenshot">
+                </div>
             </div>
         </section>
 
@@ -55,26 +74,34 @@
             <h2>Everything you need</h2>
 
             <div class="feature-grid">
-                <div class="feature">
-                    <div class="feature-icon">📱</div>
+                <div class="feature" style="--delay: 0s">
+                    <div class="feature-icon-wrapper">
+                        <span class="feature-icon">📷</span>
+                    </div>
                     <h3>Smart Scanning</h3>
                     <p>Point your camera at any QR code. Automatic detection and parsing for HomeKit, Matter, Ring, Nest, Hue, and more.</p>
                 </div>
 
-                <div class="feature">
-                    <div class="feature-icon">⌚</div>
+                <div class="feature" style="--delay: 0.1s">
+                    <div class="feature-icon-wrapper">
+                        <span class="feature-icon">⌚</span>
+                    </div>
                     <h3>Apple Watch</h3>
                     <p>Access your QR codes from your wrist. Perfect for setting up devices around the house.</p>
                 </div>
 
-                <div class="feature">
-                    <div class="feature-icon">🏠</div>
+                <div class="feature" style="--delay: 0.2s">
+                    <div class="feature-icon-wrapper">
+                        <span class="feature-icon">🏠</span>
+                    </div>
                     <h3>Organize by Home</h3>
                     <p>Create multiple homes and rooms. 13 device categories with beautiful icons.</p>
                 </div>
 
-                <div class="feature">
-                    <div class="feature-icon">🔒</div>
+                <div class="feature" style="--delay: 0.3s">
+                    <div class="feature-icon-wrapper">
+                        <span class="feature-icon">🔒</span>
+                    </div>
                     <h3>Secure & Private</h3>
                     <p>Face ID protection. iCloud sync. Works offline. Your data stays on your devices.</p>
                 </div>
@@ -84,16 +111,28 @@
         <!-- Supported Brands -->
         <section class="brands">
             <h2>Works with your devices</h2>
-            <p class="brand-list">HomeKit · Matter · Ring · Nest · Philips Hue · Schlage · MyQ</p>
+            <div class="brand-pills">
+                <span class="brand-pill">HomeKit</span>
+                <span class="brand-pill">Matter</span>
+                <span class="brand-pill">Ring</span>
+                <span class="brand-pill">Nest</span>
+                <span class="brand-pill">Philips Hue</span>
+                <span class="brand-pill">Schlage</span>
+                <span class="brand-pill">MyQ</span>
+                <span class="brand-pill">Yale</span>
+                <span class="brand-pill">Ecobee</span>
+            </div>
         </section>
 
         <!-- CTA -->
         <section class="cta">
             <h2>Stop digging through boxes</h2>
             <p>Download SmartHomeQR and have all your setup codes ready when you need them.</p>
-            <a href="https://apps.apple.com/app/smarthomeqr/id6738029702" class="cta-button">
+            <a href="https://apps.apple.com/app/id6740243377" class="cta-button">
+                <span class="button-icon">↓</span>
                 Download on the App Store
             </a>
+            <p class="price-note">Just $0.99 · Works on iPhone, iPad, Mac & Apple Watch</p>
         </section>
 
         <!-- Footer -->
