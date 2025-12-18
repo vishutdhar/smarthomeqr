@@ -341,7 +341,7 @@ body {
 /* CTA */
 .cta {
     text-align: center;
-    padding: 60px 24px;
+    padding: 60px 24px 40px;
 }
 
 .cta h2 {
@@ -401,7 +401,7 @@ body {
 /* About Section */
 .about {
     text-align: center;
-    padding: 40px 24px 60px;
+    padding: 0 24px 60px;
     max-width: 600px;
     margin: 0 auto;
 }
