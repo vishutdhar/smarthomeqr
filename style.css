@@ -1,18 +1,16 @@
-/* SmartHomeQR Landing Page - Apple-inspired Design */
+/* SmartHomeQR Landing Page - Polished Design */
+/* Colors matched to app icon gradient: blue (#4A9FE8) to purple (#8B5CF6) */
 
 :root {
     --gradient-start: #4A9FE8;
-    --gradient-mid: #6B7FEF;
     --gradient-end: #8B5CF6;
-    --bg-dark: #000000;
-    --bg-section: #111111;
-    --bg-card: rgba(255, 255, 255, 0.05);
-    --bg-card-hover: rgba(255, 255, 255, 0.08);
-    --text-primary: #f5f5f7;
-    --text-secondary: #86868b;
-    --text-link: #2997ff;
-    --success: #30d158;
-    --border-subtle: rgba(255, 255, 255, 0.08);
+    --text-primary: #ffffff;
+    --text-secondary: rgba(255, 255, 255, 0.85);
+    --text-muted: rgba(255, 255, 255, 0.6);
+    --glass-bg: rgba(0, 0, 0, 0.25);
+    --glass-border: rgba(255, 255, 255, 0.15);
+    --button-bg: rgba(0, 0, 0, 0.4);
+    --button-hover: rgba(0, 0, 0, 0.55);
 }
 
 * {
@@ -26,42 +24,26 @@ html {
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
-    background: var(--bg-dark);
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', sans-serif;
+    background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+    background-attachment: fixed;
     color: var(--text-primary);
-    line-height: 1.5;
+    line-height: 1.6;
     min-height: 100vh;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-/* Subtle gradient overlay */
-body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(74, 159, 232, 0.15), transparent),
-                radial-gradient(ellipse 60% 40% at 80% 60%, rgba(139, 92, 246, 0.1), transparent);
-    pointer-events: none;
-    z-index: 0;
 }
 
 .container {
-    max-width: 980px;
+    max-width: 1100px;
     margin: 0 auto;
-    padding: 0 22px;
-    position: relative;
-    z-index: 1;
+    padding: 0 24px;
 }
 
-/* Hero - Apple style */
+/* Hero */
 .hero {
     text-align: center;
-    padding: 120px 22px 80px;
+    padding: 100px 24px 70px;
     max-width: 800px;
     margin: 0 auto;
 }
@@ -69,7 +51,7 @@ body::before {
 .icon-glow {
     position: relative;
     display: inline-block;
-    margin-bottom: 32px;
+    margin-bottom: 28px;
 }
 
 .icon-glow::before {
@@ -78,226 +60,220 @@ body::before {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 200px;
-    height: 200px;
-    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    width: 180px;
+    height: 180px;
+    background: rgba(255, 255, 255, 0.2);
     border-radius: 50%;
-    filter: blur(60px);
-    opacity: 0.4;
+    filter: blur(40px);
 }
 
 .app-icon {
-    width: 128px;
-    height: 128px;
-    border-radius: 28px;
+    width: 120px;
+    height: 120px;
+    border-radius: 27px;
     position: relative;
     z-index: 1;
-    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
 }
 
 .hero h1 {
-    font-size: 56px;
-    font-weight: 600;
-    letter-spacing: -0.025em;
-    line-height: 1.07;
-    margin-bottom: 12px;
-    background: linear-gradient(180deg, #ffffff 0%, #a1a1a6 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    font-size: 52px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 10px;
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
 }
 
 .tagline {
-    font-size: 21px;
-    font-weight: 400;
+    font-size: 20px;
+    font-weight: 500;
     color: var(--text-secondary);
     margin-bottom: 8px;
 }
 
 .subtitle {
-    font-size: 28px;
+    font-size: 26px;
     font-weight: 600;
-    letter-spacing: -0.015em;
-    margin-bottom: 40px;
+    margin-bottom: 36px;
     color: var(--text-primary);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
 }
 
+/* App Store Badge - Made visible */
 .badge-container {
     margin-bottom: 28px;
 }
 
+.app-store-badge {
+    display: inline-block;
+    background: var(--button-bg);
+    padding: 12px 20px;
+    border-radius: 14px;
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.app-store-badge:hover {
+    background: var(--button-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
 .app-store-badge img {
-    height: 48px;
-    transition: opacity 0.3s ease;
+    height: 44px;
+    display: block;
 }
 
-.app-store-badge:hover img {
-    opacity: 0.8;
-}
-
+/* Highlight box */
 .highlight-box {
     display: inline-flex;
     align-items: center;
     gap: 8px;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 100px;
+    padding: 14px 28px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 .highlight-icon {
-    display: none;
+    font-size: 1.1rem;
 }
 
 .highlight {
-    color: var(--success);
-    font-weight: 500;
-    font-size: 17px;
+    color: var(--text-primary);
+    font-weight: 600;
+    font-size: 16px;
 }
 
-/* Screenshots - Cinematic Apple style */
+/* Screenshots */
 .screenshots {
-    padding: 40px 0 100px;
-    overflow: visible;
+    padding: 50px 0 90px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 .screenshot-scroll {
     display: flex;
-    gap: 20px;
+    gap: 24px;
     justify-content: center;
     align-items: center;
-    padding: 40px 22px;
-    perspective: 1000px;
+    padding: 30px 24px;
+    perspective: 1200px;
 }
 
 .phone-frame {
-    position: relative;
     flex-shrink: 0;
-    transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+    transition: transform 0.4s ease;
 }
 
 .phone-frame:nth-child(1) {
-    transform: rotateY(6deg) translateZ(-30px);
+    transform: rotateY(5deg);
 }
 
 .phone-frame:nth-child(2) {
-    transform: rotateY(3deg) translateZ(-10px);
+    transform: rotateY(2deg);
 }
 
 .phone-frame:nth-child(3) {
-    transform: rotateY(-3deg) translateZ(-10px);
+    transform: rotateY(-2deg);
 }
 
 .phone-frame:nth-child(4) {
-    transform: rotateY(-6deg) translateZ(-30px);
-}
-
-.phone-frame:hover {
-    transform: scale(1.02) translateZ(30px) !important;
-}
-
-.phone-frame img {
-    height: 580px;
-    border-radius: 40px;
-    box-shadow:
-        0 50px 100px -20px rgba(0, 0, 0, 0.7),
-        0 0 0 0.5px rgba(255, 255, 255, 0.1);
-}
-
-.watch-frame {
-    flex-shrink: 0;
-    transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
     transform: rotateY(-5deg);
 }
 
-.watch-frame:hover {
-    transform: scale(1.05);
+.phone-frame:hover {
+    transform: scale(1.03) rotateY(0deg) !important;
+    z-index: 10;
 }
 
-.watch-frame img {
-    height: 260px;
-    border-radius: 52px;
-    box-shadow:
-        0 40px 80px -20px rgba(0, 0, 0, 0.6),
-        0 0 0 0.5px rgba(255, 255, 255, 0.1);
+.phone-frame img {
+    height: 540px;
+    border-radius: 36px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Features - Clean Apple grid */
+/* Features - Glass cards */
 .features {
-    padding: 100px 22px;
+    padding: 80px 24px;
     text-align: center;
-    background: var(--bg-section);
-    border-radius: 0;
-    margin: 0 -22px;
-    padding-left: 44px;
-    padding-right: 44px;
 }
 
 .features h2 {
-    font-size: 48px;
-    font-weight: 600;
-    letter-spacing: -0.025em;
-    margin-bottom: 60px;
-    color: var(--text-primary);
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 50px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
 }
 
 .feature-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
+    gap: 20px;
     max-width: 900px;
     margin: 0 auto;
 }
 
 .feature {
-    background: transparent;
-    border: none;
-    border-radius: 20px;
-    padding: 40px 30px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    padding: 36px 28px;
     text-align: left;
-    transition: background 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .feature:hover {
-    background: var(--bg-card);
+    background: rgba(0, 0, 0, 0.35);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
 }
 
 .feature-icon-wrapper {
     width: 56px;
     height: 56px;
-    margin-bottom: 20px;
-    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    margin-bottom: 18px;
+    background: rgba(255, 255, 255, 0.15);
     border-radius: 14px;
     display: flex;
     align-items: center;
     justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .feature-icon {
-    font-size: 1.5rem;
-    filter: grayscale(1) brightness(10);
+    font-size: 1.6rem;
 }
 
 .feature h3 {
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 600;
-    letter-spacing: -0.01em;
     margin-bottom: 10px;
-    color: var(--text-primary);
 }
 
 .feature p {
     color: var(--text-secondary);
-    font-size: 17px;
-    line-height: 1.5;
+    font-size: 16px;
+    line-height: 1.6;
 }
 
-/* Brands - Minimal */
+/* Brands */
 .brands {
-    padding: 80px 22px;
+    padding: 60px 24px;
     text-align: center;
 }
 
 .brands h2 {
-    font-size: 28px;
+    font-size: 24px;
     font-weight: 600;
-    margin-bottom: 32px;
+    margin-bottom: 28px;
     color: var(--text-secondary);
 }
 
@@ -306,44 +282,45 @@ body::before {
     flex-wrap: wrap;
     gap: 12px;
     justify-content: center;
-    max-width: 600px;
+    max-width: 650px;
     margin: 0 auto;
 }
 
 .brand-pill {
-    background: transparent;
-    border: 1px solid var(--border-subtle);
-    border-radius: 980px;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 100px;
     padding: 10px 20px;
-    font-size: 15px;
-    font-weight: 400;
+    font-size: 14px;
+    font-weight: 500;
     color: var(--text-secondary);
     transition: all 0.3s ease;
 }
 
 .brand-pill:hover {
-    border-color: rgba(255, 255, 255, 0.2);
+    background: rgba(0, 0, 0, 0.35);
+    border-color: rgba(255, 255, 255, 0.25);
     color: var(--text-primary);
 }
 
-/* CTA - Apple style */
+/* CTA */
 .cta {
     text-align: center;
-    padding: 100px 22px 120px;
+    padding: 80px 24px 100px;
 }
 
 .cta h2 {
-    font-size: 48px;
-    font-weight: 600;
-    letter-spacing: -0.025em;
+    font-size: 40px;
+    font-weight: 700;
     margin-bottom: 16px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
 }
 
 .cta > p {
     color: var(--text-secondary);
-    font-size: 21px;
-    margin-bottom: 40px;
-    max-width: 500px;
+    font-size: 20px;
+    margin-bottom: 36px;
+    max-width: 480px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -351,41 +328,43 @@ body::before {
 .cta-button {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    background: var(--text-link);
+    gap: 10px;
+    background: rgba(0, 0, 0, 0.5);
     color: white;
     text-decoration: none;
-    padding: 16px 32px;
-    border-radius: 980px;
-    font-weight: 400;
-    font-size: 17px;
+    padding: 18px 36px;
+    border-radius: 16px;
+    font-weight: 600;
+    font-size: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 .cta-button:hover {
-    background: #0077ed;
-    transform: scale(1.02);
+    background: rgba(0, 0, 0, 0.65);
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
 }
 
 .button-icon {
-    display: none;
+    font-size: 1.2rem;
 }
 
 .price-note {
-    margin-top: 24px;
-    color: var(--text-secondary);
+    margin-top: 20px;
+    color: var(--text-muted);
     font-size: 14px;
 }
 
-/* Footer - Minimal Apple style */
+/* Footer */
 footer {
     text-align: center;
-    padding: 40px 22px;
-    border-top: 1px solid var(--border-subtle);
-    background: var(--bg-section);
-    margin: 0 -22px;
-    padding-left: 44px;
-    padding-right: 44px;
+    padding: 50px 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.15);
 }
 
 .footer-links {
@@ -393,24 +372,25 @@ footer {
 }
 
 .footer-links a {
-    color: var(--text-link);
+    color: var(--text-secondary);
     text-decoration: none;
-    margin: 0 16px;
-    font-size: 12px;
+    margin: 0 18px;
+    font-size: 14px;
+    font-weight: 500;
     transition: color 0.2s ease;
 }
 
 .footer-links a:hover {
-    text-decoration: underline;
+    color: var(--text-primary);
 }
 
 .copyright {
-    color: var(--text-secondary);
-    font-size: 12px;
+    color: var(--text-muted);
+    font-size: 13px;
     margin-top: 8px;
 }
 
-/* Hide animated shapes - cleaner Apple look */
+/* Hide animated shapes div */
 .bg-shapes {
     display: none;
 }
@@ -418,40 +398,34 @@ footer {
 /* Responsive */
 @media (max-width: 1068px) {
     .hero h1 {
-        font-size: 48px;
+        font-size: 44px;
     }
 
     .features h2,
     .cta h2 {
-        font-size: 40px;
+        font-size: 34px;
     }
 
     .phone-frame img {
-        height: 500px;
-    }
-
-    .feature-grid {
-        gap: 20px;
+        height: 480px;
     }
 }
 
 @media (max-width: 734px) {
     .hero {
-        padding: 80px 22px 60px;
+        padding: 80px 20px 50px;
     }
 
     .hero h1 {
-        font-size: 40px;
+        font-size: 36px;
     }
 
     .subtitle {
-        font-size: 24px;
+        font-size: 22px;
     }
 
     .screenshot-scroll {
         justify-content: flex-start;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
         padding: 20px;
     }
 
@@ -463,22 +437,13 @@ footer {
     }
 
     .phone-frame img {
-        height: 450px;
-        border-radius: 32px;
-    }
-
-    .watch-frame {
-        transform: none;
-    }
-
-    .watch-frame img {
-        height: 200px;
-        border-radius: 44px;
+        height: 420px;
+        border-radius: 28px;
     }
 
     .features h2,
     .cta h2 {
-        font-size: 32px;
+        font-size: 28px;
     }
 
     .feature-grid {
@@ -493,22 +458,15 @@ footer {
         margin-left: auto;
         margin-right: auto;
     }
-
-    .features,
-    footer {
-        margin: 0;
-        padding-left: 22px;
-        padding-right: 22px;
-    }
 }
 
 @media (max-width: 480px) {
     .hero h1 {
-        font-size: 32px;
+        font-size: 30px;
     }
 
     .subtitle {
-        font-size: 21px;
+        font-size: 19px;
     }
 
     .app-icon {
@@ -518,42 +476,30 @@ footer {
     }
 
     .phone-frame img {
-        height: 380px;
-        border-radius: 28px;
-    }
-
-    .watch-frame img {
-        height: 160px;
-    }
-
-    .feature h3 {
-        font-size: 21px;
-    }
-
-    .feature p {
-        font-size: 15px;
+        height: 360px;
+        border-radius: 24px;
     }
 
     .cta-button {
-        padding: 14px 28px;
+        padding: 16px 28px;
+        font-size: 16px;
     }
 }
 
-/* Smooth scrollbar */
+/* Scrollbar */
 ::-webkit-scrollbar {
-    width: 8px;
     height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-    background: transparent;
+    background: rgba(0, 0, 0, 0.1);
 }
 
 ::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.3);
     border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.4);
 }
