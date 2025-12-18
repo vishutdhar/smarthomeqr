@@ -175,6 +175,25 @@
         }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Screenshot scroll dots
+        const scrollContainer = document.querySelector('.screenshot-scroll');
+        const dots = document.querySelectorAll('.scroll-dots .dot');
+        const frames = document.querySelectorAll('.phone-frame');
+
+        if (scrollContainer && dots.length && frames.length) {
+            scrollContainer.addEventListener('scroll', () => {
+                const scrollLeft = scrollContainer.scrollLeft;
+                const frameWidth = frames[0].offsetWidth + 24; // width + gap
+                const activeIndex = Math.round(scrollLeft / frameWidth);
+
+                dots.forEach((dot, i) => {
+                    dot.style.background = i === activeIndex
+                        ? 'rgba(255, 255, 255, 0.9)'
+                        : 'rgba(255, 255, 255, 0.4)';
+                });
+            });
+        }
     </script>
 </body>
 </html>
