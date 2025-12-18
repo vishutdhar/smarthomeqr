@@ -22,12 +22,8 @@
     <link rel="icon" type="image/png" href="images/icon.png">
 </head>
 <body>
-    <!-- Animated background shapes -->
-    <div class="bg-shapes">
-        <div class="shape shape-1"></div>
-        <div class="shape shape-2"></div>
-        <div class="shape shape-3"></div>
-    </div>
+    <!-- Subtle noise texture overlay -->
+    <div class="noise"></div>
 
     <div class="container">
         <!-- Hero Section -->
@@ -52,7 +48,7 @@
         </header>
 
         <!-- Screenshots -->
-        <section class="screenshots">
+        <section class="screenshots reveal">
             <div class="screenshot-scroll">
                 <div class="phone-frame">
                     <img src="images/iphone-homes.png" alt="Organize by home">
@@ -70,11 +66,11 @@
         </section>
 
         <!-- Features -->
-        <section class="features">
+        <section class="features reveal">
             <h2>Everything you need</h2>
 
             <div class="feature-grid">
-                <div class="feature" style="--delay: 0s">
+                <div class="feature">
                     <div class="feature-icon-wrapper">
                         <span class="feature-icon">📷</span>
                     </div>
@@ -82,7 +78,7 @@
                     <p>Point your camera at any QR code. Automatic detection and parsing for HomeKit, Matter, Ring, Nest, Hue, and more.</p>
                 </div>
 
-                <div class="feature" style="--delay: 0.1s">
+                <div class="feature">
                     <div class="feature-icon-wrapper">
                         <span class="feature-icon">⌚</span>
                     </div>
@@ -90,7 +86,7 @@
                     <p>Access your QR codes from your wrist. Perfect for setting up devices around the house.</p>
                 </div>
 
-                <div class="feature" style="--delay: 0.2s">
+                <div class="feature">
                     <div class="feature-icon-wrapper">
                         <span class="feature-icon">🏠</span>
                     </div>
@@ -98,7 +94,7 @@
                     <p>Create multiple homes and rooms. 13 device categories with beautiful icons.</p>
                 </div>
 
-                <div class="feature" style="--delay: 0.3s">
+                <div class="feature">
                     <div class="feature-icon-wrapper">
                         <span class="feature-icon">🔒</span>
                     </div>
@@ -109,7 +105,7 @@
         </section>
 
         <!-- Supported Brands -->
-        <section class="brands">
+        <section class="brands reveal">
             <h2>Works with your devices</h2>
             <div class="brand-pills">
                 <span class="brand-pill">HomeKit</span>
@@ -125,7 +121,7 @@
         </section>
 
         <!-- CTA -->
-        <section class="cta">
+        <section class="cta reveal">
             <h2>Stop digging through boxes</h2>
             <p>Download SmartHomeQR and have all your setup codes ready when you need them.</p>
             <a href="https://apps.apple.com/us/app/smarthomeqr/id6756529233" class="cta-button">
@@ -136,7 +132,7 @@
         </section>
 
         <!-- About Section -->
-        <section class="about">
+        <section class="about reveal">
             <p class="about-text">SmartHomeQR is a simple, secure app for storing and organizing all your smart home device QR codes and setup codes in one place. Whether you're setting up a new home or managing dozens of devices, SmartHomeQR keeps everything organized and instantly accessible.</p>
 
             <p class="about-text">Designed to be installed once and forgotten - until you need it.</p>
@@ -160,5 +156,18 @@
             <p class="copyright">&copy; 2025 Vishut Dhar. All rights reserved.</p>
         </footer>
     </div>
+
+    <!-- Scroll reveal animation -->
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
 </body>
 </html>
