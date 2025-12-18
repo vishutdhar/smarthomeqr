@@ -406,6 +406,13 @@ body {
     margin: 0 auto;
 }
 
+.about h2 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
 .about-text {
     font-size: 18px;
     line-height: 1.7;
