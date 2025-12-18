@@ -232,6 +232,11 @@ body {
         0 40px 80px rgba(0, 0, 0, 0.35);
 }
 
+/* Scroll indicator dots - hidden on desktop */
+.scroll-dots {
+    display: none;
+}
+
 /* Features - Glass cards */
 .features {
     padding: 60px 24px;
@@ -520,17 +525,45 @@ footer {
     }
 
     .screenshots {
-        padding: 20px 0 30px;
+        padding: 20px 0 16px;
     }
 
     .screenshot-scroll {
         justify-content: flex-start;
         padding: 20px;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .phone-frame {
+        scroll-snap-align: center;
+        min-width: calc(50% - 12px);
     }
 
     .phone-frame img {
-        height: 360px;
+        height: 340px;
+        width: 100%;
+        object-fit: contain;
         border-radius: 28px;
+    }
+
+    /* Show scroll dots on mobile */
+    .scroll-dots {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        padding: 12px 0;
+    }
+
+    .scroll-dots .dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.4);
+    }
+
+    .scroll-dots .dot:first-child {
+        background: rgba(255, 255, 255, 0.9);
     }
 
     .features {
