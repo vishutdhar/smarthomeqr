@@ -236,7 +236,7 @@ body {
 /* Screenshots */
 .screenshots {
     padding: 40px 0 60px;
-    overflow: hidden;
+    overflow: visible;
 }
 
 .screenshot-scroll {
@@ -575,6 +575,7 @@ footer {
     .screenshot-scroll {
         justify-content: flex-start;
         padding: 20px;
+        overflow-x: auto;
         scroll-snap-type: x mandatory;
         -webkit-overflow-scrolling: touch;
     }
