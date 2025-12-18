@@ -1,9 +1,9 @@
 /* SmartHomeQR Landing Page - Premium Polish */
-/* Colors matched to app icon gradient: blue (#4A9FE8) to purple (#8B5CF6) */
+/* Purple gradient: light (#A78BFA) to deep (#7C3AED) */
 
 :root {
-    --gradient-start: #4A9FE8;
-    --gradient-end: #8B5CF6;
+    --gradient-start: #A78BFA;
+    --gradient-end: #7C3AED;
     --text-primary: #ffffff;
     --text-secondary: rgba(255, 255, 255, 0.85);
     --text-muted: rgba(255, 255, 255, 0.6);
