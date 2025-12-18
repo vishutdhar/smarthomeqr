@@ -570,6 +570,11 @@ footer {
     .about h2 {
         font-size: 26px;
     }
+
+    /* Fix gradient rendering on mobile */
+    body {
+        background-attachment: scroll;
+    }
 }
 
 @media (max-width: 480px) {
