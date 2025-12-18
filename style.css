@@ -173,16 +173,19 @@ body::before {
 }
 
 .phone-frame:nth-child(1) {
-    transform: rotateY(8deg) translateZ(-20px);
+    transform: rotateY(6deg) translateZ(-30px);
 }
 
 .phone-frame:nth-child(2) {
-    transform: scale(1.05) translateZ(20px);
-    z-index: 2;
+    transform: rotateY(3deg) translateZ(-10px);
 }
 
 .phone-frame:nth-child(3) {
-    transform: rotateY(-8deg) translateZ(-20px);
+    transform: rotateY(-3deg) translateZ(-10px);
+}
+
+.phone-frame:nth-child(4) {
+    transform: rotateY(-6deg) translateZ(-30px);
 }
 
 .phone-frame:hover {
@@ -454,7 +457,8 @@ footer {
 
     .phone-frame:nth-child(1),
     .phone-frame:nth-child(2),
-    .phone-frame:nth-child(3) {
+    .phone-frame:nth-child(3),
+    .phone-frame:nth-child(4) {
         transform: none;
     }
 
