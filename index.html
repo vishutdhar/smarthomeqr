@@ -3,293 +3,203 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SmartHomeQR - Smart Home QR Code Manager</title>
-    <meta name="description" content="Store and organize QR codes for all your smart home devices. iPhone, iPad, and Apple Watch. Free to start, no subscription.">
-    <meta name="keywords" content="smart home, QR code, HomeKit, Matter, iOS app, Apple Watch, setup codes">
+    <title>SmartHomeQR. The private vault for smart home setup codes.</title>
+    <meta name="description" content="Store every smart home device QR and setup code in one private, offline vault. iPhone, iPad, and Apple Watch. Free to start, $6.99 once, no subscription.">
+    <meta name="keywords" content="smart home, QR code, setup code, HomeKit, Matter, iOS app, Apple Watch, offline, private">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="SmartHomeQR - Smart Home QR Code Manager">
-    <meta property="og:description" content="Store and organize QR codes for all your smart home devices. Free to start.">
+    <meta property="og:title" content="SmartHomeQR. The private vault for smart home setup codes.">
+    <meta property="og:description" content="Every device QR and setup code, saved and ready. Offline, private, no subscription.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://vishutdhar.github.io/smarthomeqr/">
     <meta property="og:image" content="https://vishutdhar.github.io/smarthomeqr/images/icon.png">
 
-    <!-- Favicon -->
     <link rel="icon" type="image/png" href="images/icon.png">
 </head>
 <body>
-    <!-- Animated gradient background -->
-    <div class="gradient-bg">
-        <div class="gradient-orb orb-1"></div>
-        <div class="gradient-orb orb-2"></div>
-        <div class="gradient-orb orb-3"></div>
-    </div>
 
-    <!-- Subtle noise texture -->
-    <div class="noise"></div>
+    <a class="skip-link" href="#main">Skip to content</a>
 
-    <div class="container">
-        <!-- Hero Section -->
-        <header class="hero">
-            <div class="icon-container">
-                <div class="icon-glow"></div>
-                <div class="icon-ring"></div>
-                <img src="images/icon.png" alt="SmartHomeQR App Icon" class="app-icon">
+    <header class="nav">
+        <a class="wordmark" href="#" aria-label="SmartHomeQR home">
+            <svg class="wordmark-glyph" width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true">
+                <rect x="1.5" y="1.5" width="23" height="23" rx="6.5" stroke="url(#wg)" stroke-width="2.4"/>
+                <path d="M8 13.2 13 8.6l5 4.6v4.6H8z" stroke="url(#wg)" stroke-width="2" stroke-linejoin="round" fill="none"/>
+                <defs>
+                    <linearGradient id="wg" x1="0" y1="0" x2="26" y2="26" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#4D8DFF"/><stop offset="1" stop-color="#8B6BFF"/>
+                    </linearGradient>
+                </defs>
+            </svg>
+            <span>SmartHomeQR</span>
+        </a>
+        <a class="nav-cta" href="https://apps.apple.com/app/smarthomeqr/id6756529233" target="_blank" rel="noopener noreferrer">Get the app</a>
+    </header>
+
+    <main id="main">
+
+        <!-- Hero -->
+        <section class="hero">
+            <div class="hero-copy">
+                <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span>Private offline vault</p>
+                <h1>Never lose a <span class="grad-text">setup code</span> again.</h1>
+                <p class="hero-sub">Every smart home device ships with a QR code you will need exactly when you cannot find it. SmartHomeQR keeps them all in one private vault on your iPhone.</p>
+                <div class="hero-cta">
+                    <a class="store-badge" href="https://apps.apple.com/app/smarthomeqr/id6756529233" target="_blank" rel="noopener noreferrer">
+                        <img src="images/app-store-badge.svg" alt="Download on the App Store" width="160" height="54">
+                    </a>
+                    <p class="price-line">Free to start. Premium is <strong>$6.99 once</strong>, yours forever.</p>
+                </div>
+                <ul class="trust-chips" aria-label="Product principles">
+                    <li>Private</li>
+                    <li>Offline</li>
+                    <li>No account</li>
+                    <li>No subscription</li>
+                </ul>
             </div>
 
-            <h1>SmartHomeQR</h1>
-            <p class="tagline">Smart Home QR Code Manager</p>
-            <p class="subtitle">Never lose a setup code again</p>
-
-            <div class="badge-container">
-                <a href="https://apps.apple.com/app/smarthomeqr/id6756529233" class="app-store-badge" target="_blank" rel="noopener noreferrer">
-                    <img src="images/app-store-badge.svg" alt="Download on the App Store">
-                </a>
-            </div>
-
-            <div class="highlight-box">
-                <div class="highlight-content">
-                    <span class="highlight-icon">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>
-                    </span>
-                    <span class="highlight-text">No ads</span>
+            <div class="hero-qr" aria-label="Scan to download">
+                <div class="qr-tile">
+                    <img src="images/qr-appstore.svg" alt="QR code that opens SmartHomeQR on the App Store" width="300" height="300">
                 </div>
-                <div class="highlight-divider"></div>
-                <div class="highlight-content">
-                    <span class="highlight-icon">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>
-                    </span>
-                    <span class="highlight-text">No subscription</span>
-                </div>
-                <div class="highlight-divider"></div>
-                <div class="highlight-content">
-                    <span class="highlight-icon">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>
-                    </span>
-                    <span class="highlight-text">Pay once</span>
-                </div>
-                <div class="highlight-divider"></div>
-                <div class="highlight-content">
-                    <span class="highlight-icon">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>
-                    </span>
-                    <span class="highlight-text">Own forever</span>
-                </div>
-            </div>
-        </header>
-
-        <!-- Screenshots -->
-        <section class="screenshots reveal">
-            <div class="screenshot-scroll">
-                <div class="phone-frame">
-                    <img src="images/iphone-homes.png" alt="Organize by home" loading="lazy">
-                </div>
-                <div class="phone-frame">
-                    <img src="images/iphone-rooms.png" alt="Rooms in your home" loading="lazy">
-                </div>
-                <div class="phone-frame">
-                    <img src="images/iphone-devices.png" alt="All your devices" loading="lazy">
-                </div>
-                <div class="phone-frame">
-                    <img src="images/iphone-detail.png" alt="Device details with QR code" loading="lazy">
-                </div>
-            </div>
-            <div class="scroll-dots">
-                <span class="dot active"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
+                <p class="qr-caption"><span class="mono">Point your iPhone camera here.</span><br>It opens the App Store page.</p>
             </div>
         </section>
+
+        <!-- Setup code ticker -->
+        <div class="ticker" aria-hidden="true">
+            <div class="ticker-track">
+                <span>RING DOORBELL&nbsp;&nbsp;4820 77XK 09PB</span><span>ECOBEE&nbsp;&nbsp;MT:Y.K90AFN004</span><span>HUE BRIDGE&nbsp;&nbsp;221 AB CDE</span><span>SCHLAGE ENCODE&nbsp;&nbsp;88410 22156</span><span>NEST CAM&nbsp;&nbsp;X41Q 7ZR2</span><span>WEMO PLUG&nbsp;&nbsp;038 552 914</span><span>EERO PRO&nbsp;&nbsp;NQ7C 55DK</span><span>MYQ GARAGE&nbsp;&nbsp;3301 8874</span><span>RING DOORBELL&nbsp;&nbsp;4820 77XK 09PB</span><span>ECOBEE&nbsp;&nbsp;MT:Y.K90AFN004</span><span>HUE BRIDGE&nbsp;&nbsp;221 AB CDE</span><span>SCHLAGE ENCODE&nbsp;&nbsp;88410 22156</span><span>NEST CAM&nbsp;&nbsp;X41Q 7ZR2</span><span>WEMO PLUG&nbsp;&nbsp;038 552 914</span><span>EERO PRO&nbsp;&nbsp;NQ7C 55DK</span><span>MYQ GARAGE&nbsp;&nbsp;3301 8874</span>
+            </div>
+        </div>
 
         <!-- Features -->
-        <section class="features reveal">
-            <div class="section-header">
-                <span class="section-label">Features</span>
-                <h2>Everything you need</h2>
-            </div>
-
+        <section class="features">
+            <header class="section-head">
+                <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span>Inside the vault</p>
+                <h2>A place for every device.</h2>
+            </header>
             <div class="feature-grid">
-                <div class="feature">
-                    <div class="feature-icon-wrapper">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
-                            <circle cx="12" cy="13" r="4"></circle>
-                        </svg>
-                    </div>
-                    <h3>Smart Scanning</h3>
-                    <p>Point your camera at any QR code. Automatic detection for HomeKit, Matter, Ring, Nest, Hue, and more.</p>
-                </div>
+                <article class="feature-card reveal">
+                    <div class="shot-frame"><img src="images/iphone-homes.png" alt="Homes list in SmartHomeQR" loading="lazy"></div>
+                    <h3>Every home, every room</h3>
+                    <p>Organize by home, then by room. Your house, the beach place, your parents' setup. It stays where you put it.</p>
+                </article>
+                <article class="feature-card reveal">
+                    <div class="shot-frame"><img src="images/iphone-detail.png" alt="Device detail with QR and setup code" loading="lazy"></div>
+                    <h3>The code is the point</h3>
+                    <p>QR, setup code, brand and model on one screen. Rescan straight from your phone when a device resets.</p>
+                </article>
+                <article class="feature-card reveal">
+                    <div class="shot-frame"><img src="images/iphone-devices.png" alt="Searching all devices" loading="lazy"></div>
+                    <h3>Find it instantly</h3>
+                    <p>One search across every home. No scrolling through a camera roll, no digging through boxes in the garage.</p>
+                </article>
+                <article class="feature-card reveal">
+                    <div class="shot-frame watch"><img src="images/watch-list.png" alt="SmartHomeQR on Apple Watch" loading="lazy"></div>
+                    <h3>On your wrist</h3>
+                    <p>The Apple Watch app puts codes at the breaker box, on the ladder, wherever the device actually is.</p>
+                </article>
+            </div>
+        </section>
 
-                <div class="feature">
-                    <div class="feature-icon-wrapper">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="12" cy="12" r="7"></circle>
-                            <polyline points="12 9 12 12 13.5 13.5"></polyline>
-                            <path d="M16.51 17.35l-.35 3.83a2 2 0 0 1-2 1.82H9.83a2 2 0 0 1-2-1.82l-.35-3.83m.01-10.7l.35-3.83A2 2 0 0 1 9.83 1h4.35a2 2 0 0 1 2 1.82l.35 3.83"></path>
-                        </svg>
-                    </div>
-                    <h3>Apple Watch</h3>
-                    <p>Access your QR codes from your wrist. Perfect for setting up devices around the house.</p>
-                </div>
+        <!-- Privacy -->
+        <section class="privacy reveal">
+            <div class="privacy-inner">
+                <p class="eyebrow light"><span class="eyebrow-dot" aria-hidden="true"></span>Privacy</p>
+                <h2>Your codes never leave your devices.</h2>
+                <p class="privacy-sub">No account. No analytics. No server waiting to be breached. SmartHomeQR works entirely offline, syncs through your own iCloud, and locks behind Face ID.</p>
+                <p class="privacy-label mono">App Store privacy label: <strong>Data Not Collected</strong></p>
+            </div>
+        </section>
 
-                <div class="feature">
-                    <div class="feature-icon-wrapper">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                            <polyline points="9 22 9 12 15 12 15 22"></polyline>
-                        </svg>
-                    </div>
-                    <h3>Organize by Home</h3>
-                    <p>Create multiple homes and rooms. 13 device categories with beautiful icons.</p>
+        <!-- Pricing -->
+        <section class="pricing">
+            <header class="section-head">
+                <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span>Pricing</p>
+                <h2>Pay once. That is the whole model.</h2>
+            </header>
+            <div class="tier-grid">
+                <div class="tier reveal">
+                    <p class="tier-name mono">Free</p>
+                    <p class="tier-price">$0</p>
+                    <ul>
+                        <li>1 home</li>
+                        <li>3 rooms</li>
+                        <li>5 devices</li>
+                        <li>Scanning, search, Watch app</li>
+                    </ul>
                 </div>
-
-                <div class="feature">
-                    <div class="feature-icon-wrapper">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-                            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-                        </svg>
-                    </div>
-                    <h3>Secure & Private</h3>
-                    <p>Face ID protection. iCloud sync. Works offline. Your data stays on your devices.</p>
+                <div class="tier premium reveal">
+                    <p class="tier-name mono">Premium</p>
+                    <p class="tier-price">$6.99 <span>once</span></p>
+                    <ul>
+                        <li>Unlimited devices</li>
+                        <li>More homes and rooms</li>
+                        <li>Every future update</li>
+                        <li>No subscription, ever</li>
+                    </ul>
                 </div>
             </div>
         </section>
 
-        <!-- Pricing Highlight -->
-        <section class="pricing reveal">
-            <div class="pricing-card">
-                <div class="pricing-header">
-                    <span class="pricing-label">Simple Pricing</span>
-                    <h2>Start free, upgrade if you need more</h2>
-                </div>
-                <div class="pricing-tiers">
-                    <div class="tier free">
-                        <div class="tier-badge">Free</div>
-                        <div class="tier-limits">
-                            <span>1 Home</span>
-                            <span class="tier-dot"></span>
-                            <span>3 Rooms</span>
-                            <span class="tier-dot"></span>
-                            <span>5 Devices</span>
-                        </div>
-                    </div>
-                    <div class="tier-arrow">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                            <polyline points="12 5 19 12 12 19"></polyline>
-                        </svg>
-                    </div>
-                    <div class="tier premium">
-                        <div class="tier-badge">Premium</div>
-                        <div class="tier-limits">
-                            <span>Unlimited everything</span>
-                        </div>
-                        <div class="tier-price">One-time $4.99</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Supported Brands -->
+        <!-- Compatibility -->
         <section class="brands reveal">
-            <div class="section-header">
-                <span class="section-label">Compatibility</span>
-                <h2>Works with your devices</h2>
-            </div>
-            <div class="brand-pills">
-                <span class="brand-pill">HomeKit</span>
-                <span class="brand-pill">Matter</span>
-                <span class="brand-pill">Ring</span>
-                <span class="brand-pill">Nest</span>
-                <span class="brand-pill">Philips Hue</span>
-                <span class="brand-pill">Schlage</span>
-                <span class="brand-pill">MyQ</span>
-                <span class="brand-pill">Yale</span>
-                <span class="brand-pill">Ecobee</span>
-            </div>
+            <header class="section-head">
+                <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span>Compatibility</p>
+                <h2>Works with what you own.</h2>
+            </header>
+            <ul class="brand-pills">
+                <li>HomeKit</li>
+                <li>Matter</li>
+                <li>Ring</li>
+                <li>Nest</li>
+                <li>Philips Hue</li>
+                <li>Schlage</li>
+                <li>MyQ</li>
+                <li>Yale</li>
+                <li>Ecobee</li>
+                <li>Wemo</li>
+                <li>Eero</li>
+            </ul>
         </section>
 
-        <!-- CTA -->
+        <!-- Final CTA -->
         <section class="cta reveal">
-            <h2>Stop digging through boxes</h2>
-            <p>Download SmartHomeQR and have all your setup codes ready when you need them.</p>
-            <a href="https://apps.apple.com/app/smarthomeqr/id6756529233" class="cta-button" target="_blank" rel="noopener noreferrer">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
-                </svg>
-                Download Free
+            <h2>Stop digging through boxes.</h2>
+            <p>Save every setup code once, and have it ready forever.</p>
+            <a class="store-badge" href="https://apps.apple.com/app/smarthomeqr/id6756529233" target="_blank" rel="noopener noreferrer">
+                <img src="images/app-store-badge.svg" alt="Download on the App Store" width="180" height="60">
             </a>
-            <p class="price-note">iPhone, iPad, Mac & Apple Watch</p>
+            <p class="platforms mono">For iPhone, iPad, and Apple Watch</p>
         </section>
 
-        <!-- Footer -->
-        <footer>
-            <div class="footer-content">
-                <div class="footer-links">
-                    <a href="https://vishutdhar.github.io/smarthomeqr-site/support.html" target="_blank" rel="noopener noreferrer">Support</a>
-                    <a href="privacy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
-                </div>
-                <p class="footer-tagline">Made in the USA for people who hate subscriptions.</p>
-                <p class="copyright">&copy; 2025 Vishut Dhar. All rights reserved.</p>
-                <p class="brand-link"><a href="https://freedom-terminal.com">A Freedom Terminal product</a></p>
-            </div>
-        </footer>
-    </div>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="mailto:support@freedom-terminal.com">Support</a>
+            <a href="privacy.html">Privacy Policy</a>
+        </div>
+        <p class="footer-tagline">Made in the USA for people who hate subscriptions.</p>
+        <p class="copyright">&copy; 2026 Vishut Dhar. All rights reserved.</p>
+        <p class="brand-link"><a href="https://freedom-terminal.com">A Freedom Terminal product</a></p>
+    </footer>
 
     <script>
-        // Scroll reveal animation
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-        // Screenshot scroll dots
-        const scrollContainer = document.querySelector('.screenshot-scroll');
-        const dots = document.querySelectorAll('.scroll-dots .dot');
-        const frames = document.querySelectorAll('.phone-frame');
-
-        if (scrollContainer && dots.length && frames.length) {
-            scrollContainer.addEventListener('scroll', () => {
-                const scrollLeft = scrollContainer.scrollLeft;
-                const frameWidth = frames[0].offsetWidth + 24;
-                const activeIndex = Math.min(Math.round(scrollLeft / frameWidth), dots.length - 1);
-
-                dots.forEach((dot, i) => {
-                    dot.classList.toggle('active', i === activeIndex);
-                });
-            });
-        }
-
-        // Parallax effect for gradient orbs
-        document.addEventListener('mousemove', (e) => {
-            const orbs = document.querySelectorAll('.gradient-orb');
-            const x = e.clientX / window.innerWidth;
-            const y = e.clientY / window.innerHeight;
-
-            orbs.forEach((orb, i) => {
-                const speed = (i + 1) * 20;
-                orb.style.transform = `translate(${x * speed}px, ${y * speed}px)`;
-            });
-        });
     </script>
 </body>
 </html>
