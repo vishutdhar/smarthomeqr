@@ -681,6 +681,21 @@ footer {
     font-size: 13px;
 }
 
+.brand-link {
+    margin-top: 8px;
+}
+
+.brand-link a {
+    color: var(--text-muted);
+    font-size: 13px;
+    text-decoration: none;
+    transition: color 0.3s var(--ease-out);
+}
+
+.brand-link a:hover {
+    color: var(--text-secondary);
+}
+
 /* Responsive */
 @media (max-width: 1068px) {
     .hero h1 { font-size: 44px; }
