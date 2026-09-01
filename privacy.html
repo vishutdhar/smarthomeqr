@@ -67,21 +67,21 @@
     <p class="last-updated">Last updated: September 1, 2026</p>
 
     <div class="highlight">
-        <strong>Summary:</strong> SmartHomeQR runs no analytics, shows no ads, and never sells your data or shares it beyond the storage service you choose. On iOS your data stays on your device and in your private iCloud. On Android it stays on your phone unless you turn on optional cloud sync, which stores it in a Google Firebase database for this app.
+        <strong>Summary:</strong> SmartHomeQR runs no analytics, shows no ads, and never sells your data or shares it beyond the storage service you choose. On iOS your data stays on your device and in your private iCloud. On Android it stays on your phone; the current Android release offers no cloud sync. The Android app reads QR codes and labels on the phone with Google ML Kit, whose software reports diagnostic data about each scan (device model, OS version, app version, a per-installation identifier, timing and error codes) to Google, never your codes or photos.
     </div>
 
     <h2>Introduction</h2>
     <p>SmartHomeQR ("we", "our", or "the app") is committed to protecting your privacy. This Privacy Policy explains how we handle information when you use our iOS and Android applications.</p>
 
     <h2>Data Collection</h2>
-    <p><strong>We run no analytics and take nothing for ourselves.</strong> On iOS, SmartHomeQR operates entirely on your device and your personal iCloud account; we have no servers there and no way to access your information. On Android, everything stays on your phone unless you turn on the optional Cloud Sync setting. When Cloud Sync is on, your homes, rooms, devices, QR images and setup codes are stored in a Google Firebase database operated for this app, tied to your Google sign-in, and used only to sync your devices. They are not yet end to end encrypted; a future update will add that. We do not look at, analyze, or share this data.</p>
+    <p><strong>We run no analytics and take nothing for ourselves.</strong> On iOS, SmartHomeQR operates entirely on your device and your personal iCloud account; we have no servers there and no way to access your information. On Android, everything stays on your phone. The current Android release does not offer Cloud Sync. When a future release adds it, it will be off by default; if you turn it on, your homes, rooms, devices, QR images and setup codes will be stored in a Google Firebase database operated for this app, tied to your Google sign-in, and used only to sync your devices. They will not be end to end encrypted at first; a later update will add that. We do not look at, analyze, or share this data.</p>
 
     <h2>Data Storage</h2>
     <p>All data you create in SmartHomeQR is stored:</p>
     <ul>
         <li><strong>Locally on your device</strong> - Your homes, rooms, devices, and QR code images are stored in your device's local storage.</li>
         <li><strong>iOS, in your iCloud account</strong> - If you have iCloud enabled, your data syncs privately through Apple's iCloud service to your other devices. This sync is encrypted and managed entirely by Apple.</li>
-        <li><strong>Android, in Firebase when Cloud Sync is on</strong> - Cloud Sync is off by default. If you turn it on, your data is copied to a Google Firebase database for this app so your devices can sync. Turning it off stops syncing immediately and keeps your local data.</li>
+        <li><strong>Android, in Firebase when Cloud Sync is on</strong> - not offered in the current Android release. When a future release adds Cloud Sync it will be off by default; if you turn it on, your data is copied to a Google Firebase database for this app so your devices can sync. Turning it off stops syncing immediately and keeps your local data.</li>
     </ul>
 
     <h2>Data We Do NOT Collect</h2>
@@ -95,7 +95,7 @@
     </ul>
 
     <h2>Third-Party Services</h2>
-    <p>SmartHomeQR does not integrate with any third-party analytics, advertising, or tracking services. The only external services used are Apple's iCloud (iOS, optional) and Google Firebase (Android, only when you enable Cloud Sync; see <a href="https://firebase.google.com/support/privacy" rel="noopener">Firebase privacy</a>). iCloud is governed by <a href="https://www.apple.com/legal/privacy/" target="_blank">Apple's Privacy Policy</a>.</p>
+    <p>SmartHomeQR does not integrate with any third-party analytics, advertising, or tracking services. The external services involved are Apple's iCloud (iOS, optional); Google ML Kit on Android, which performs barcode and text recognition on your phone and whose software sends Google diagnostic data about each scan (device model, OS version, app version, a per-installation identifier that Google says is not meant to identify you or your device, timing and error codes), described in <a href="https://developers.google.com/ml-kit/android-data-disclosure" rel="noopener">Google's ML Kit disclosure</a>, and never your codes or photos; and Google Firebase (Android, only in a future release and only when you enable Cloud Sync; see <a href="https://firebase.google.com/support/privacy" rel="noopener">Firebase privacy</a>). iCloud is governed by <a href="https://www.apple.com/legal/privacy/" target="_blank">Apple's Privacy Policy</a>.</p>
 
     <h2>Camera and Photo Library</h2>
     <p>SmartHomeQR requests access to your camera and photo library solely to capture or import QR code images. These images are stored on your device, in your iCloud account (iOS), or in Firebase when Android Cloud Sync is on. We do not transmit them anywhere else.</p>
@@ -106,7 +106,7 @@
         <li>Delete individual items within the app at any time</li>
         <li>Uninstall the app to remove all local data</li>
         <li>Manage iCloud data through your device's Settings > [Your Name] > iCloud</li>
-        <li>On Android, turn off Cloud Sync at any time; deleting a device in the app also deletes its cloud copy, and you can email us to have all your cloud data removed</li>
+        <li>On Android, once Cloud Sync is offered, turn it off at any time; deleting a device in the app also deletes its cloud copy, and you can email us to have all your cloud data removed</li>
     </ul>
 
     <h2>Children's Privacy</h2>
