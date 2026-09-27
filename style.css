@@ -370,19 +370,7 @@ a:focus-visible, button:focus-visible {
     color: var(--muted);
     max-width: 38em;
     font-size: 18px;
-    margin-bottom: 28px;
 }
-
-.privacy-label {
-    display: inline-block;
-    font-size: 13px;
-    letter-spacing: 0.05em;
-    color: var(--muted);
-    border: 1px solid var(--line);
-    border-radius: 100px;
-    padding: 10px 18px;
-}
-.privacy-label strong { color: var(--text); }
 
 /* ---------- Pricing ---------- */
 
