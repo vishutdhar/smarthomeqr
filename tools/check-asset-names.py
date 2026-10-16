@@ -144,7 +144,8 @@ def references(page):
         if default_port is None or url.hostname != HOST or url.port not in (None, default_port):
             continue
         path = unquote(url.path).lstrip("/")
-        if re.search(r"(^|/)(images|fonts)/", path):
+        # Matched without regard to case, so a wrongly capitalised folder is reported, not skipped.
+        if re.search(r"(^|/)(images|fonts)/", path, re.IGNORECASE):
             yield path
 
 
