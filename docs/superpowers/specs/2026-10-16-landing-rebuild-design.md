@@ -167,5 +167,5 @@ Every image and font the pages use carries the first 8 hex digits of its SHA-256
 year. Replacing an image therefore means a new name, so no browser keeps a stale copy. The older
 unhashed files (icon.png, the iphone PNGs, qr-appstore.svg, app-store-badge.svg) stay in place only so
 their existing URLs keep working, and they get the default revalidating cache.
-tools/check-asset-names.sh fails when a hashed name no longer matches its content or when a page
+python3 tools/check-asset-names.py fails when a hashed name no longer matches its content or when a page
 references an unhashed image or font.
