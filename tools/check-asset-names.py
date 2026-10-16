@@ -5,6 +5,9 @@ vercel.json caches a file under images/ or fonts/ for a year, as immutable, only
 carries the first 8 hex digits of its SHA-256 (name.1a2b3c4d.ext). That is safe only while
 1. every such name matches its content, and
 2. every image or font the pages use has such a name and exists.
+To make sure no misspelt reference slips past the second check, every same-site reference the pages
+make, page links included, must resolve to a file the way the site serves it (clean URLs, so
+/privacy is privacy.html and / is index.html).
 
 References are read the way a browser reads them: HTML attributes through the standard HTML
 parser, srcset with the HTML candidate rules, JSON-LD as JSON, and CSS url() values with CSS escapes
@@ -120,7 +123,7 @@ class Collector(HTMLParser):
             return
         text = "".join(self.raw)
         if self.raw_kind == "json":
-            self.urls.extend(s for s in json_strings(json.loads(text)) if "/" in s)
+            self.urls.extend(s for s in json_strings(json.loads(text)) if re.match(r"^(https?:)?/", s))
         else:
             self.urls.extend(css_urls(text))
         self.raw = self.raw_kind = None
@@ -143,10 +146,7 @@ def references(page):
         default_port = {"http": 80, "https": 443}.get(url.scheme)
         if default_port is None or url.hostname != HOST or url.port not in (None, default_port):
             continue
-        path = unquote(url.path).lstrip("/")
-        # Matched without regard to case, so a wrongly capitalised folder is reported, not skipped.
-        if re.search(r"(^|/)(images|fonts)/", path, re.IGNORECASE):
-            yield path
+        yield unquote(url.path).lstrip("/")
 
 
 def exists_exactly(path):
@@ -158,6 +158,15 @@ def exists_exactly(path):
             return False
         folder = folder / part
     return folder.is_file()
+
+
+def served_file(path):
+    """The file the site serves for a path, with clean URLs, or None when there is none."""
+    if path == "" or path.endswith("/"):
+        candidates = [path + "index.html"]
+    else:
+        candidates = [path, path + ".html"]
+    return next((c for c in candidates if exists_exactly(c)), None)
 
 
 def main():
@@ -172,12 +181,19 @@ def main():
                 problems.append(f"stale name: {folder}/{file.name} holds content {actual}")
     for page in PAGES:
         for path in sorted(set(references(page))):
+            target = served_file(path)
+            if target is None:
+                problems.append(f"{page}: missing file {path or '/'}")
+            # An asset is anything that names an images or fonts folder, in any capitalisation,
+            # or lands in one; each must sit in the real folder and carry a content hash.
+            asset = re.search(r"(^|/)(images|fonts)/", path, re.IGNORECASE) or (
+                target is not None and re.match(r"^(images|fonts)/", target))
+            if not asset:
+                continue
             if not (path.startswith("images/") or path.startswith("fonts/")):
                 problems.append(f"{page}: {path} is outside images/ and fonts/")
             elif not HASHED.match(posixpath.basename(path)):
                 problems.append(f"{page}: unhashed reference {path}")
-            if not exists_exactly(path):
-                problems.append(f"{page}: missing file {path}")
     for problem in problems:
         print(problem)
     if not problems:
