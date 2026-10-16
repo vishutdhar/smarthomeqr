@@ -105,10 +105,11 @@ class Collector(HTMLParser):
                 self.urls.extend(css_urls(value))
         if tag == "base" and self.base is None and attrs.get("href") is not None:
             self.base = attrs["href"].strip()
-        if tag == "meta" and "content" in attrs:
-            key = (attrs.get("property") or attrs.get("name") or "").lower()
-            if key.endswith(":image") or key.endswith("image"):
-                self.urls.append((attrs["content"] or "").strip())
+        if tag == "meta" and attrs.get("content"):
+            # og:url, og:image, twitter:image and the like: any content that is a URL.
+            content = attrs["content"].strip()
+            if re.match(r"^(https?:)?/", content, re.IGNORECASE):
+                self.urls.append(content)
         if tag == "script" and (attrs.get("type") or "").lower() == "application/ld+json":
             self.raw, self.raw_kind = [], "json"
         elif tag == "style":
