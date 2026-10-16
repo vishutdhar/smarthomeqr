@@ -336,7 +336,8 @@
   /* Motion. Under reduced motion, or without this script, the page is complete and still. */
   (function () {
     var root = document.documentElement;
-    if (!window.matchMedia || matchMedia("(prefers-reduced-motion: reduce)").matches || !("IntersectionObserver" in window)) return;
+    var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)");
+    if (!reduce || reduce.matches || !("IntersectionObserver" in window)) return;
 
     /* Section reveals: each list gets a one time class the moment its first pixel enters the
        viewport, so nothing on screen ever waits in its hidden start state. */
@@ -360,7 +361,21 @@
     var p = -1, locked = false, tx = 0, ty = 0, x = 0, y = 0;
 
     function queue() {
-      if (!frame && live) frame = requestAnimationFrame(draw);
+      if (!frame && live && !reduce.matches) frame = requestAnimationFrame(draw);
+    }
+
+    /* Reduced motion switched on after load: stop and put the scene back in its resting pose. The
+       CSS start states and transitions sit in a no-preference query, so they stop by themselves. */
+    function rest() {
+      if (frame) cancelAnimationFrame(frame);
+      frame = 0;
+      p = -1;
+      locked = false;
+      tx = ty = x = y = 0;
+      scene.style.removeProperty("--p");
+      scene.style.removeProperty("--px");
+      scene.style.removeProperty("--py");
+      scene.classList.remove("is-locked");
     }
 
     function measure() {
@@ -392,6 +407,10 @@
       if (x !== tx || y !== ty) queue();
     }
 
+    reduce.addEventListener("change", function () {
+      if (reduce.matches) rest();
+      else measure();
+    });
     addEventListener("scroll", queue, { passive: true });
     addEventListener("resize", measure, { passive: true });
     addEventListener("load", measure);

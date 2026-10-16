@@ -139,7 +139,7 @@ measured on load and resize, never per frame. The loop stops when the hero is ou
 the pointer has settled. Links do not animate.
 
 Without JavaScript nothing is hidden: the hidden start states of the reveals apply only under a
-class the script adds. The script is inline at the end of the page (1.7 KB minified), so the class
+class the script adds. The script is inline at the end of the page (1.9 KB minified), so the class
 is in place before the first paint and no list flashes visible and then hidden.
 
 ## 4. Reduced motion
@@ -148,6 +148,12 @@ Under `prefers-reduced-motion: reduce` no animation, transition or script motion
 keyframes sit inside a `no-preference` query, the script exits before adding its class, and every
 section is in its final state. The hero keeps its depth: the scene renders at its resting pose,
 label lifted, rig in three quarter view, shadows and occlusion intact, as a still.
+
+The preference is followed live. If a reader turns reduced motion on after the page has loaded, the
+CSS start states and transitions drop out on their own (they sit in the no-preference query), and the
+script cancels its frame loop and clears the scene's scroll and pointer values, so the hero returns
+to that resting still and no longer answers scroll or pointer. Turned off again, the scroll drives it
+once more.
 
 ## 5. Review against the generic defaults
 
