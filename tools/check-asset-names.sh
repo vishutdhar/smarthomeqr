@@ -16,7 +16,7 @@ for f in images/* fonts/*; do
     fail=1
   fi
 done
-for r in $(grep -ohE '(images|fonts)/[A-Za-z0-9._-]+' index.html privacy.html style.css | sort -u); do
+for r in $(grep -ohE '(images|fonts)/[A-Za-z0-9._-]*[A-Za-z0-9_-]' index.html privacy.html style.css tools/og.html | sort -u); do
   case "$r" in
     *.[0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f].*) ;;
     *) echo "unhashed reference: $r"; fail=1 ;;
