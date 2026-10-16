@@ -159,3 +159,13 @@ network QR codes are parsed only on Android, so the page does not claim them.
    QR path included, every frame. The corners and the scan line now sit on their own elements and
    animate only transform and opacity, and the label is static artwork. Performance went to 100 with
    0 to 20 ms of blocking time.
+
+## Asset names and caching
+
+Every image and font the pages use carries the first 8 hex digits of its SHA-256 in its name
+(for example images/og.da35d565.png), and vercel.json marks only names of that shape immutable for a
+year. Replacing an image therefore means a new name, so no browser keeps a stale copy. The older
+unhashed files (icon.png, the iphone PNGs, qr-appstore.svg, app-store-badge.svg) stay in place only so
+their existing URLs keep working, and they get the default revalidating cache.
+tools/check-asset-names.sh fails when a hashed name no longer matches its content or when a page
+references an unhashed image or font.
