@@ -19,19 +19,34 @@
 }
 
 :root {
-  /* Colour. The accent is the icon's dominant hue (220 degrees, #3778FD) raised in lightness until
-     accent text on the ground passes APCA Lc 60 and ground ink on an accent button passes Lc 75. */
-  --ground: #07080B;
-  --surface-1: #0F1116;
-  --surface-2: #15181F;
-  --ink: #E6E8EB;
-  --body: #CDD0D4;
-  --muted: #9BA1A8;
-  --hairline: rgba(255, 255, 255, 0.11);
-  --accent: #A6D0FF;
-  --accent-hover: #C2DEFF;
+  /* Colour, sampled from the app (see docs/superpowers/specs/2026-10-16-app-colours-depth-motion.md).
+     The app opens in its dark appearance and offers light, so dark is the base set and the light set
+     below overrides it when the reader's system is light. */
+  color-scheme: dark;
+  --ground: #000000;
+  --surface-1: #1C1C1E;
+  --surface-2: #2C2C2E;
+  --ink: #FFFFFF;
+  --body: #D1D1D6;
+  --muted: #C7C7CC;
+  --hairline: rgba(84, 84, 88, 0.65);
+  --button-line: rgba(235, 235, 245, 0.3);
+  /* The app's tint #007AFF, held at its hue: darkened just enough for white button text to pass
+     APCA Lc 75, and lightened for link text on black to pass Lc 60. */
+  --accent: #0072F0;
+  --on-accent: #FFFFFF;
+  --link: #74BAFF;
+  /* The app's systemGreen: its scanner frame turns green when it locks on. */
+  --status: #30D158;
   --paper: #F5F6F7;
   --print: #0A0B0D;
+  /* The hero scene. */
+  --device: #1C1C1E;
+  --device-edge: #2C2C2E;
+  --residue: #26262A;
+  --cast: rgba(0, 0, 0, 0.62);
+  --drop: rgba(0, 0, 0, 0.55);
+  --far-opacity: 0.7;
 
   /* Type. Fluid values stop growing at 1280 px. */
   --font: "Schibsted Grotesk", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -55,6 +70,28 @@
   --col-gap: 64px;
   --phone-shot: clamp(240px, 215px + 6.63vw, 300px);
   --radius: 12px;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color-scheme: light;
+    --ground: #F2F2F7;
+    --surface-1: #FFFFFF;
+    --surface-2: #E5E5EA;
+    --ink: #000000;
+    --body: #3C3C43;
+    --muted: #636366;
+    --hairline: rgba(60, 60, 67, 0.29);
+    --button-line: rgba(60, 60, 67, 0.36);
+    --link: #0072F0;
+    --status: #248A3D;
+    --device: #FFFFFF;
+    --device-edge: #D1D1D6;
+    --residue: #EBEBF0;
+    --cast: rgba(0, 0, 0, 0.3);
+    --drop: rgba(0, 0, 0, 0.18);
+    --far-opacity: 0.8;
+  }
 }
 
 *,
@@ -109,24 +146,24 @@ img {
 }
 
 a {
-  color: var(--accent);
+  color: var(--link);
   text-decoration-thickness: 1px;
   text-underline-offset: 0.2em;
 }
 
 a:hover {
-  color: var(--accent-hover);
+  text-decoration-thickness: 2px;
 }
 
 :focus-visible {
-  outline: 2px solid var(--accent);
+  outline: 2px solid var(--link);
   outline-offset: 3px;
   border-radius: 4px;
 }
 
 ::selection {
   background: var(--accent);
-  color: var(--ground);
+  color: var(--on-accent);
 }
 
 .visually-hidden {
@@ -151,7 +188,7 @@ a:hover {
   padding: 12px 16px;
   border-radius: 0 0 var(--radius) var(--radius);
   background: var(--accent);
-  color: var(--ground);
+  color: var(--on-accent);
   font-weight: 700;
   text-decoration: none;
   transform: translateY(calc(-100% - 8px));
@@ -160,7 +197,7 @@ a:hover {
 .skip-link:focus,
 .skip-link:focus-visible {
   transform: translateY(0);
-  color: var(--ground);
+  color: var(--on-accent);
 }
 
 .wrap {
@@ -262,7 +299,7 @@ h3 {
   text-wrap: pretty;
 }
 
-/* Buttons say what happens; no transitions. */
+/* Buttons say what happens. The only things on the page that answer a pointer with motion. */
 
 .actions {
   display: flex;
@@ -286,16 +323,11 @@ h3 {
 
 .button-primary {
   background: var(--accent);
-  color: var(--ground);
-}
-
-.button-primary:hover {
-  background: var(--accent-hover);
-  color: var(--ground);
+  color: var(--on-accent);
 }
 
 .button-secondary {
-  border: 1px solid rgba(255, 255, 255, 0.24);
+  border: 1px solid var(--button-line);
   color: var(--ink);
 }
 
@@ -308,6 +340,7 @@ h3 {
 
 .hero {
   padding-top: var(--hero-top);
+  overflow-x: clip;
 }
 
 .hero-grid {
@@ -329,44 +362,196 @@ h3 {
   margin-top: 16px;
 }
 
-/* The sticker and its saved copy. Widths are shares of the pair, so the composition scales as one. */
+/* The scene: three planes in one perspective. Far back, the saved codes; in the middle, the Device
+   Details screen; in front, the device and the setup code label peeling off it. The script writes
+   --p (0 at rest, 1 once the label has settled flat) from the scroll position, and --px and --py
+   (-1 to 1) from a mouse pointer. Without the script the scene rests at --p 0, depth intact. */
 
-.pair {
+.scene {
+  --p: 0;
+  --px: 0;
+  --py: 0;
   position: relative;
   width: 100%;
-  max-width: 392px;
+  max-width: 400px;
   margin-left: auto;
   aspect-ratio: 1 / 0.98;
+  perspective: 1000px;
+  perspective-origin: 56% 44%;
 }
 
-/* The saved copy: the real Device Details screen, behind and to the left. */
-.pair-phone {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 52%;
-  border-radius: 18px;
-  box-shadow: 0 0 0 1px var(--hairline);
-}
-
-/* The physical label, in front and lower, clear of the screen's left aligned setup code.
-   The label itself is static artwork; only the viewfinder corners and the scan line move, each on
-   its own layer, so the animation never repaints the label. */
-.sticker-wrap {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  width: 60%;
-  aspect-ratio: 360 / 460;
-}
-
-.sticker,
-.corners {
+/* Every plane pivots on the one point where the label is still stuck to the device. */
+.rig {
   position: absolute;
   inset: 0;
+  transform-style: preserve-3d;
+  transform-origin: 69.5% 93%;
+  transform:
+    rotateX(calc((1 - var(--p)) * 5deg - var(--py) * 6deg))
+    rotateY(calc((var(--p) - 1) * 12deg + var(--px) * 6deg));
+}
+
+.plane-far,
+.plane-phone,
+.device {
+  position: absolute;
+}
+
+/* Back plane: the app's All Devices list, quiet. */
+.plane-far {
+  top: -7%;
+  left: 44%;
+  width: 54%;
+  height: auto;
+  aspect-ratio: 300 / 406;
+  opacity: var(--far-opacity);
+  -webkit-mask-image: linear-gradient(to bottom, #000 55%, transparent 96%);
+  mask-image: linear-gradient(to bottom, #000 55%, transparent 96%);
+  transform: translate3d(0, calc(var(--p) * 28px), -170px);
+}
+
+.far-card {
+  fill: var(--surface-1);
+}
+
+.far-heading,
+.far-name,
+.far-maker {
+  fill: var(--ink);
+}
+
+.far-heading {
+  fill-opacity: 0.4;
+}
+
+.far-name {
+  fill-opacity: 0.55;
+}
+
+.far-maker {
+  fill-opacity: 0.28;
+}
+
+.far-tile {
+  fill: #FFFFFF;
+  stroke: var(--hairline);
+  stroke-width: 1;
+}
+
+.far-qr {
+  fill: #000000;
+}
+
+.far-chevron {
+  fill: none;
+  stroke: var(--ink);
+  stroke-opacity: 0.3;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.far-rule {
+  stroke: var(--hairline);
+  stroke-width: 1;
+}
+
+/* Middle plane: the saved copy of the label, on the real Device Details screen. */
+.plane-phone {
+  top: 3%;
+  left: 0;
+  width: 50%;
+  border-radius: 18px;
+  box-shadow: 0 0 0 1px var(--hairline), 12px 22px 36px -14px var(--drop);
+  transform: translate3d(0, calc(var(--p) * 6px), -50px);
+}
+
+/* Front plane: the device, a slab with a face and an edge 14 px behind it. */
+.device {
+  top: 27%;
+  left: 42%;
+  width: 55%;
+  aspect-ratio: 220 / 282;
+  transform-style: preserve-3d;
+  transform: translate3d(0, calc(var(--p) * -18px), 30px);
+}
+
+.device-face,
+.device-edge {
+  position: absolute;
+  inset: 0;
+  border-radius: 14% / 11%;
+}
+
+.device-face {
+  background: var(--device);
+}
+
+/* The device's shadow falls behind it, so it hangs off the back layer. */
+.device-edge {
+  background: var(--device-edge);
+  box-shadow: 10px 16px 30px -12px var(--drop);
+  transform: translateZ(-14px);
+}
+
+/* The label: a footprint on the device, a strip still stuck to it, and the sheet hinged on the fold
+   just below the QR code. The QR code is never bent, so it scans at every scroll position. */
+.label {
+  position: absolute;
+  top: 7.84%;
+  left: 10%;
+  width: 80%;
+  aspect-ratio: 296 / 400;
+  transform-style: preserve-3d;
+  transform: translateZ(1px);
+}
+
+.label-footprint,
+.label-cast,
+.label-strip,
+.label-sheet,
+.corners {
+  position: absolute;
+}
+
+.label-footprint {
+  inset: 0;
+  border-radius: 12% / 8.9%;
+  background: var(--residue);
+}
+
+/* The lifted sheet's shadow on the device: it leans away from a light at the upper left, widest at
+   the top of the sheet and nothing at the hinge, and shrinks to a contact shadow as the sheet lands. */
+.label-cast {
+  top: 3%;
+  left: 4%;
+  width: 92%;
+  height: 89%;
+  border-radius: 12% / 9%;
+  background: var(--cast);
+  filter: blur(9px);
+  opacity: calc(1 - var(--p) * 0.8);
+  transform-origin: 50% 100%;
+  transform:
+    translateZ(0.2px)
+    translate(calc((1 - var(--p)) * 9%), calc((1 - var(--p)) * 3%))
+    skewX(calc((1 - var(--p)) * -18deg));
+}
+
+.label-strip {
+  bottom: 0;
+  left: 0;
   width: 100%;
-  height: 100%;
-  overflow: visible;
+  height: 7.25%;
+}
+
+.label-sheet {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 93%;
+  transform-origin: 50% 100%;
+  transform: translateZ(0.5px) rotateX(calc((1 - var(--p)) * -42deg));
 }
 
 .sticker-paper {
@@ -382,71 +567,147 @@ h3 {
   fill: var(--print);
 }
 
+/* The viewfinder, flat on the device around the footprint. It locks, green as in the app, when the
+   label lies flat inside it. */
+.corners {
+  top: -3.5%;
+  left: -4.73%;
+  width: 109.46%;
+  height: 107%;
+  overflow: visible;
+  pointer-events: none;
+  transform: translateZ(1px);
+}
+
 .corners path {
   fill: none;
-  stroke: var(--accent);
   stroke-width: 4;
   stroke-linecap: round;
 }
 
-.scanline {
-  position: absolute;
-  top: 3.5%;
-  left: 5%;
-  right: 5%;
-  height: 93%;
-  border-top: 2px solid var(--accent);
+.corners-idle path {
+  stroke: var(--ink);
+}
+
+.corners-lock path {
+  stroke: var(--status);
+}
+
+.corners-lock,
+.is-locked .corners-idle {
   opacity: 0;
-  pointer-events: none;
+}
+
+.is-locked .corners-lock {
+  opacity: 1;
 }
 
 .scan-hint {
   margin-top: 16px;
   margin-left: auto;
-  max-width: 392px;
+  max-width: 400px;
   text-align: right;
   text-wrap: balance;
 }
 
-/* The one orchestrated moment: the viewfinder closes on the sticker and one scan line passes. */
+/* The one load sequence: the planes settle back to front, the viewfinder closes on the footprint,
+   then the copy arrives. The headline only moves, so it is readable from the first frame. */
 
 @media (prefers-reduced-motion: no-preference) {
-  .corners {
-    animation: corners-in 560ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
-    will-change: transform, opacity;
+  .plane-far {
+    animation: far-in 900ms cubic-bezier(0.2, 0.7, 0.2, 1) backwards;
   }
 
-  .scanline {
-    animation: scan 1100ms 360ms cubic-bezier(0.45, 0, 0.55, 1) both;
-    will-change: transform, opacity;
+  .plane-phone {
+    animation: phone-in 800ms 80ms cubic-bezier(0.2, 0.7, 0.2, 1) backwards;
+  }
+
+  .device {
+    animation: device-in 820ms 160ms cubic-bezier(0.2, 0.7, 0.2, 1) backwards;
+  }
+
+  .label-sheet {
+    animation: sheet-land 900ms 200ms cubic-bezier(0.3, 0.6, 0.25, 1) backwards;
+  }
+
+  .label-cast {
+    animation: fade-in 520ms 480ms ease-out backwards;
+  }
+
+  .corners-idle {
+    animation: corners-in 520ms 640ms cubic-bezier(0.2, 0.7, 0.2, 1) backwards;
+  }
+
+  .corners-idle,
+  .corners-lock {
+    transition: opacity 300ms ease-in-out;
+  }
+
+  .hero-copy h1 {
+    animation: rise 640ms 120ms cubic-bezier(0.2, 0.7, 0.2, 1) backwards;
+  }
+
+  .hero-copy .lede {
+    animation: appear 560ms 420ms cubic-bezier(0.2, 0.7, 0.2, 1) backwards;
+  }
+
+  .hero-copy .actions {
+    animation: appear 560ms 500ms cubic-bezier(0.2, 0.7, 0.2, 1) backwards;
+  }
+
+  .hero-copy .fine {
+    animation: appear 560ms 580ms cubic-bezier(0.2, 0.7, 0.2, 1) backwards;
+  }
+}
+
+@keyframes far-in {
+  from {
+    opacity: 0;
+    translate: 0 -18px;
+  }
+}
+
+@keyframes phone-in {
+  from {
+    translate: 0 24px;
+  }
+}
+
+@keyframes device-in {
+  from {
+    translate: 32px 0;
+  }
+}
+
+@keyframes sheet-land {
+  from {
+    rotate: x -40deg;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
   }
 }
 
 @keyframes corners-in {
   from {
     opacity: 0;
-    transform: scale(1.08);
-  }
-  to {
-    opacity: 1;
-    transform: none;
+    scale: 1.08;
   }
 }
 
-@keyframes scan {
-  0% {
+@keyframes rise {
+  from {
+    translate: 0 10px;
+  }
+}
+
+@keyframes appear {
+  from {
     opacity: 0;
-    transform: translateY(0);
-  }
-  12% {
-    opacity: 1;
-  }
-  85% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    transform: translateY(100%);
+    translate: 0 8px;
   }
 }
 
@@ -477,6 +738,7 @@ h3 {
 }
 
 .row {
+  position: relative;
   display: grid;
   grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
   column-gap: var(--col-gap);
@@ -484,8 +746,21 @@ h3 {
   padding-block: 24px;
 }
 
+/* The hairline is its own layer over a transparent border, so a list can draw it in from the left
+   without moving anything. */
 .row + .row {
-  border-top: 1px solid var(--hairline);
+  border-top: 1px solid transparent;
+}
+
+.row + .row::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  right: 0;
+  left: 0;
+  height: 1px;
+  background: var(--hairline);
+  transform-origin: 0 50%;
 }
 
 /* The last row ends on its text, so the gap to the next section is the section token alone. */
@@ -583,11 +858,20 @@ h3 {
   align-items: start;
 }
 
+/* The figure sits in its own clipped line, so it can rise into place. The padding and the equal
+   negative margin give its descender room without moving the layout. */
 .price-figure {
   display: block;
+  padding-bottom: 0.15em;
+  margin-bottom: -0.15em;
   font-size: var(--fs-h1);
   line-height: 1.06;
   letter-spacing: -0.02em;
+  clip-path: inset(-0.3em -0.3em 0 -0.3em);
+}
+
+.price-roll {
+  display: inline-block;
 }
 
 .price-terms {
@@ -614,6 +898,115 @@ h3 {
 
 .rows-stack .row-term {
   font-size: var(--fs-body);
+}
+
+/* Section reveals. Each list arrives once, in its own way. The start states exist only after the
+   script has put .motion on the root, which it never does under reduced motion, so without the
+   script every section is already in its final state. */
+
+@media (prefers-reduced-motion: no-preference) {
+  .button {
+    transition: transform 120ms ease-out;
+  }
+
+  .button:hover {
+    transform: translateY(-1px);
+  }
+
+  .button:active {
+    transform: scale(0.98);
+  }
+
+  /* Where codes are printed: each sample code prints left to right. */
+  .motion [data-reveal="print"] .code-sample {
+    clip-path: inset(-0.2em 100% -0.2em -0.2em);
+    transition: clip-path 560ms cubic-bezier(0.5, 0, 0.2, 1);
+  }
+
+  .motion [data-reveal="print"].is-in .code-sample {
+    clip-path: inset(-0.2em -0.2em -0.2em -0.2em);
+  }
+
+  .motion [data-reveal="print"] .row:nth-child(2) .code-sample {
+    transition-delay: 120ms;
+  }
+
+  .motion [data-reveal="print"] .row:nth-child(3) .code-sample {
+    transition-delay: 240ms;
+  }
+
+  /* What it does: each hairline draws in from the left, then its row's words follow. */
+  .motion [data-reveal="draw"] .row::before {
+    transform: scaleX(0);
+    transition: transform 520ms cubic-bezier(0.6, 0, 0.2, 1);
+  }
+
+  .motion [data-reveal="draw"] .row > * {
+    opacity: 0;
+    transition: opacity 420ms ease-out;
+  }
+
+  .motion [data-reveal="draw"].is-in .row::before {
+    transform: none;
+  }
+
+  .motion [data-reveal="draw"].is-in .row > * {
+    opacity: 1;
+  }
+
+  .motion [data-reveal="draw"] .row:nth-child(2)::before { transition-delay: 70ms; }
+  .motion [data-reveal="draw"] .row:nth-child(3)::before { transition-delay: 140ms; }
+  .motion [data-reveal="draw"] .row:nth-child(4)::before { transition-delay: 210ms; }
+  .motion [data-reveal="draw"] .row:nth-child(5)::before { transition-delay: 280ms; }
+  .motion [data-reveal="draw"] .row:nth-child(6)::before { transition-delay: 350ms; }
+  .motion [data-reveal="draw"] .row:nth-child(1) > * { transition-delay: 120ms; }
+  .motion [data-reveal="draw"] .row:nth-child(2) > * { transition-delay: 220ms; }
+  .motion [data-reveal="draw"] .row:nth-child(3) > * { transition-delay: 290ms; }
+  .motion [data-reveal="draw"] .row:nth-child(4) > * { transition-delay: 360ms; }
+  .motion [data-reveal="draw"] .row:nth-child(5) > * { transition-delay: 430ms; }
+  .motion [data-reveal="draw"] .row:nth-child(6) > * { transition-delay: 500ms; }
+
+  /* Platforms: each screen turns from perspective to face the reader. */
+  .motion [data-reveal="straighten"] .shot-img {
+    opacity: 0;
+    transform: perspective(900px) rotateY(-18deg) rotateX(6deg) translateZ(-40px);
+    transform-origin: 50% 100%;
+    transition:
+      transform 760ms cubic-bezier(0.2, 0.7, 0.2, 1),
+      opacity 480ms ease-out;
+  }
+
+  .motion [data-reveal="straighten"].is-in .shot-img {
+    opacity: 1;
+    transform: none;
+  }
+
+  .motion [data-reveal="straighten"] .shot:nth-child(2) .shot-img {
+    transition-delay: 110ms;
+  }
+
+  .motion [data-reveal="straighten"] .shot:nth-child(3) .shot-img {
+    transition-delay: 220ms;
+  }
+
+  /* Pricing: the price rises out of its own line, then the terms. */
+  .motion [data-reveal="price"] .price-roll {
+    transform: translateY(115%);
+    transition: transform 620ms cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+
+  .motion [data-reveal="price"].is-in .price-roll {
+    transform: none;
+  }
+
+  .motion [data-reveal="price"] .price-terms {
+    opacity: 0;
+    transition: opacity 480ms 180ms ease-out;
+  }
+
+  .motion [data-reveal="price"].is-in .price-terms {
+    opacity: 1;
+  }
 }
 
 /* Footer */
@@ -746,7 +1139,7 @@ h3 {
     width: min(100%, 440px);
   }
 
-  .pair {
+  .scene {
     margin-left: 0;
   }
 
