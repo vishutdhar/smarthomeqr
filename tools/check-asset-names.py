@@ -7,8 +7,9 @@ carries the first 8 hex digits of its SHA-256 (name.1a2b3c4d.ext). That is safe 
 2. every image or font the pages use has such a name and exists.
 
 References are read the way a browser reads them: HTML attributes through the standard HTML
-parser (only srcset is split into candidates), JSON-LD as JSON, and CSS url() values, then each one
-is resolved with the standard URL resolver against the page's own address on the site.
+parser, srcset with the HTML candidate rules, JSON-LD as JSON, and CSS url() values with CSS escapes
+decoded. Each one is resolved with the standard URL resolver against the page's address on the site,
+or its <base href> when it has one, and compared by origin.
 Changed an image? Rename it with the new hash (shasum -a 256 FILE | cut -c1-8) and update the
 references, then run: python3 tools/check-asset-names.py
 """
@@ -24,15 +25,48 @@ from urllib.parse import unquote, urljoin, urlsplit
 ROOT = Path(__file__).resolve().parent.parent
 PAGES = ["index.html", "privacy.html", "style.css", "tools/og.html"]
 SITE = "https://smarthomeqr.vishutdhar.com/"
-HOST = urlsplit(SITE).netloc
+HOST = urlsplit(SITE).hostname
 HASHED = re.compile(r"^.+\.([0-9a-f]{8})\.[a-z0-9]+$")
-CSS_URL = re.compile(r"url\(\s*(?:\"([^\"]*)\"|'([^']*)'|([^)\s]*))\s*\)")
+CSS_URL = re.compile(r"url\(\s*(?:\"([^\"]*)\"|'([^']*)'|([^)\s]*))\s*\)", re.IGNORECASE)
+CSS_ESCAPE = re.compile(r"\\(?:([0-9a-fA-F]{1,6})[ \t\n\r\f]?|(.))", re.DOTALL)
 URL_ATTRS = {"src", "href", "poster", "data"}
+
+
+def css_unescape(value):
+    return CSS_ESCAPE.sub(lambda m: chr(int(m.group(1), 16)) if m.group(1) else m.group(2), value)
 
 
 def css_urls(text):
     for match in CSS_URL.finditer(text):
-        yield next(group for group in match.groups() if group is not None)
+        yield css_unescape(next(group for group in match.groups() if group is not None))
+
+
+def srcset_urls(value):
+    """The URLs of a srcset, following the HTML candidate parsing rules."""
+    pos, size, urls = 0, len(value), []
+    while True:
+        while pos < size and (value[pos] in " \t\n\r\f,"):
+            pos += 1
+        if pos >= size:
+            return urls
+        start = pos
+        while pos < size and value[pos] not in " \t\n\r\f":
+            pos += 1
+        url = value[start:pos]
+        if url.endswith(","):
+            urls.append(url.rstrip(","))
+            continue
+        urls.append(url)
+        depth = 0
+        while pos < size:
+            char = value[pos]
+            pos += 1
+            if char == "(":
+                depth += 1
+            elif char == ")":
+                depth = max(0, depth - 1)
+            elif char == "," and depth == 0:
+                break
 
 
 def json_strings(value):
@@ -50,6 +84,7 @@ class Collector(HTMLParser):
     def __init__(self):
         super().__init__(convert_charrefs=True)
         self.urls = []
+        self.base = None
         self.raw = None
         self.raw_kind = None
 
@@ -61,12 +96,11 @@ class Collector(HTMLParser):
             if name in URL_ATTRS:
                 self.urls.append(value.strip())
             elif name in ("srcset", "imagesrcset"):
-                for candidate in value.split(","):
-                    tokens = candidate.split()
-                    if tokens:
-                        self.urls.append(tokens[0])
+                self.urls.extend(srcset_urls(value))
             elif name == "style":
                 self.urls.extend(css_urls(value))
+        if tag == "base" and self.base is None and attrs.get("href") is not None:
+            self.base = attrs["href"].strip()
         if tag == "meta" and "content" in attrs:
             key = (attrs.get("property") or attrs.get("name") or "").lower()
             if key.endswith(":image") or key.endswith("image"):
@@ -93,6 +127,7 @@ class Collector(HTMLParser):
 
 def references(page):
     text = (ROOT / page).read_text(encoding="utf-8")
+    base = urljoin(SITE, page)
     if page.endswith(".css"):
         found = list(css_urls(text))
     else:
@@ -100,10 +135,12 @@ def references(page):
         collector.feed(text)
         collector.close()
         found = collector.urls
-    base = urljoin(SITE, page)
+        if collector.base is not None:
+            base = urljoin(base, collector.base)
     for ref in found:
         url = urlsplit(urljoin(base, ref))
-        if url.scheme not in ("http", "https") or url.netloc != HOST:
+        default_port = {"http": 80, "https": 443}.get(url.scheme)
+        if default_port is None or url.hostname != HOST or url.port not in (None, default_port):
             continue
         path = unquote(url.path).lstrip("/")
         if re.search(r"(^|/)(images|fonts)/", path):
