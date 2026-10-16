@@ -15,6 +15,7 @@ references, then run: python3 tools/check-asset-names.py
 """
 import hashlib
 import json
+import os
 import posixpath
 import re
 import sys
@@ -147,6 +148,17 @@ def references(page):
             yield path
 
 
+def exists_exactly(path):
+    """True when the file exists with exactly this spelling. Vercel serves from a case sensitive
+    file system, so a name that only matches on a case insensitive Mac would be a 404 there."""
+    folder = ROOT
+    for part in path.split("/"):
+        if not folder.is_dir() or part not in os.listdir(folder):
+            return False
+        folder = folder / part
+    return folder.is_file()
+
+
 def main():
     problems = []
     for folder in ("images", "fonts"):
@@ -163,7 +175,7 @@ def main():
                 problems.append(f"{page}: {path} is outside images/ and fonts/")
             elif not HASHED.match(posixpath.basename(path)):
                 problems.append(f"{page}: unhashed reference {path}")
-            if not (ROOT / path).is_file():
+            if not exists_exactly(path):
                 problems.append(f"{page}: missing file {path}")
     for problem in problems:
         print(problem)
