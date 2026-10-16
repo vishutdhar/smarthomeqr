@@ -34,6 +34,12 @@ HASHED = re.compile(r"^.+\.([0-9a-f]{8})\.[a-z0-9]+$")
 CSS_URL = re.compile(r"url\(\s*(?:\"([^\"]*)\"|'([^']*)'|([^)\s]*))\s*\)", re.IGNORECASE)
 CSS_ESCAPE = re.compile(r"\\(?:([0-9a-fA-F]{1,6})[ \t\n\r\f]?|(.))", re.DOTALL)
 URL_ATTRS = {"src", "href", "poster", "data"}
+# Meta properties and JSON-LD keys whose value is a URL, written relative or absolute.
+URL_META = {"og:url", "og:image", "og:image:url", "og:image:secure_url", "og:video", "og:audio",
+            "twitter:image", "twitter:url"}
+URL_KEYS = {"@id", "url", "image", "logo", "installUrl", "sameAs", "item", "contentUrl",
+            "thumbnailUrl", "downloadUrl", "screenshot"}
+ABSOLUTE = re.compile(r"^(https?:)?//|^/", re.IGNORECASE)
 
 
 def css_unescape(value):
@@ -73,15 +79,17 @@ def srcset_urls(value):
                 break
 
 
-def json_strings(value):
+def json_urls(value, key=None):
+    """URLs in JSON-LD: every string under a URL key, and any other string that is absolute."""
     if isinstance(value, str):
-        yield value
+        if key in URL_KEYS or ABSOLUTE.match(value):
+            yield value
     elif isinstance(value, dict):
-        for item in value.values():
-            yield from json_strings(item)
+        for name, item in value.items():
+            yield from json_urls(item, name)
     elif isinstance(value, list):
         for item in value:
-            yield from json_strings(item)
+            yield from json_urls(item, key)
 
 
 class Collector(HTMLParser):
@@ -106,9 +114,9 @@ class Collector(HTMLParser):
         if tag == "base" and self.base is None and attrs.get("href") is not None:
             self.base = attrs["href"].strip()
         if tag == "meta" and attrs.get("content"):
-            # og:url, og:image, twitter:image and the like: any content that is a URL.
+            key = (attrs.get("property") or attrs.get("name") or "").lower()
             content = attrs["content"].strip()
-            if re.match(r"^(https?:)?/", content, re.IGNORECASE):
+            if key in URL_META or ABSOLUTE.match(content):
                 self.urls.append(content)
         if tag == "script" and (attrs.get("type") or "").lower() == "application/ld+json":
             self.raw, self.raw_kind = [], "json"
@@ -124,7 +132,7 @@ class Collector(HTMLParser):
             return
         text = "".join(self.raw)
         if self.raw_kind == "json":
-            self.urls.extend(s for s in json_strings(json.loads(text)) if re.match(r"^(https?:)?/", s))
+            self.urls.extend(json_urls(json.loads(text)))
         else:
             self.urls.extend(css_urls(text))
         self.raw = self.raw_kind = None
