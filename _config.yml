@@ -1,0 +1,5 @@
+# GitHub Pages copy of the site. Keep the design notes and the social card source off the public site.
+exclude:
+  - docs
+  - tools
+  - vercel.json
