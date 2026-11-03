@@ -27,7 +27,7 @@ from pathlib import Path
 from urllib.parse import unquote, urljoin, urlsplit
 
 ROOT = Path(__file__).resolve().parent.parent
-PAGES = ["index.html", "privacy.html", "style.css", "tools/og.html"]
+PAGES = ["index.html", "privacy.html", "matter-qr-code-decoder.html", "style.css", "tools/og.html"]
 SITE = "https://smarthomeqr.vishutdhar.com/"
 HOST = urlsplit(SITE).hostname
 HASHED = re.compile(r"^.+\.([0-9a-f]{8})\.[a-z0-9]+$")

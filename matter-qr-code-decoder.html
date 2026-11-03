@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Matter and HomeKit setup code decoder | SmartHomeQR</title>
+  <meta name="description" content="Paste a Matter QR payload or manual pairing code, or a HomeKit setup payload, and see what it carries: the 11 digit code to type, the vendor, product, discriminator and passcode. Runs in your browser, nothing is uploaded. Print a replacement label.">
+  <link rel="canonical" href="https://smarthomeqr.vishutdhar.com/matter-qr-code-decoder">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#F2F2F7" media="(prefers-color-scheme: light)">
+  <meta name="color-scheme" content="dark light">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="icon" type="image/png" sizes="64x64" href="images/favicon-64.18bc72ef.png">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.4c9713b6.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="SmartHomeQR">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="Matter and HomeKit setup code decoder">
+  <meta property="og:description" content="Paste a Matter QR payload or manual pairing code, or a HomeKit setup payload, and read the code to type, the vendor, product, discriminator and passcode. In your browser, nothing uploaded.">
+  <meta property="og:url" content="https://smarthomeqr.vishutdhar.com/matter-qr-code-decoder">
+  <meta property="og:image" content="https://smarthomeqr.vishutdhar.com/images/og.fa189b3f.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="A HomeKit style setup code sticker beside the line Lost a HomeKit or Matter setup code?">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Matter and HomeKit setup code decoder">
+  <meta name="twitter:description" content="Paste a Matter QR payload or manual pairing code, or a HomeKit setup payload, and read what it carries. In your browser, nothing uploaded.">
+  <meta name="twitter:image" content="https://smarthomeqr.vishutdhar.com/images/og.fa189b3f.png">
+  <link rel="preload" href="fonts/schibsted-grotesk-700-latin.519f310a.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/schibsted-grotesk-400-latin.a1b49272.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="tool-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap header-row">
+      <a class="wordmark" href="./">
+        <img src="images/icon-56.9eebb22e.webp" alt="" width="28" height="28">
+        <span>SmartHomeQR</span>
+      </a>
+      <nav aria-label="Site">
+        <ul class="nav-links">
+          <li><a href="./#pricing">The app</a></li>
+          <li><a href="#questions">Questions</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="hero tool-hero" aria-labelledby="hero-title">
+      <div class="wrap">
+        <h1 id="hero-title">Read a Matter or HomeKit setup code</h1>
+        <p class="lede">Paste the text inside a Matter QR code, a manual pairing code, or a HomeKit setup payload. You get the code to type into Apple Home or Google Home, what the device says about itself, and a label you can print. Everything runs in your browser, and nothing you paste leaves it.</p>
+
+        <noscript><p class="field-error">This page reads codes with JavaScript, which is off in your browser. With it on, the code still never leaves your browser.</p></noscript>
+        <form class="tool-form" id="decoder" novalidate hidden>
+          <label class="field-label" for="code">Setup code or QR text</label>
+          <div class="field-row">
+            <input class="field" id="code" type="text" inputmode="text" autocomplete="off" autocapitalize="characters" spellcheck="false" maxlength="600" placeholder="MT:Y.K9042C00KA0648G00" aria-describedby="code-help code-error">
+            <button class="button button-primary" type="submit">Decode</button>
+          </div>
+          <p class="fine" id="code-help">A Matter QR code holds text that starts with MT:. A manual pairing code has 11 or 21 digits. A HomeKit QR code holds text that starts with X-HM://, and a HomeKit code has 8 digits. To read the text out of a QR code, scan it with a QR reader and copy what it shows.</p>
+          <p class="field-error" id="code-error" role="alert" hidden></p>
+          <p class="visually-hidden" id="status" role="status" aria-live="polite"></p>
+          <p class="examples">Try one: <button class="example" type="button" data-example="MT:Y.K9042C00KA0648G00">a Matter QR payload</button>, <button class="example" type="button" data-example="3497-011-2332">a manual pairing code</button> or <button class="example" type="button" data-example="X-HM://00522H1VMHSPN">a HomeKit payload</button>.</p>
+        </form>
+      </div>
+    </section>
+
+    <section class="section result" id="result" aria-labelledby="result-title" hidden>
+      <div class="wrap result-grid">
+        <figure class="label-figure">
+          <svg class="label-svg" id="label" viewBox="0 0 296 400" role="img" aria-labelledby="label-title">
+            <title id="label-title"></title>
+          </svg>
+          <figcaption class="fine" id="label-caption"></figcaption>
+          <div class="actions label-actions">
+            <button class="button button-secondary" type="button" id="copy">Copy the code</button>
+            <button class="button button-secondary" type="button" id="print">Print this label</button>
+          </div>
+        </figure>
+        <div class="result-fields">
+          <h2 id="result-title" tabindex="-1"></h2>
+          <p class="lede" id="result-lede"></p>
+          <dl class="rows rows-compact" id="fields"></dl>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="inside" aria-labelledby="inside-title">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="inside-title">What a Matter QR code carries</h2>
+          <p class="lede">The QR code on a Matter device is a short piece of text, MT: and about twenty characters. Packed inside are the six values a Home app needs to find the device and prove it has the right one.</p>
+        </div>
+        <dl class="rows">
+          <div class="row">
+            <dt class="row-term">Vendor and product</dt>
+            <dd>Two numbers. The vendor ID is assigned by the Connectivity Standards Alliance, the product ID by the maker. Together they name the model, which is how a Home app knows what it is pairing before the device says a word.</dd>
+          </div>
+          <div class="row">
+            <dt class="row-term">Discriminator</dt>
+            <dd>A 12 bit number the device advertises over Bluetooth or the network while it waits to be paired. The Home app uses it to pick your device out of several that are waiting at once. The manual pairing code carries only its top four bits.</dd>
+          </div>
+          <div class="row">
+            <dt class="row-term">Passcode</dt>
+            <dd>An eight digit number, up to 99,999,998, that the device and the Home app both know. It is the proof of possession: without it, nothing nearby can take over the device. Codes made of one repeated digit, 12345678 and 87654321 are never issued.</dd>
+          </div>
+          <div class="row">
+            <dt class="row-term">Commissioning flow</dt>
+            <dd>Standard means the device is ready to pair as soon as it has power. User intent means you press a button or follow a step first. Custom means the maker's own app has to take part. A device on either of the last two prints a longer 21 digit code with the vendor and product in it.</dd>
+          </div>
+          <div class="row">
+            <dt class="row-term">Discovery</dt>
+            <dd>How the device waits to be found: over Bluetooth LE, already on your Wi-Fi or Thread network, as its own Wi-Fi access point, over Wi-Fi public action frames, or by an NFC tap.</dd>
+          </div>
+          <div class="row">
+            <dt class="row-term">The manual pairing code</dt>
+            <dd>The 11 digits printed beside the QR code, grouped 4, 3 and 4. They carry the passcode and the short discriminator, and the last digit is a check digit, so a typo is caught before the Home app goes looking. Apple Home, Google Home, Alexa and SmartThings all accept it when the QR code will not scan.</dd>
+          </div>
+          <div class="row">
+            <dt class="row-term">And a HomeKit code</dt>
+            <dd>A HomeKit QR code is older and simpler: X-HM:// and 13 characters that hold the eight digit setup code, the accessory category and whether it pairs over Wi-Fi or Bluetooth. The eight digits printed beside the house mark are all the Home app needs.</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="section" id="questions" aria-labelledby="faq-title">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="faq-title">Questions</h2>
+        </div>
+        <dl class="rows">
+          <div class="row">
+            <dt class="row-term">Can I turn an 11 digit code back into the QR code?</dt>
+            <dd>No. The manual code leaves out the vendor, the product and most of the discriminator, so no one can rebuild the QR code from it. You do not need to: every Home app has a place to type the code instead of scanning.</dd>
+          </div>
+          <div class="row">
+            <dt class="row-term">The code fails the check digit. What now?</dt>
+            <dd>At least one digit was read wrong. On a worn label 0 and 8, 1 and 7, 3 and 8, and 5 and 6 are the usual mix ups. If one digit is doubtful, try its likely swap: the check digit catches any single wrong digit, so the first code that passes is the one to try in the Home app. If two or more are unreadable, a guess can pass the check and still be another device's code, and the Home app will not pair; then you need the QR code, the maker's app or a reset.</dd>
+          </div>
+          <div class="row">
+            <dt class="row-term">Is the code I paste sent anywhere?</dt>
+            <dd>No. The page does its arithmetic in your browser and makes no network request with what you type. You can load it, go offline and it still works.</dd>
+          </div>
+          <div class="row">
+            <dt class="row-term">Can I print a replacement label?</dt>
+            <dd>Yes. Decode the code and press Print this label. From QR text, a Matter label prints with its QR code and the manual code, and a HomeKit label with the house mark, the code and its QR code. From a typed code alone, the label prints with the code. Stick it on the device, or inside the box lid.</dd>
+          </div>
+          <div class="row">
+            <dt class="row-term">I have only the 8 digit HomeKit code. Can I get a QR code?</dt>
+            <dd>Not from the digits alone: the QR code also names the accessory category and its pairing transport, which the digits do not carry. Type the eight digits into the Home app instead; it accepts them for every accessory.</dd>
+          </div>
+          <div class="row">
+            <dt class="row-term">The code is right, but a second app will not pair the device</dt>
+            <dd>The printed code works at first setup and after a factory reset. Once a device is in one ecosystem, that app hands it to the next one. In Apple Home, open the accessory's settings and choose Turn On Pairing Mode for a temporary code. In Google Home, open the device's settings, then Linked Matter apps and services, and Link apps and services; it can hand the device over without a code. In Alexa, open the device, then Other Assistants and Apps, and Add another, for a code that lasts 15 minutes. In SmartThings, open the device's menu, then Share with other services, and Share device. The code each one shows is not the one on the label.</dd>
+          </div>
+          <div class="row">
+            <dt class="row-term">Where was the code to begin with?</dt>
+            <dd>On the device, on its box and in its quick start card, and for some brands inside their app. <a href="./#where">Where setup codes are printed</a> goes through each place.</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="section cta" aria-labelledby="cta-title">
+      <div class="wrap pricing-grid">
+        <div class="pricing-lead">
+          <h2 id="cta-title">Next time, have it on your phone</h2>
+          <p class="lede">SmartHomeQR scans each label once and keeps every HomeKit, Matter and Z Wave code, by home and room, on iPhone, iPad, Apple Watch and Android. Offline, no account. Free for 5 devices.</p>
+          <div class="actions">
+            <a class="button button-primary" href="https://apps.apple.com/app/smarthomeqr/id6756529233">Download on the App Store</a>
+            <a class="button button-secondary" href="https://play.google.com/store/apps/details?id=com.vishutdhar.smarthomeqr">Get it on Google Play</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p class="footer-support">A code this page reads wrongly, or a label it should read and does not: write to <a href="mailto:support@freedom-terminal.com">support@freedom-terminal.com</a>.</p>
+      <div class="footer-row">
+        <ul class="footer-links">
+          <li><a href="./">SmartHomeQR</a></li>
+          <li><a href="privacy">Privacy</a></li>
+          <li><a href="mailto:support@freedom-terminal.com">Support</a></li>
+          <li><a href="https://freedom-terminal.com/">A Freedom Terminal product</a></li>
+        </ul>
+        <div class="badges">
+          <a class="badge" href="https://apps.apple.com/app/smarthomeqr/id6756529233"><img src="images/app-store-badge.6c5c68cc.svg" alt="Download on the App Store" width="120" height="40"></a>
+          <a class="badge" href="https://play.google.com/store/apps/details?id=com.vishutdhar.smarthomeqr"><img src="images/google-play-badge.446c2320.png" alt="Get it on Google Play" width="135" height="40"></a>
+        </div>
+      </div>
+      <p class="fine">SmartHomeQR is an independent app and is not affiliated with Apple Inc., Google LLC or the Connectivity Standards Alliance. App Store and HomeKit are trademarks of Apple Inc. Google Play is a trademark of Google LLC. Matter is a trademark of the Connectivity Standards Alliance. QR Code is a registered trademark of DENSO WAVE INCORPORATED.</p>
+      <p class="fine">&copy; 2026 Vishut Dhar</p>
+    </div>
+  </footer>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://smarthomeqr.vishutdhar.com/matter-qr-code-decoder#app",
+        "name": "Matter and HomeKit setup code decoder",
+        "url": "https://smarthomeqr.vishutdhar.com/matter-qr-code-decoder",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Any",
+        "browserRequirements": "Requires JavaScript",
+        "isAccessibleForFree": true,
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "description": "Reads a Matter QR payload, a Matter manual pairing code or a HomeKit setup payload in the browser and shows the code to type, the vendor, product, discriminator and passcode, with a printable replacement label.",
+        "publisher": { "@type": "Organization", "name": "Freedom Terminal", "url": "https://freedom-terminal.com/" },
+        "isPartOf": { "@id": "https://smarthomeqr.vishutdhar.com/#website" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "SmartHomeQR", "item": "https://smarthomeqr.vishutdhar.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Setup code decoder", "item": "https://smarthomeqr.vishutdhar.com/matter-qr-code-decoder" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Can I turn an 11 digit Matter code back into the QR code?",
+            "acceptedAnswer": { "@type": "Answer", "text": "No. The manual pairing code leaves out the vendor, the product and most of the discriminator, so the QR code cannot be rebuilt from it. Every Home app has a place to type the code instead of scanning." }
+          },
+          {
+            "@type": "Question",
+            "name": "The Matter code fails the check digit. What now?",
+            "acceptedAnswer": { "@type": "Answer", "text": "At least one digit was read wrong. On a worn label 0 and 8, 1 and 7, 3 and 8, and 5 and 6 are the usual mix ups. If one digit is doubtful, try its likely swap: the check digit catches any single wrong digit. If two or more are unreadable, a guess can pass the check and still be another device's code, so you need the QR code, the maker's app or a reset." }
+          },
+          {
+            "@type": "Question",
+            "name": "Is the code I paste sent anywhere?",
+            "acceptedAnswer": { "@type": "Answer", "text": "No. The page decodes in your browser and makes no network request with what you type." }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I print a replacement Matter or HomeKit label?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. Decode the code and press Print this label. From QR text, a Matter label prints with its QR code and manual code, and a HomeKit label with the house mark, the code and its QR code. From a typed code alone, the label prints with the code." }
+          },
+          {
+            "@type": "Question",
+            "name": "The Matter code is right, but a second app will not pair the device",
+            "acceptedAnswer": { "@type": "Answer", "text": "The printed code works at first setup and after a factory reset. Once a device is in one ecosystem, that app hands it to the next one: Apple Home has Turn On Pairing Mode in the accessory's settings, Google Home has Linked Matter apps and services, Alexa has Other Assistants and Apps with a code that lasts 15 minutes, and SmartThings has Share with other services. The code each one shows is not the one on the label." }
+          },
+          {
+            "@type": "Question",
+            "name": "I have only the 8 digit HomeKit code. Can I get a QR code?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Not from the digits alone: the QR code also names the accessory category and its pairing transport. Type the eight digits into the Home app instead; it accepts them for every accessory." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <script src="vendor/qrcode-generator-1.4.4.js"></script>
+  <script src="setup-code.js"></script>
+  <script>
+  (function () {
+    "use strict";
+    var form = document.getElementById("decoder");
+    var input = document.getElementById("code");
+    var errorBox = document.getElementById("code-error");
+    var result = document.getElementById("result");
+    var title = document.getElementById("result-title");
+    var lede = document.getElementById("result-lede");
+    var fields = document.getElementById("fields");
+    var label = document.getElementById("label");
+    var labelTitle = document.getElementById("label-title");
+    var labelCaption = document.getElementById("label-caption");
+    var copyButton = document.getElementById("copy");
+    var status = document.getElementById("status");
+    var printButton = document.getElementById("print");
+    var SVG = "http://www.w3.org/2000/svg";
+    var HOUSE = "M36 114V72H26L69 30L112 72H102V114ZM88 48.6V33H98V58.3M60 114V97A9 9 0 0 1 78 97V114";
+    var current = null;
+
+    /* The form is useful only with this script, so it is hidden until the script runs: without it a
+       browser would submit the field to the server, which is the one thing this page promises not
+       to do. */
+    form.hidden = false;
+
+    function hex(n) { return "0x" + n.toString(16).toUpperCase(); }
+
+    function row(term, text, codeText) {
+      var div = document.createElement("div");
+      div.className = "row";
+      var dt = document.createElement("dt");
+      var span = document.createElement("span");
+      span.className = "row-term";
+      span.textContent = term;
+      dt.appendChild(span);
+      var dd = document.createElement("dd");
+      if (codeText) {
+        var code = document.createElement("span");
+        code.className = "code-sample";
+        code.textContent = codeText;
+        dd.appendChild(code);
+      }
+      if (text) {
+        var p = document.createElement("span");
+        p.className = codeText ? "row-note" : "";
+        p.textContent = text;
+        dd.appendChild(p);
+      }
+      div.appendChild(dt);
+      div.appendChild(dd);
+      fields.appendChild(div);
+    }
+
+    function el(name, attrs, parent) {
+      var node = document.createElementNS(SVG, name);
+      for (var k in attrs) node.setAttribute(k, attrs[k]);
+      parent.appendChild(node);
+      return node;
+    }
+
+    function qrPath(modules, x, y, size) {
+      var n = modules.length;
+      var step = size / n;
+      var d = "";
+      for (var r = 0; r < n; r++) {
+        var c = 0;
+        while (c < n) {
+          if (!modules[r][c]) { c += 1; continue; }
+          var start = c;
+          while (c < n && modules[r][c]) c += 1;
+          d += "M" + start + " " + r + "h" + (c - start) + "v1h-" + (c - start) + "z";
+        }
+      }
+      return { d: d, transform: "translate(" + x + " " + y + ") scale(" + step.toFixed(4) + ")" };
+    }
+
+    function drawLabel(r) {
+      while (label.lastChild && label.lastChild !== labelTitle) label.removeChild(label.lastChild);
+      el("rect", { "class": "sticker-paper", x: 5.5, y: 5.5, width: 285, height: 389, rx: 30, "stroke-width": 11 }, label);
+      var qrText = null;
+      if (r.kind === "homekit-qr" || r.kind === "homekit-code") {
+        el("path", { "class": "sticker-line", d: HOUSE, fill: "none", "stroke-width": 8, "stroke-linejoin": "round", "stroke-linecap": "round" }, label);
+        var line1 = el("text", { "class": "sticker-text", x: 130, y: 66 }, label);
+        line1.textContent = r.setupCode.slice(0, 4);
+        var line2 = el("text", { "class": "sticker-text", x: 130, y: 110 }, label);
+        line2.textContent = r.setupCode.slice(4);
+        if (r.kind === "homekit-qr") qrText = r.payload;
+      } else {
+        var groups = r.manualCodeGrouped.split("-");
+        var top = el("text", { "class": "sticker-text sticker-text-wide", x: 148, y: 66, "text-anchor": "middle" }, label);
+        top.textContent = groups.slice(0, 3).join(" ");
+        if (groups.length > 3) {
+          var second = el("text", { "class": "sticker-text sticker-text-wide", x: 148, y: 110, "text-anchor": "middle" }, label);
+          second.textContent = groups.slice(3).join(" ");
+        }
+        if (r.kind === "matter-qr") qrText = r.payload;
+      }
+      if (qrText) {
+        /* Four clear modules on every side, inside the printed border (the paper's inner edge is 11
+           units in from the viewBox), so the printed label scans. */
+        var modules = SetupCode.qrModules(qrText);
+        var n = modules.length;
+        /* The quiet square (symbol plus four modules a side) sits below the artwork, which ends at
+           y 120, inside the paper's inner edge (11 units in) and clear of its rounded corners
+           (inner radius 24.5, centres at x 35.5 and 260.5, y 364.5). */
+        var bottom = 389;
+        var quiet, left;
+        for (;;) {
+          quiet = Math.min(274, bottom - 120);
+          left = 148 - quiet / 2;
+          var dx = Math.max(0, 35.5 - left);
+          var dy = Math.max(0, bottom - 364.5);
+          if (dx * dx + dy * dy <= 24.5 * 24.5) break;
+          bottom -= 0.5;
+        }
+        var size = quiet * n / (n + 8);
+        var step = size / n;
+        var q = qrPath(modules, 148 - size / 2, bottom - 4 * step - size, size);
+        el("path", { "class": "sticker-ink", transform: q.transform, "shape-rendering": "crispEdges", d: q.d }, label);
+      } else {
+        var note = el("text", { "class": "sticker-note", x: 148, y: 258, "text-anchor": "middle" }, label);
+        note.textContent = "Type the code in the Home app";
+      }
+    }
+
+    function show(r) {
+      current = r;
+      fields.textContent = "";
+      var code, kindTitle, kindLede, caption;
+      if (r.kind === "matter-qr") {
+        code = r.manualCodeGrouped;
+        kindTitle = "A Matter device";
+        kindLede = "The QR text decodes. If it came from the label, the code below works at first setup and after a factory reset. If an app showed it to share the device, it works only until that app's time runs out.";
+        caption = "The label, regenerated: the same QR code and the manual pairing code.";
+        row("Manual pairing code", r.manualCode.length === 21 ? "21 digits, because the commissioning flow is not the standard one, so the code carries the vendor and product." : "11 digits. The last one is a check digit.", r.manualCodeGrouped);
+        row("Vendor", r.vendorID >= 0xFFF1 ? "A test vendor ID. Devices on sale never carry one; this payload comes from a specification example or a development board." : "Assigned by the Connectivity Standards Alliance. The CSA's Distributed Compliance Ledger lists which maker holds it.", hex(r.vendorID) + ", " + r.vendorID);
+        row("Product", "Chosen by the maker to name the model.", hex(r.productID) + ", " + r.productID);
+        row("Discriminator", "Advertised while the device waits to be paired. The manual code carries only the short form, " + r.shortDiscriminator + ".", r.discriminator + ", " + hex(r.discriminator));
+        row("Passcode", "The proof of possession the Home app presents to the device.", String(r.passcode));
+        row("Commissioning flow", r.commissioningFlow === 0 ? "Ready to pair as soon as it has power." : r.commissioningFlow === 1 ? "You press a button or follow a step on the device first." : "The maker's app takes part in pairing.", r.commissioningFlowName);
+        row("Discovery", r.discoveryNames.length ? "" : "The payload names no transport.", r.discoveryNames.join(", ") || "None");
+        if (r.serialNumber) row("Serial number", "Carried in the optional data after the header.", r.serialNumber);
+        if (r.deviceCount !== null) row("Devices", "How many devices this one code sets up.", String(r.deviceCount));
+        if (r.commissioningTimeout !== null) row("Pairing window", "Seconds the device waits to be paired, as the code states it.", String(r.commissioningTimeout));
+        row("Payload", r.extraSegments ? "This QR code onboards " + (r.extraSegments + 1) + " devices at once; the first segment is the one above." : "The text inside the QR code, as a Home app reads it.", r.payload);
+      } else if (r.kind === "matter-manual") {
+        code = r.manualCodeGrouped;
+        kindTitle = "A Matter manual pairing code";
+        kindLede = "The check digit matches, which rules out a single wrong digit. Type the code into Apple Home, Google Home, Alexa or SmartThings.";
+        caption = "The code only. A manual code cannot rebuild the QR code, so the label prints without one.";
+        row("Manual pairing code", r.manualCode.length === 21 ? "21 digits: the device's commissioning flow is not the standard one, so the code carries the vendor and product." : "11 digits, grouped 4, 3 and 4. The last one is a check digit.", r.manualCodeGrouped);
+        row("Passcode", "The proof of possession the Home app presents to the device.", String(r.passcode));
+        row("Short discriminator", "The top four bits of the discriminator the device advertises.", String(r.shortDiscriminator));
+        if (r.vendorID !== undefined) {
+          row("Vendor", "", hex(r.vendorID) + ", " + r.vendorID);
+          row("Product", "", hex(r.productID) + ", " + r.productID);
+        }
+      } else if (r.kind === "homekit-qr") {
+        code = r.setupCodeGrouped;
+        kindTitle = "A HomeKit accessory";
+        kindLede = "The payload decodes. Type the eight digits into the Home app, or scan the regenerated label.";
+        caption = "The label, regenerated: the house mark, the code and the same QR code.";
+        row("Setup code", "Eight digits, printed in two rows of four beside the house mark.", r.setupCodeGrouped);
+        row("Category", "What the accessory says it is. The Home app shows the matching icon.", r.categoryName + " (" + r.category + ")");
+        row("Pairs over", "", r.transports.join(", "));
+        row("Setup ID", "Four characters that let the Home app match this QR code to the accessory it finds nearby.", r.setupID);
+        row("Payload", "The text inside the QR code.", r.payload);
+      } else {
+        code = r.setupCodeGrouped;
+        kindTitle = "A HomeKit setup code";
+        kindLede = "Eight digits, and not one of the patterns HomeKit refuses. Type it into the Home app.";
+        caption = "The code only. Without the QR text there is no QR code to print.";
+        row("Setup code", "Printed as three, two and three digits beside the house mark.", r.setupCodeGrouped);
+      }
+      title.textContent = kindTitle;
+      lede.textContent = kindLede;
+      labelTitle.textContent = kindTitle + " label with the code " + code;
+      labelCaption.textContent = caption;
+      copyButton.textContent = "Copy the code";
+      try {
+        drawLabel(r);
+      } catch (e) {
+        return fail({ reason: "draw", message: "The code decodes, but it is too long to draw as one QR code." });
+      }
+      result.hidden = false;
+      status.textContent = kindTitle + ". " + kindLede;
+      var reduce = window.matchMedia ? matchMedia("(prefers-reduced-motion: reduce)").matches : true;
+      result.scrollIntoView({ block: "start", behavior: reduce ? "auto" : "smooth" });
+      title.focus({ preventScroll: true });
+    }
+
+    function fail(r) {
+      result.hidden = true;
+      current = null;
+      status.textContent = "";
+      var general = "That is not a code this page reads. A Matter QR code holds text starting with MT:, a manual pairing code has 11 or 21 digits, a HomeKit QR code holds text starting with X-HM://, and a HomeKit code has 8 digits.";
+      errorBox.textContent = r.reason === "empty" ? "Paste a code first." : (r.message || general);
+      errorBox.hidden = false;
+      input.setAttribute("aria-invalid", "true");
+      input.focus();
+    }
+
+    function run() {
+      var r = SetupCode.decode(input.value);
+      if (r.kind === "error") return fail(r);
+      errorBox.hidden = true;
+      errorBox.textContent = "";
+      input.removeAttribute("aria-invalid");
+      show(r);
+    }
+
+    form.addEventListener("submit", function (event) { event.preventDefault(); run(); });
+    Array.prototype.forEach.call(document.querySelectorAll(".example"), function (button) {
+      button.addEventListener("click", function () {
+        input.value = button.getAttribute("data-example");
+        run();
+      });
+    });
+    copyButton.addEventListener("click", function () {
+      if (!current) return;
+      var text = current.kind.indexOf("matter") === 0 ? current.manualCode : current.setupCode;
+      var copied = current;
+      /* The button reports only on the result it was pressed for. */
+      var done = function () { if (current === copied) copyButton.textContent = "Copied"; };
+      var failed = function () { if (current === copied) copyButton.textContent = "Select it and copy"; };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, failed);
+      } else {
+        copyButton.textContent = "Select it and copy";
+      }
+    });
+    printButton.addEventListener("click", function () { window.print(); });
+  })();
+  </script>
+</body>
+</html>
