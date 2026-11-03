@@ -1,18 +1,41 @@
 {
-  "kind": "brand", "slug": "lutron-caseta-homekit-code", "short": "Lutron Caseta",
+  "kind": "brand",
+  "slug": "lutron-caseta-homekit-code",
+  "short": "Lutron Caseta",
   "title": "Where the Lutron Caseta HomeKit code is",
   "description": "Only the Lutron Smart Hub has a HomeKit code, printed on its underside. Dimmers and switches have none; they reach Apple Home through the hub.",
   "lede": "Turn the hub over. The Caseta HomeKit code is on the bottom of the Smart Hub, and it is the only code in the system.",
-  "published": "2026-11-03", "read": "3 November 2026", "about": "Lutron Caseta HomeKit code",
+  "published": "2026-11-03",
+  "read": "3 November 2026",
+  "about": "Lutron Caseta HomeKit code",
   "sections": [
-    {"id": "where", "heading": "Where the code is", "rows": [
-      {"term": "The bottom of the Smart Hub", "text": "Lutron: enter the HomeKit setup code on the bottom of your Smart Hub. Lutron now calls the Smart Bridge the Smart Hub. The step lives under the integration settings in the Lutron app, Apple HomeKit."},
-      {"term": "Dimmers and switches", "text": "Have no HomeKit code. They join through the hub: once the hub is in Apple Home, its dimmers, switches, plugs and shades appear there. Lutron says Pico remotes and standard keypads do not, which is normal and not a failed pairing."},
-      {"term": "Lost", "text": "Lutron publishes no recovery for a lost hub code. Keep the hub paired; if it ever has to be reset and the label is unreadable, Lutron support is the route."}
-    ]}
+    {
+      "id": "where",
+      "heading": "Where the code is",
+      "rows": [
+        {
+          "term": "The bottom of the Smart Hub",
+          "text": "Lutron: enter the HomeKit setup code on the bottom of your Smart Hub. Lutron now calls the Smart Bridge the Smart Hub. The step lives under the integration settings in the Lutron app, Apple HomeKit."
+        },
+        {
+          "term": "Dimmers and switches",
+          "text": "Have no HomeKit code. They join through the hub: once the hub is in Apple Home, its dimmers, switches, plugs and shades appear there. Lutron says Pico remotes and standard keypads do not, which is normal and not a failed pairing."
+        },
+        {
+          "term": "Lost",
+          "text": "Lutron publishes no recovery for a lost hub code. Keep the hub paired; if it ever has to be reset and the label is unreadable, Lutron support is the route."
+        }
+      ]
+    }
   ],
   "sources": [
-    {"label": "Lutron Caseta: Apple HomeKit", "url": "https://www.casetawireless.com/us/en/apple-home-kit"},
-    {"label": "Lutron support: Apple HomeKit with Caseta and RA2 Select", "url": "https://support.lutron.com/us/en/product/casetawireless/article/connected-products/Apple-HomeKit-and-how-to-set-up-and-use-voice-commands-with-the-Caseta-or-RA2-Select-Systems"}
+    {
+      "label": "Lutron Caseta: Apple HomeKit",
+      "url": "https://www.casetawireless.com/us/en/apple-home-kit"
+    },
+    {
+      "label": "Lutron support: Apple HomeKit with Caseta and RA2 Select",
+      "url": "https://support.lutron.com/us/en/product/casetawireless/article/connected-products/Apple-HomeKit-and-how-to-set-up-and-use-voice-commands-with-the-Caseta-or-RA2-Select-Systems"
+    }
   ]
 }

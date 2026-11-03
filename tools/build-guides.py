@@ -103,7 +103,9 @@ def strip_links(text):
 
 def json_ld(page):
     url = f"{SITE}/guides/{page['slug']}"
+    website = {"@type": "WebSite", "@id": f"{SITE}/#website", "name": "SmartHomeQR", "url": f"{SITE}/"}
     graph = [
+        website,
         {
             "@type": "Article",
             "@id": url + "#article",
@@ -271,7 +273,7 @@ INDEX_HEAD = HEAD
 
 def render_index(pages):
     url = f"{SITE}/guides"
-    head = HEAD.format(title="Guides to HomeKit and Matter setup codes", description="Where each brand prints its HomeKit or Matter setup code, what to do when the sticker is lost, how to type a code in when the QR will not scan, and why a Matter code stops working after the first setup.",
+    head = HEAD.format(title="Guides to HomeKit and Matter setup codes", description="These guides show where each brand prints its HomeKit or Matter code, what to do when the sticker is lost, how to type a code in, and why a code stops working.",
                        url=url, site=SITE, h1="Setup code guides", lede="Where the code is printed, brand by brand, and what still works when it is gone. Each page is checked against the maker's own support pages, with the sources listed.",
                        dateline="")
     head = head.replace('        <p class="crumb"><a href="../guides">Guides</a></p>\n', "").replace('        <p class="fine"></p>\n', "")
@@ -296,6 +298,7 @@ def render_index(pages):
         out.append('    </section>')
         out.append("")
     graph = {"@context": "https://schema.org", "@graph": [
+        {"@type": "WebSite", "@id": f"{SITE}/#website", "name": "SmartHomeQR", "url": f"{SITE}/"},
         {"@type": "CollectionPage", "@id": url + "#page", "name": "Setup code guides", "url": url, "isPartOf": {"@id": f"{SITE}/#website"}},
         {"@type": "BreadcrumbList", "itemListElement": [
             {"@type": "ListItem", "position": 1, "name": "SmartHomeQR", "item": f"{SITE}/"},

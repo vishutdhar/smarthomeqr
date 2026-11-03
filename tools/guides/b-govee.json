@@ -1,17 +1,37 @@
 {
-  "kind": "brand", "slug": "govee-matter-code", "short": "Govee",
+  "kind": "brand",
+  "slug": "govee-matter-code",
+  "short": "Govee",
   "title": "Where the Govee Matter code is",
-  "description": "Govee prints the Matter QR code or device number on the product and shows it again on the Device Settings page in the Govee Home app. First setup must happen within 15 minutes of power on.",
+  "description": "Govee prints the Matter QR code or device number on the product and shows it again in the Govee Home app. Set it up within 15 minutes of power on.",
   "lede": "Govee keeps the code in two places: on the product, and on the device's settings page in the Govee Home app.",
-  "published": "2026-11-03", "read": "3 November 2026", "about": "Govee Matter code",
+  "published": "2026-11-03",
+  "read": "3 November 2026",
+  "about": "Govee Matter code",
   "sections": [
-    {"id": "where", "heading": "Where the code is", "rows": [
-      {"term": "On the product or in the app", "text": "Govee: find the QR code or Matter device number on the product or the Device Settings page in the Govee Home app. Owners of light strips report the printed one on a white band on the power cord."},
-      {"term": "The first 15 minutes", "text": "First time Matter setup must happen within 15 minutes after the product is powered on."},
-      {"term": "A second controller", "text": "Once a device is added to one controller, the setup code that came with the product cannot be used for the second commissioning. Generate a new code from the first controller."}
-    ]}
+    {
+      "id": "where",
+      "heading": "Where the code is",
+      "rows": [
+        {
+          "term": "On the product or in the app",
+          "text": "Govee: find the QR code or Matter device number on the product or the Device Settings page in the Govee Home app. Owners of light strips report the printed one on a white band on the power cord."
+        },
+        {
+          "term": "The first 15 minutes",
+          "text": "First time Matter setup must happen within 15 minutes after the product is powered on."
+        },
+        {
+          "term": "A second controller",
+          "text": "Once a device is added to one controller, the setup code that came with the product cannot be used for the second commissioning. Generate a new code from the first controller."
+        }
+      ]
+    }
   ],
   "sources": [
-    {"label": "Govee: Matter FAQ", "url": "https://us.govee.com/pages/matter-faq"}
+    {
+      "label": "Govee: Matter FAQ",
+      "url": "https://us.govee.com/pages/matter-faq"
+    }
   ]
 }

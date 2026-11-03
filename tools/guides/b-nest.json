@@ -1,18 +1,41 @@
 {
-  "kind": "brand", "slug": "google-nest-matter-code", "short": "Google Nest",
+  "kind": "brand",
+  "slug": "google-nest-matter-code",
+  "short": "Google Nest",
   "title": "Google Nest and Matter: sharing from Google Home",
-  "description": "Nest devices that support Matter reach Apple Home, Alexa and SmartThings through Google Home's sharing: device settings, Linked Matter apps and services, then a pairing code or QR code. Google's setup fixes cover restarts and resets, not lost codes.",
+  "description": "Matter capable Nest devices reach Apple Home, Alexa and SmartThings from Google Home: device settings, Linked Matter apps and services, a temporary code.",
   "lede": "A Matter capable Nest device has no sticker you scan into Apple Home. The code comes out of the Google Home app, for a few minutes at a time. Which Nest models support Matter is on Google's own list; this page covers the sharing step only.",
-  "published": "2026-11-03", "read": "3 November 2026", "about": "Google Nest Matter sharing",
+  "published": "2026-11-03",
+  "read": "3 November 2026",
+  "about": "Google Nest Matter sharing",
   "sections": [
-    {"id": "where", "heading": "Where the code comes from", "rows": [
-      {"term": "Google Home", "text": "Open the device's settings, Linked Matter apps and services, Link apps and services, then Use pairing code or Share with QR code to generate a temporary pairing or QR code. TP-Link reports Google's code expires in about 3 minutes."},
-      {"term": "On the thermostat", "text": "Owners describe Settings, Matter, Link another app, Scan code on the Nest Learning Thermostat (4th generation). Google's community answer did not render when this page was checked, so take it as owner reported."},
-      {"term": "When a third party device fails to set up", "text": "Google's Matter setup page is written for third party devices, not Nest devices, and its sequence is: restart the accessory, close the Google Home app, clear its cache, restart the phone, reopen Google Home and try again, and contact the manufacturer if that fails, with a factory reset only where the maker calls for one. It does not cover lost codes. For a Nest device itself, Google's Nest help is the reference. A reset puts a third party device back to needing its printed code, so make sure you have that code first."}
-    ]}
+    {
+      "id": "where",
+      "heading": "Where the code comes from",
+      "rows": [
+        {
+          "term": "Google Home",
+          "text": "Open the device's settings, Linked Matter apps and services, Link apps and services, then Use pairing code or Share with QR code to generate a temporary pairing or QR code. TP-Link reports Google's code expires in about 3 minutes."
+        },
+        {
+          "term": "On the thermostat",
+          "text": "Owners describe Settings, Matter, Link another app, Scan code on the Nest Learning Thermostat (4th generation). Google's community answer did not render when this page was checked, so take it as owner reported."
+        },
+        {
+          "term": "When a third party device fails to set up",
+          "text": "Google's Matter setup page is written for third party devices, not Nest devices, and its sequence is: restart the accessory, close the Google Home app, clear its cache, restart the phone, reopen Google Home and try again, and contact the manufacturer if that fails, with a factory reset only where the maker calls for one. It does not cover lost codes. For a Nest device itself, Google's Nest help is the reference. A reset puts a third party device back to needing its printed code, so make sure you have that code first."
+        }
+      ]
+    }
   ],
   "sources": [
-    {"label": "Google: link Matter devices to other apps", "url": "https://support.google.com/googlehome/answer/13127223?hl=en"},
-    {"label": "TP-Link: Matter code lifetimes", "url": "https://www.tp-link.com/us/support/faq/3564/"}
+    {
+      "label": "Google: link Matter devices to other apps",
+      "url": "https://support.google.com/googlehome/answer/13127223?hl=en"
+    },
+    {
+      "label": "TP-Link: Matter code lifetimes",
+      "url": "https://www.tp-link.com/us/support/faq/3564/"
+    }
   ]
 }

@@ -1,21 +1,53 @@
 {
-  "kind": "brand", "slug": "lifx-homekit-matter-code", "short": "LIFX",
+  "kind": "brand",
+  "slug": "lifx-homekit-matter-code",
+  "short": "LIFX",
   "title": "Where the LIFX HomeKit and Matter codes are",
-  "description": "LIFX prints the HomeKit code as HK: ###-##-### below the serial number on most lights and on the back of the manual. Matter lights carry a Matter QR and 11 digit code. The app shares Matter lights to other platforms.",
+  "description": "LIFX prints the HomeKit code as HK: ###-##-### on the light, below the serial on most models, and on the back of the manual. Matter lights have a Matter QR.",
   "lede": "LIFX labels the HomeKit code with HK: so you can tell it from the serial number, and lists where it sits on every product.",
-  "published": "2026-11-03", "read": "3 November 2026", "about": "LIFX setup codes",
+  "published": "2026-11-03",
+  "read": "3 November 2026",
+  "about": "LIFX setup codes",
   "sections": [
-    {"id": "where", "heading": "Where the code is", "rows": [
-      {"term": "HomeKit era lights", "text": "Printed on the back of the product manual and on the product, marked HK: ###-##-###. A19, Mini and GU10: below the serial number. BR30: to the right of the serial number, under the rubber seal. Lightstrip and Beam: on the back of the controller. Tile: on the master tile only. Downlight: etched on the casing."},
-      {"term": "Code recovery", "text": "Exists only for lights that shipped without a code: Light Settings, HomeKit Status, PAIR, GET CODE in the LIFX app. It does not apply to lights that shipped with one."},
-      {"term": "Matter lights", "text": "Look for the QR code with the Matter logo and an 11 digit code. LIFX: save it before installation, especially for hard to reach fixtures."},
-      {"term": "Sharing a Matter light", "text": "LIFX app, Light Settings, Share Device with another service. iOS generates a Matter setup code. Android hands the light over without a code, except when sharing to an iOS ecosystem, where a code is generated and scanned."}
-    ]}
+    {
+      "id": "where",
+      "heading": "Where the code is",
+      "rows": [
+        {
+          "term": "HomeKit era lights",
+          "text": "Printed on the back of the product manual and on the product, marked HK: ###-##-###. A19, Mini and GU10: below the serial number. BR30: to the right of the serial number, under the rubber seal. Lightstrip and Beam: on the back of the controller. Tile: on the master tile only. Downlight: etched on the casing."
+        },
+        {
+          "term": "Code recovery",
+          "text": "Exists only for lights that shipped without a code: Light Settings, HomeKit Status, PAIR, GET CODE in the LIFX app. It does not apply to lights that shipped with one."
+        },
+        {
+          "term": "Matter lights",
+          "text": "Look for the QR code with the Matter logo and an 11 digit code. LIFX: save it before installation, especially for hard to reach fixtures."
+        },
+        {
+          "term": "Sharing a Matter light",
+          "text": "LIFX app, Light Settings, Share Device with another service. iOS generates a Matter setup code. Android hands the light over without a code, except when sharing to an iOS ecosystem, where a code is generated and scanned."
+        }
+      ]
+    }
   ],
   "sources": [
-    {"label": "LIFX: HomeKit code", "url": "https://support.lifx.com/hc/en-us/articles/14509217123095-HomeKit-Code"},
-    {"label": "LIFX: HomeKit code recovery", "url": "https://support.lifx.com/hc/en-us/articles/14509142777367-HomeKit-Code-Recovery"},
-    {"label": "LIFX: Matter light bulbs", "url": "https://www.lifx.com/pages/matter-light-bulb"},
-    {"label": "LIFX: share Matter devices across platforms", "url": "https://support.lifx.com/hc/en-us/articles/34825700428823-Share-LIFX-Matter-Devices-Across-Platforms"}
+    {
+      "label": "LIFX: HomeKit code",
+      "url": "https://support.lifx.com/hc/en-us/articles/14509217123095-HomeKit-Code"
+    },
+    {
+      "label": "LIFX: HomeKit code recovery",
+      "url": "https://support.lifx.com/hc/en-us/articles/14509142777367-HomeKit-Code-Recovery"
+    },
+    {
+      "label": "LIFX: Matter light bulbs",
+      "url": "https://www.lifx.com/pages/matter-light-bulb"
+    },
+    {
+      "label": "LIFX: share Matter devices across platforms",
+      "url": "https://support.lifx.com/hc/en-us/articles/34825700428823-Share-LIFX-Matter-Devices-Across-Platforms"
+    }
   ]
 }

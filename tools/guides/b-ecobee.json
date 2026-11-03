@@ -1,18 +1,41 @@
 {
-  "kind": "brand", "slug": "ecobee-homekit-code", "short": "ecobee",
+  "kind": "brand",
+  "slug": "ecobee-homekit-code",
+  "short": "ecobee",
   "title": "Where the ecobee HomeKit code is: on the thermostat's screen",
-  "description": "ecobee thermostats have no HomeKit sticker. The QR code appears on the thermostat's own screen under Main Menu, General, Settings, HomeKit, or when the Home app asks the thermostat to display it.",
+  "description": "ecobee thermostats have no HomeKit sticker. The QR code appears on the thermostat's own screen under Settings, HomeKit, or when the Home app asks for it.",
   "lede": "There is no sticker to lose. An ecobee shows its HomeKit code on its own screen whenever you ask for it.",
-  "published": "2026-11-03", "read": "3 November 2026", "about": "ecobee HomeKit code",
+  "published": "2026-11-03",
+  "read": "3 November 2026",
+  "about": "ecobee HomeKit code",
   "sections": [
-    {"id": "where", "heading": "Where the code is", "rows": [
-      {"term": "On the thermostat", "text": "Main Menu, General, Settings, HomeKit, then Enable HomeKit pairing to reveal the HomeKit QR code. On Smart Thermostat Lite and Essential the path is Main Menu, Settings, HomeKit."},
-      {"term": "From the ecobee app", "text": "Thermostat, the gear, Integrations, HomeKit, Add to HomeKit. Bring the phone close to the thermostat and the HomeKit code appears on it."},
-      {"term": "If no code appears", "text": "In Apple Home choose Don't Have a Code or Can't Scan, select the thermostat, and it displays the code on the thermostat."},
-      {"term": "Unlinking", "text": "Main Menu, General, Settings, Reset, Disconnect from HomeKit."}
-    ]}
+    {
+      "id": "where",
+      "heading": "Where the code is",
+      "rows": [
+        {
+          "term": "On the thermostat",
+          "text": "Main Menu, General, Settings, HomeKit, then Enable HomeKit pairing to reveal the HomeKit QR code. On Smart Thermostat Lite and Essential the path is Main Menu, Settings, HomeKit."
+        },
+        {
+          "term": "From the ecobee app",
+          "text": "Thermostat, the gear, Integrations, HomeKit, Add to HomeKit. Bring the phone close to the thermostat and the HomeKit code appears on it."
+        },
+        {
+          "term": "If no code appears",
+          "text": "In Apple Home choose Don't Have a Code or Can't Scan, select the thermostat, and it displays the code on the thermostat."
+        },
+        {
+          "term": "Unlinking",
+          "text": "Main Menu, General, Settings, Reset, Disconnect from HomeKit."
+        }
+      ]
+    }
   ],
   "sources": [
-    {"label": "ecobee: setting up Apple HomeKit with your thermostat", "url": "https://support.ecobee.com/s/articles/Setting-up-Apple-HomeKit-with-your-ecobee-Thermostat"}
+    {
+      "label": "ecobee: setting up Apple HomeKit with your thermostat",
+      "url": "https://support.ecobee.com/s/articles/Setting-up-Apple-HomeKit-with-your-ecobee-Thermostat"
+    }
   ]
 }

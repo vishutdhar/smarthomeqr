@@ -1,20 +1,49 @@
 {
-  "kind": "brand", "slug": "amazon-echo-alexa-matter-code", "short": "Amazon Echo and Alexa",
+  "kind": "brand",
+  "slug": "amazon-echo-alexa-matter-code",
+  "short": "Amazon Echo and Alexa",
   "title": "Alexa and Matter: where the code comes from",
-  "description": "Echo devices are Matter controllers and have no code to scan. Alexa takes the accessory's QR or 11 digit code, shares devices with a 15 minute code under Other Assistants and Apps, and needs a Thread enabled Echo for Thread devices.",
+  "description": "An Echo has no Matter code of its own. Alexa takes the accessory's QR or 11 digit code, shares with a 15 minute code, and needs a Thread Echo for Thread.",
   "lede": "An Echo has no Matter code of its own. The code is on the accessory, and Alexa has its own place to type it and its own way to share a device onward.",
-  "published": "2026-11-03", "read": "3 November 2026", "about": "Alexa Matter setup",
+  "published": "2026-11-03",
+  "read": "3 November 2026",
+  "about": "Alexa Matter setup",
   "sections": [
-    {"id": "where", "heading": "Where the code is", "rows": [
-      {"term": "On the accessory", "text": "Amazon: the pairing code is found on the device instructions or on the device itself. Install Matter devices within 30 feet of a compatible Alexa hub or device."},
-      {"term": "Typing it", "text": "Devices, the plus, Add Device, the Matter icon, Yes, then Try Numeric Code Instead, and enter the 11 digit code."},
-      {"term": "Sharing onward", "text": "Devices, the device, Other Assistants and Apps, Add another. Copy the 11 digit pairing code that is generated; it is only valid for 15 minutes. Amazon confirms the printed code is only for initial setup or after a factory reset."},
-      {"term": "Thread devices", "text": "Need a Thread enabled Echo. Without one, Amazon's advice is to set the device up with another Thread enabled assistant first and share it to Alexa."}
-    ]}
+    {
+      "id": "where",
+      "heading": "Where the code is",
+      "rows": [
+        {
+          "term": "On the accessory",
+          "text": "Amazon: the pairing code is found on the device instructions or on the device itself. Install Matter devices within 30 feet of a compatible Alexa hub or device."
+        },
+        {
+          "term": "Typing it",
+          "text": "Devices, the plus, Add Device, the Matter icon, Yes, then Try Numeric Code Instead, and enter the 11 digit code."
+        },
+        {
+          "term": "Sharing onward",
+          "text": "Devices, the device, Other Assistants and Apps, Add another. Copy the 11 digit pairing code that is generated; it is only valid for 15 minutes. Amazon confirms the printed code is only for initial setup or after a factory reset."
+        },
+        {
+          "term": "Thread devices",
+          "text": "Need a Thread enabled Echo. Without one, Amazon's advice is to set the device up with another Thread enabled assistant first and share it to Alexa."
+        }
+      ]
+    }
   ],
   "sources": [
-    {"label": "Amazon: Matter and Thread on Alexa", "url": "https://www.amazon.com/gp/help/customer/display.html?nodeId=TSWevY1sX8ADH2LC20"},
-    {"label": "Amazon: add a Matter device", "url": "https://www.amazon.com/gp/help/customer/display.html?nodeId=THb8haIG2r14WuNOCU"},
-    {"label": "Amazon: share a Matter device with other assistants", "url": "https://www.amazon.com/gp/help/customer/display.html?nodeId=T6iLWTtbZygaBJnQhg"}
+    {
+      "label": "Amazon: Matter and Thread on Alexa",
+      "url": "https://www.amazon.com/gp/help/customer/display.html?nodeId=TSWevY1sX8ADH2LC20"
+    },
+    {
+      "label": "Amazon: add a Matter device",
+      "url": "https://www.amazon.com/gp/help/customer/display.html?nodeId=THb8haIG2r14WuNOCU"
+    },
+    {
+      "label": "Amazon: share a Matter device with other assistants",
+      "url": "https://www.amazon.com/gp/help/customer/display.html?nodeId=T6iLWTtbZygaBJnQhg"
+    }
   ]
 }

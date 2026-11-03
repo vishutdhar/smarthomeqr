@@ -1,39 +1,71 @@
 {
-  "kind": "topic", "order": 2,
+  "kind": "topic",
+  "order": 2,
   "slug": "lost-matter-pairing-code",
   "short": "Lost Matter pairing code",
   "title": "Lost your Matter pairing code? Where it still is",
-  "description": "A Matter QR code and its 11 digit code are needed at first setup and after a reset. Where to find them again: the device, the box, the maker's app, or a share code from the app that already has the device, which your iPhone's Matter list can name.",
+  "description": "A Matter code is needed at first setup and after a reset. It can still be on the device, in the box, in the maker's app, or shared from the first app.",
   "lede": "Matter is kinder than HomeKit about lost codes, as long as the device is still paired somewhere. Here is where the code lives, in the order worth checking.",
-  "published": "2026-11-03", "read": "3 November 2026",
+  "published": "2026-11-03",
+  "read": "3 November 2026",
   "about": "Matter pairing codes",
   "sections": [
     {
       "id": "what",
       "heading": "What you are looking for",
       "rows": [
-        {"term": "The QR code", "text": "Printed with the Matter mark on the device, its packaging or the quick start card. It holds the pairing code plus the vendor, product and a discriminator. If you only have its text, the [decoder](../matter-qr-code-decoder) turns it back into a label."},
-        {"term": "The manual pairing code", "text": "11 digits, usually printed as XXXX-XXX-XXXX beside the QR code; 21 digits on devices whose commissioning flow is not the standard one, where a step on the device or in the maker's app comes first. Apple Home, Google Home, Alexa and SmartThings all accept it typed in."},
-        {"term": "One rule to know", "text": "The printed code works for the first setup and again after a factory reset. Once the device is in one ecosystem, the next ecosystem gets a temporary code from the first app instead. Amazon, Kwikset, Govee, Yale and SmartThings all state this."}
+        {
+          "term": "The QR code",
+          "text": "Printed with the Matter mark on the device, its packaging or the quick start card. It holds the pairing code plus the vendor, product and a discriminator. If you only have its text, the [decoder](../matter-qr-code-decoder) turns it back into a label."
+        },
+        {
+          "term": "The manual pairing code",
+          "text": "11 digits, usually printed as XXXX-XXX-XXXX beside the QR code; 21 digits on devices whose commissioning flow is not the standard one, where a step on the device or in the maker's app comes first. Apple Home, Google Home, Alexa and SmartThings all accept it typed in."
+        },
+        {
+          "term": "One rule to know",
+          "text": "The printed code works for the first setup and again after a factory reset. Once the device is in one ecosystem, the next ecosystem gets a temporary code from the first app instead. Amazon, Kwikset, Govee, Yale and SmartThings all state this."
+        }
       ]
     },
     {
       "id": "where",
       "heading": "Where to look, in order",
       "rows": [
-        {"term": "The app that already has the device", "text": "If the device is in Apple Home, Google Home, Alexa or SmartThings, that app can issue a fresh code for another ecosystem: Apple Home has Turn On Pairing Mode in the accessory's settings, Google Home has Linked Matter apps and services, Alexa has Other Assistants and Apps with a 15 minute code, and SmartThings has Share with other services. The code it shows is not the printed one and is not needed again."},
-        {"term": "The maker's app", "text": "Two different things live in makers' apps, and it matters which you have. The permanent code, the one on the label, is shown by TP-Link Tapo and Kasa (Device Settings, Device Info, Matter Setup Code), Leviton (Device Settings in My Leviton), Govee (Device Settings), SONOFF eWeLink (Device Settings) and Eve (stored at the Matter upgrade). Two makers document their own flows: SwitchBot has you copy the code from the app under Matter Setup, reset the Hub 2, then paste that code into the Home app, so it serves the first pairing; Nanoleaf's Device Settings, Connections makes a code for the first Matter ecosystem of a device the Nanoleaf app has, and a device already commissioned elsewhere must be shared from that ecosystem. The ecosystem apps above make temporary share codes for adding one more ecosystem. Only a permanent code works after a factory reset."},
-        {"term": "Your iPhone's Matter list", "text": "Settings, General, Matter Accessories lists every Matter device paired from that iPhone and which apps it is connected to. It does not show the code, but it tells you which app has the device and can share it onward. Apple says the setup code is kept in iCloud Keychain for those devices."},
-        {"term": "The device and the box", "text": "TP-Link puts the code on the side of a plug or the neck of a bulb and a backup sticker in the box. Philips Hue prints it on the bulb and in the installation guide. IKEA prints it on the yellow cover in the packaging. Yale keeps its Yale Access QR code on the side of the battery compartment, and does not say where the Matter label sits. The [brand pages](where-is-the-setup-code) have the rest."}
+        {
+          "term": "The app that already has the device",
+          "text": "If the device is in Apple Home, Google Home, Alexa or SmartThings, that app can issue a fresh code for another ecosystem: Apple Home has Turn On Pairing Mode in the accessory's settings, Google Home has Linked Matter apps and services, Alexa has Other Assistants and Apps with a 15 minute code, and SmartThings has Share with other services. The code it shows is not the printed one and is not needed again."
+        },
+        {
+          "term": "The maker's app",
+          "text": "Two different things live in makers' apps, and it matters which you have. The permanent code, the one on the label, is shown by TP-Link Tapo and Kasa (Device Settings, Device Info, Matter Setup Code), Leviton (Device Settings in My Leviton), Govee (Device Settings), SONOFF eWeLink (Device Settings) and Eve (stored at the Matter upgrade). Two makers document their own flows: SwitchBot has you copy the code from the app under Matter Setup, reset the Hub 2, then paste that code into the Home app, so it serves the first pairing; Nanoleaf's Device Settings, Connections makes a code for the first Matter ecosystem of a device the Nanoleaf app has, and a device already commissioned elsewhere must be shared from that ecosystem. The ecosystem apps above make temporary share codes for adding one more ecosystem. Only a permanent code works after a factory reset."
+        },
+        {
+          "term": "Your iPhone's Matter list",
+          "text": "Settings, General, Matter Accessories lists every Matter device paired from that iPhone and which apps it is connected to. It does not show the code, but it tells you which app has the device and can share it onward. Apple says the setup code is kept in iCloud Keychain for those devices."
+        },
+        {
+          "term": "The device and the box",
+          "text": "TP-Link puts the code on the side of a plug or the neck of a bulb and a backup sticker in the box. Philips Hue prints it on the bulb and in the installation guide. IKEA prints it on the yellow cover in the packaging. Yale keeps its Yale Access QR code on the side of the battery compartment, and does not say where the Matter label sits. The [brand pages](where-is-the-setup-code) have the rest."
+        }
       ]
     },
     {
       "id": "reset",
       "heading": "Before you reset anything",
       "rows": [
-        {"term": "A reset brings back the need for the printed code", "text": "After a factory reset the device is new again, and only its permanent code will pair it: the printed one, a saved copy of it, or, for a device whose maker replaced the label code at a firmware upgrade, the replacement code the maker's app gave you, as Eve does. If the sticker is gone and no app shows the code, do not reset: the device would be locked out of every ecosystem."},
-        {"term": "Save the code from the app first", "text": "While the device is still in a maker's app, save the permanent code it shows as an image or a note. TP-Link suggests the phone's photo album; Eve offers AirDrop, email, Files or print. Check that it is a permanent code, not a share code: the digits on the label, or the replacement code a maker's upgrade generated. Eve says a device that fails to re-add after a reset needs the Matter setup code provided at the start of the upgrade, and a temporary share code will not bring it back. Only then reset."},
-        {"term": "Makers that say a lost code is final", "text": "Aqara's forum moderators said a lost Matter code cannot be restored, even by support with the serial number. Treat that as the worst case and avoid the reset."}
+        {
+          "term": "A reset brings back the need for the printed code",
+          "text": "After a factory reset the device is new again, and only its permanent code will pair it: the printed one, a saved copy of it, or, for a device whose maker replaced the label code at a firmware upgrade, the replacement code the maker's app gave you, as Eve does. If the sticker is gone and no app shows the code, do not reset: the device would be locked out of every ecosystem."
+        },
+        {
+          "term": "Save the code from the app first",
+          "text": "While the device is still in a maker's app, save the permanent code it shows as an image or a note. TP-Link suggests the phone's photo album; Eve offers AirDrop, email, Files or print. Check that it is a permanent code, not a share code: the digits on the label, or the replacement code a maker's upgrade generated. Eve says a device that fails to re-add after a reset needs the Matter setup code provided at the start of the upgrade, and a temporary share code will not bring it back. Only then reset."
+        },
+        {
+          "term": "Makers that say a lost code is final",
+          "text": "Aqara's forum moderators said a lost Matter code cannot be restored, even by support with the serial number. Treat that as the worst case and avoid the reset."
+        }
       ]
     },
     {
@@ -45,25 +77,79 @@
     }
   ],
   "questions": [
-    {"q": "Can I rebuild the QR code from the 11 digit code?", "a": "No. The 11 digit code leaves out the vendor, the product and most of the discriminator. Type the 11 digits instead; every Home app accepts them."},
-    {"q": "The code is on the label but the app says it is invalid", "a": "Three usual causes: the device is already paired to another ecosystem, so this code no longer applies; the first pairing window closed (TP-Link, Govee, Kwikset and Sengled quote about 15 minutes), so power the device off and on; or a digit was misread, which the check digit in the [decoder](../matter-qr-code-decoder) will catch. See [Matter code not working](matter-code-not-working)."},
-    {"q": "Does a Matter code expire?", "a": "The printed code does not. A code shown by an app to share the device does, within minutes: 15 for Alexa, about 3 for Google Home per TP-Link, and Apple Home waits 5 minutes between codes."}
+    {
+      "q": "Can I rebuild the QR code from the 11 digit code?",
+      "a": "No. The 11 digit code leaves out the vendor, the product and most of the discriminator. Type the 11 digits instead; every Home app accepts them."
+    },
+    {
+      "q": "The code is on the label but the app says it is invalid",
+      "a": "Three usual causes: the device is already paired to another ecosystem, so this code no longer applies; the first pairing window closed (TP-Link, Govee, Kwikset and Sengled quote about 15 minutes), so power the device off and on; or a digit was misread, which the check digit in the [decoder](../matter-qr-code-decoder) will catch. See [Matter code not working](matter-code-not-working)."
+    },
+    {
+      "q": "Does a Matter code expire?",
+      "a": "The printed code does not. A code shown by an app to share the device does, within minutes: 15 for Alexa, about 3 for Google Home per TP-Link, and Apple Home waits 5 minutes between codes."
+    }
   ],
   "sources": [
-    {"label": "Apple: Matter accessories and the Home app", "url": "https://support.apple.com/en-us/102135"},
-    {"label": "Google: link Matter devices to other apps", "url": "https://support.google.com/googlehome/answer/13127223?hl=en"},
-    {"label": "Amazon: share a Matter device with other assistants", "url": "https://www.amazon.com/gp/help/customer/display.html?nodeId=T6iLWTtbZygaBJnQhg"},
-    {"label": "SmartThings and Matter", "url": "https://support.smartthings.com/hc/en-us/articles/11219700390804-SmartThings-x-Matter-Integration"},
-    {"label": "TP-Link: where the Matter code is printed", "url": "https://www.tp-link.com/us/support/faq/4411/"},
-    {"label": "TP-Link: lost or unreadable Matter code", "url": "https://www.tp-link.com/us/support/faq/3520/"},
-    {"label": "Leviton: Matter code in the My Leviton app", "url": "https://leviton.com/support/resources/product-support/decora-smart-support/decora-smart-wi-fi/how-do-i-update-my-decora-smart-wi-fi-2nd-gen-device-to-support-matter"},
-    {"label": "Govee: Matter FAQ", "url": "https://us.govee.com/pages/matter-faq"},
-    {"label": "SwitchBot: Matter over Wi-Fi setup", "url": "https://support.switch-bot.com/hc/en-us/articles/35927129576599-How-to-Connect-SwitchBot-Devices-to-Third-Party-Platforms-Matter-over-Wi-Fi"},
-    {"label": "SONOFF: Matter setup", "url": "https://help.sonoff.tech/docs/matter-home-assistant"},
-    {"label": "Eve: upgrade to Matter", "url": "https://www.evehome.com/en/upgrade-to-matter"},
-    {"label": "Nanoleaf: Matter over Wi-Fi", "url": "https://support.nanoleaf.me/hc/en-us/articles/36058317437588-Connecting-How-To-Matter-over-Wifi"},
-    {"label": "Kwikset: Halo Select Matter troubleshooting", "url": "https://www.kwikset.com/support/answers/how-can-i-troubleshoot-matter-connectivity-on-my-halo-select-smart-lock"},
-    {"label": "Yale: Matter Module FAQ", "url": "https://support.shopyalehome.com/faq-matter-module-rJzK0Ro"},
-    {"label": "Aqara forum: Matter code lost recovery", "url": "https://forum.aqara.com/t/matter-code-lost-recovery/152282"}
+    {
+      "label": "Apple: Matter accessories and the Home app",
+      "url": "https://support.apple.com/en-us/102135"
+    },
+    {
+      "label": "Google: link Matter devices to other apps",
+      "url": "https://support.google.com/googlehome/answer/13127223?hl=en"
+    },
+    {
+      "label": "Amazon: share a Matter device with other assistants",
+      "url": "https://www.amazon.com/gp/help/customer/display.html?nodeId=T6iLWTtbZygaBJnQhg"
+    },
+    {
+      "label": "SmartThings and Matter",
+      "url": "https://support.smartthings.com/hc/en-us/articles/11219700390804-SmartThings-x-Matter-Integration"
+    },
+    {
+      "label": "TP-Link: where the Matter code is printed",
+      "url": "https://www.tp-link.com/us/support/faq/4411/"
+    },
+    {
+      "label": "TP-Link: lost or unreadable Matter code",
+      "url": "https://www.tp-link.com/us/support/faq/3520/"
+    },
+    {
+      "label": "Leviton: Matter code in the My Leviton app",
+      "url": "https://leviton.com/support/resources/product-support/decora-smart-support/decora-smart-wi-fi/how-do-i-update-my-decora-smart-wi-fi-2nd-gen-device-to-support-matter"
+    },
+    {
+      "label": "Govee: Matter FAQ",
+      "url": "https://us.govee.com/pages/matter-faq"
+    },
+    {
+      "label": "SwitchBot: Matter over Wi-Fi setup",
+      "url": "https://support.switch-bot.com/hc/en-us/articles/35927129576599-How-to-Connect-SwitchBot-Devices-to-Third-Party-Platforms-Matter-over-Wi-Fi"
+    },
+    {
+      "label": "SONOFF: Matter setup",
+      "url": "https://help.sonoff.tech/docs/matter-home-assistant"
+    },
+    {
+      "label": "Eve: upgrade to Matter",
+      "url": "https://www.evehome.com/en/upgrade-to-matter"
+    },
+    {
+      "label": "Nanoleaf: Matter over Wi-Fi",
+      "url": "https://support.nanoleaf.me/hc/en-us/articles/36058317437588-Connecting-How-To-Matter-over-Wifi"
+    },
+    {
+      "label": "Kwikset: Halo Select Matter troubleshooting",
+      "url": "https://www.kwikset.com/support/answers/how-can-i-troubleshoot-matter-connectivity-on-my-halo-select-smart-lock"
+    },
+    {
+      "label": "Yale: Matter Module FAQ",
+      "url": "https://support.shopyalehome.com/faq-matter-module-rJzK0Ro"
+    },
+    {
+      "label": "Aqara forum: Matter code lost recovery",
+      "url": "https://forum.aqara.com/t/matter-code-lost-recovery/152282"
+    }
   ]
 }
