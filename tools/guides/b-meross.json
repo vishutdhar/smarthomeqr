@@ -1,0 +1,18 @@
+{
+  "kind": "brand", "slug": "meross-homekit-code", "short": "Meross",
+  "title": "Where to find the Meross HomeKit setup code",
+  "description": "Meross shows the HomeKit setup code inside its app under Device Settings, Device Info, and documents a factory mode route for a device that was deleted from iOS. Last resort: support with the invoice and the original Wi-Fi name.",
+  "lede": "Meross is one of the few makers with a written recovery. The code is in the app while the device is set up there, and there is a route back for a device that was removed.",
+  "published": "2026-11-03", "read": "3 November 2026", "about": "Meross HomeKit setup code",
+  "sections": [
+    {"id": "where", "heading": "Where the code is", "rows": [
+      {"term": "In the Meross app", "text": "Device Settings, Device Info, HomeKit setup code, for a device that is set up in the Meross app. Android users can set the device up in the app and read the code at the same place."},
+      {"term": "New device, or deleted on iOS", "text": "Meross: factory reset by holding the power or reset button for 5 seconds, keep the device in factory mode for 20 minutes, add it in the Meross app as the Basic Version, then read the HomeKit code on the product settings page."},
+      {"term": "Last resort", "text": "Meross support, with the Amazon order invoice and the accessory's original Wi-Fi name, Meross_XX_XXXX."},
+      {"term": "Matter", "text": "Where the Meross app shows a Matter code is not documented by Meross; only user reports exist. For a Meross Matter device already in an ecosystem, use that ecosystem's sharing step."}
+    ]}
+  ],
+  "sources": [
+    {"label": "Meross: how to find the HomeKit setup code", "url": "https://www.meross.com/en-gc/FAQ/363.html"}
+  ]
+}

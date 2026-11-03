@@ -1,0 +1,20 @@
+{
+  "kind": "brand", "slug": "kwikset-halo-matter-code", "short": "Kwikset",
+  "title": "Where the Kwikset Halo Select Matter code is",
+  "description": "Kwikset Halo Select converts to Matter from the Kwikset app, then the Matter QR code on the lock is scanned once. Extra ecosystems use the 11 digit code from the first smart home app.",
+  "lede": "Kwikset says it plainly: the Matter label on the lock is for the first platform only. Every ecosystem after that gets its code from the first app.",
+  "published": "2026-11-03", "read": "3 November 2026", "about": "Kwikset Halo Select Matter code",
+  "sections": [
+    {"id": "where", "heading": "Where the code is", "rows": [
+      {"term": "Halo Select and Halo Select Plus", "text": "Convert the lock to Matter in the Kwikset app under Lock Settings, Matter Integration. Then locate the Matter QR code on your lock and scan it in the smart home app. Kwikset does not say which face of the lock carries it; the interior assembly is the first place to look."},
+      {"term": "The 15 minutes", "text": "Matter pairing mode ends after 15 minutes of inactivity. Resume it from the Kwikset app with Resume Setup."},
+      {"term": "More ecosystems", "text": "Use the 11 digit code from the first smart home app's device settings. Kwikset: this code is unique and can only be found within the smart home app; the Matter QR code label on your lock is only used for initial platform setup."},
+      {"term": "Removing from Apple Home", "text": "Full removal may need Settings, General, Matter Accessories, then Remove Accessory."},
+      {"term": "Premis", "text": "The older HomeKit lock's code location is not on a Kwikset page. Owners report it on the interior assembly."}
+    ]}
+  ],
+  "sources": [
+    {"label": "Kwikset: troubleshoot Matter on Halo Select", "url": "https://www.kwikset.com/support/answers/how-can-i-troubleshoot-matter-connectivity-on-my-halo-select-smart-lock"},
+    {"label": "Kwikset: Halo Select Plus product support", "url": "https://www.kwikset.com/support/productdetail/halo-select-plus-touchscreen-wi-fi-and-matter-enabled-smart-lock-with-apple-home-keys"}
+  ]
+}

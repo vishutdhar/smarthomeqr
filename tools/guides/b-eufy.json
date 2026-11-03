@@ -1,0 +1,20 @@
+{
+  "kind": "brand", "slug": "eufy-homekit-code", "short": "eufy",
+  "title": "Where the eufy HomeBase HomeKit code is",
+  "description": "eufy prints the HomeKit setup code on the bottom of HomeBase 2. A system already in the eufy app can enable HomeKit from HomeBase Settings without the printed code.",
+  "lede": "Look under the HomeBase. eufy prints the setup code on its bottom, and if the system is already in the eufy app you may not need the sticker at all.",
+  "published": "2026-11-03", "read": "3 November 2026", "about": "eufy HomeKit code",
+  "sections": [
+    {"id": "where", "heading": "Where the code is", "rows": [
+      {"term": "HomeBase 2", "text": "eufy: scan the Setup Code on the bottom of HomeBase. The eufy page for this flow covers eufyCam 2, 2C, 2 Pro and 2C Pro, with up to 4 cameras per HomeBase 2 exposed; eufy's current HomeKit list names more models."},
+      {"term": "Which QR code", "text": "A QR code with the Home logo goes straight into Apple Home. One without the house mark belongs to the eufy app: add the system there first and enable HomeKit from HomeBase Settings, HomeKit Setup."},
+      {"term": "Already in the eufy app", "text": "No printed code is needed: go to HomeBase Settings, HomeKit Setup."},
+      {"term": "Reset", "text": "A pin in the reset button on the back of the HomeBase resets it and erases all settings and videos."}
+    ]}
+  ],
+  "sources": [
+    {"label": "eufy: about HomeKit", "url": "https://service.eufy.com/article-description/About-HomeKit"},
+    {"label": "eufy: set up HomeKit for eufyCam 2, 2C, 2 Pro, 2C Pro", "url": "https://service.eufy.com/article-description/How-to-Set-Up-HomeKit-for-eufyCam-2-2C-2-Pro-2C-Pro"},
+    {"label": "eufy: HomeKit on eufy devices", "url": "https://service.eufy.com/sg/article-description/HomeKit-on-eufy-Devices"}
+  ]
+}

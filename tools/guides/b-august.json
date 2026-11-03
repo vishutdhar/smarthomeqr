@@ -1,0 +1,22 @@
+{
+  "kind": "brand", "slug": "august-homekit-code", "short": "August",
+  "title": "Where the August Smart Lock HomeKit code is",
+  "description": "August prints the August and Apple HomeKit QR codes on the serial number label inside the front battery cover. Press the August logo at the bottom of the faceplate to open it.",
+  "lede": "August hides both QR codes behind the faceplate. Press the August logo at the bottom to release the cover and the label is inside.",
+  "published": "2026-11-03", "read": "3 November 2026", "about": "August Smart Lock HomeKit setup code",
+  "sections": [
+    {"id": "where", "heading": "Where the code is printed", "rows": [
+      {"term": "Inside the front battery cover", "text": "August: the QR code is located on the inside of the front battery cover. Remove the cover by pressing the August logo at the bottom of the faceplate. The serial number label there also carries the August and Apple HomeKit QR codes."},
+      {"term": "The HomeKit FAQ", "text": "August's HomeKit FAQ says the code needed to set up the integration between the lock and Apple HomeKit is found under the faceplate of the lock."},
+      {"term": "Resetting HomeKit", "text": "August documents a physical HomeKit reset on the lock, linked from its HomeKit FAQ, for when Apple Home refuses to pair."}
+    ]},
+    {"id": "lost", "heading": "Lost or replaced cover", "paragraphs": [
+      "August does not say what to do when the cover with the label is lost. Keep the lock paired, photograph the label the next time the cover is off, and go to August support with the serial number if the lock ever has to be re-paired."
+    ]}
+  ],
+  "sources": [
+    {"label": "August Wi-Fi Smart Lock FAQ", "url": "https://support.august.com/august-wi-fi-smart-lock-faq-rk6RzQ5YI"},
+    {"label": "August Smart Lock HomeKit FAQ", "url": "https://support.august.com/august-smart-lock-homekit-enabled-faq-rJv088y0_z"},
+    {"label": "August: reset HomeKit", "url": "https://support.august.com/reset-homekit-r1h6O5QAv"}
+  ]
+}

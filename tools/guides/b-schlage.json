@@ -1,0 +1,25 @@
+{
+  "kind": "brand", "slug": "schlage-homekit-code", "short": "Schlage",
+  "title": "Where the Schlage Encode Plus HomeKit code is",
+  "description": "The Schlage Encode Plus prints its HomeKit setup code on the interior assembly under the battery cover, with a backup label on the quick start guide. Where to look, how to pair, and what to do without it.",
+  "lede": "Schlage prints the HomeKit label where you will only see it with the lock in your hands: on the inside of the interior assembly. The quick start guide carries a backup.",
+  "published": "2026-11-03", "read": "3 November 2026", "about": "Schlage Encode Plus HomeKit setup code",
+  "sections": [
+    {"id": "where", "heading": "Where the code is printed", "rows": [
+      {"term": "Encode Plus (BE499WB)", "text": "On the HomeKit setup label on the inside of the interior portion of the lock, behind the battery cover. The quick start guide says to tap your iPhone to the HomeKit label, or to type the 8 digit HomeKit setup code printed on it into the Home app."},
+      {"term": "The backup on the guide", "text": "The quick start guide has a box marked Place label here for the backup codes, and the default user codes are on a label under the battery cover and on the back of the guide. Schlage says you will need these codes if you ever factory reset the lock."},
+      {"term": "Schlage Sense", "text": "The older HomeKit lock keeps its HomeKit label in the same place, on the inside of the interior portion, or on its quick start guide."}
+    ]},
+    {"id": "pairing", "heading": "Pairing it", "rows": [
+      {"term": "Pairing mode", "text": "Press the black button inside the interior assembly. A slow blue flash means the lock is ready to pair. Then scan the label or type the code in Apple Home."},
+      {"term": "Code lost", "text": "Whether the Schlage Home app can show the HomeKit code after pairing is not something Schlage documents. Keep the lock paired, and if it must be reset, Schlage support is the route, with the lock's serial number."}
+    ]}
+  ],
+  "questions": [
+    {"q": "Is the HomeKit code the same as the programming code?", "a": "No. The programming code changes the lock's settings and the user codes unlock it at the keypad. The 8 digit HomeKit code, beside the house mark, pairs the lock with Apple Home."}
+  ],
+  "sources": [
+    {"label": "Schlage Encode Plus quick start guide (PDF)", "url": "https://www.schlage.ca/content/dam/sch-us/documents/pdf/installation-manuals/schlage-encode-plus-quick-start-guide-BE499WB.pdf"},
+    {"label": "Schlage: pairing Schlage smart locks with smart home devices", "url": "https://www.schlage.com/en/blog/product_updates/pairing-schlage-smart-locks-with-smart-home-devices.html"}
+  ]
+}

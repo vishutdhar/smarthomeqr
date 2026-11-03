@@ -1,0 +1,18 @@
+{
+  "kind": "brand", "slug": "aqara-homekit-matter-code", "short": "Aqara",
+  "title": "Where the Aqara HomeKit and Matter codes are",
+  "description": "Aqara Camera E1 can show its HomeKit code in the Aqara Home app. For a lost Matter code, Aqara's forum staff say it cannot be restored. Where the codes are and what Aqara says.",
+  "lede": "Aqara's answers differ by product. The Camera E1 can fetch its HomeKit code from Aqara's cloud; for a lost Matter code, Aqara's forum staff say there is no recovery.",
+  "published": "2026-11-03", "read": "3 November 2026", "about": "Aqara setup codes",
+  "sections": [
+    {"id": "where", "heading": "What Aqara says", "rows": [
+      {"term": "Camera E1", "text": "The official Aqara forum account gives the path: Aqara Home app, Accessories, Camera E1, HomeKit, where you can connect directly or see the HomeKit pairing code. For a lost E1 code, an Aqara team member asked for the device id from the app or the camera's serial number so support could provide the QR codes."},
+      {"term": "Matter code lost", "text": "An Aqara forum moderator: if the code is lost, it cannot be restored, and support cannot recreate it from the serial number. Later posters dispute that, so treat it as Aqara's stated position and avoid resetting a device whose sticker is gone."},
+      {"term": "FP300 and Hub M3", "text": "Users report the FP300 code in the box and on the product, and the Hub M3 with the Aqara and HomeKit codes on the hub body, the Matter code on the back of the manual and in the app under Hub M3, Matter, Matter Pairing Code. Aqara's own page on this no longer loads, so check those places rather than relying on them."}
+    ]}
+  ],
+  "sources": [
+    {"label": "Aqara forum: lost codes to add to Aqara", "url": "https://forum.aqara.com/t/lost-codes-to-add-to-aqara/218171"},
+    {"label": "Aqara forum: Matter code lost recovery", "url": "https://forum.aqara.com/t/matter-code-lost-recovery/152282"}
+  ]
+}

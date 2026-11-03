@@ -1,0 +1,22 @@
+{
+  "kind": "brand", "slug": "philips-hue-homekit-matter-code", "short": "Philips Hue",
+  "title": "Where the Philips Hue HomeKit and Matter codes are",
+  "description": "Hue Matter bulbs print the 11 digit code on the bulb and the QR code in the installation guide. With a Hue Bridge, Apple Home is set up from the Hue app and Matter codes come from the app.",
+  "lede": "Hue has two routes. Bulbs used without a bridge carry a Matter code printed on the bulb. With a bridge, the codes come out of the Hue app, and the old sticker on the bridge matters less than it used to.",
+  "published": "2026-11-03", "read": "3 November 2026", "about": "Philips Hue setup codes",
+  "sections": [
+    {"id": "where", "heading": "Where the code is", "rows": [
+      {"term": "Matter bulbs without a bridge", "text": "Scan the QR code on the installation guide, the Matter QR code, or enter the 11 digit pairing code. Lost the guide: Philips says to use the manual pairing code printed on the bulb."},
+      {"term": "With a Hue Bridge", "text": "The Matter link is made in the Hue app under Settings, Smart Home. For each additional platform, use the original app to generate a new Matter setup code."},
+      {"term": "Apple Home today", "text": "Hue's current Apple Home page no longer asks you to scan a code on the bridge. The flow is Settings, Smart home and voice, Get started, Siri and Apple Home, Set up, then sign in with a Hue account."},
+      {"term": "The sticker under the bridge", "text": "The square Hue Bridge has a HomeKit code printed on its underside, according to many owners, but Philips' current pages do not mention it. If a HomeKit setup still asks for it and the sticker is gone, the suggestion on owner forums is to call Philips with the serial number."},
+      {"term": "In the Hue app", "text": "Products are added by QR. If a product has no QR code, tap No QR code and add it by searching or by its serial number."}
+    ]}
+  ],
+  "sources": [
+    {"label": "Philips Hue: Matter setup and support guide", "url": "https://www.philips-hue.com/en-us/support/article/philips-hue-and-matter-complete-setup-and-support-guide/000012"},
+    {"label": "Philips Hue: connect bulbs and lamps", "url": "https://www.philips-hue.com/en-us/support/connect-hue-product/bulbs-and-lamps"},
+    {"label": "Philips Hue: Apple Home setup", "url": "https://www.philips-hue.com/en-us/explore-hue/works-with/apple-homekit/set-up"},
+    {"label": "MacRumors: setting up Hue without the HomeKit code", "url": "https://forums.macrumors.com/threads/setting-up-phillips-hue-without-homekit-code.2242861/"}
+  ]
+}

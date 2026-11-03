@@ -1,0 +1,52 @@
+{
+  "kind": "topic", "order": 4,
+  "slug": "matter-code-not-working",
+  "short": "Matter code not working",
+  "title": "Matter pairing code not working: the six causes",
+  "description": "Setup code incorrect, pairing code expired, accessory already added, no Thread hub: why a correct Matter code is refused and what fixes each case.",
+  "lede": "A Matter code that is read correctly can still be refused. The makers' own pages point at these six causes, and each has its own fix.",
+  "published": "2026-11-03", "read": "3 November 2026",
+  "about": "Matter pairing problems",
+  "sections": [
+    {
+      "id": "causes",
+      "heading": "Work down the list",
+      "rows": [
+        {"term": "1. The device is already paired to another ecosystem", "text": "The printed code works at first setup and after a factory reset only. Once Google Home has the device, Apple Home needs a share code from Google Home, not the sticker. Open the first app and look for Linked Matter apps and services (Google), Turn On Pairing Mode (Apple), Other Assistants and Apps (Alexa) or Share with other services (SmartThings)."},
+        {"term": "2. The pairing window closed", "text": "A new device waits for its first pairing for a limited time, then stops advertising; TP-Link, Govee, Kwikset and Sengled each quote about 15 minutes. Power it off and on, or for a Kwikset Halo Select press Resume Setup in the Kwikset app, and try again straight away."},
+        {"term": "3. The share code expired", "text": "A code shown by an app to add a second ecosystem lasts minutes: 15 for Alexa, about 3 for Google Home per TP-Link. Apple Home waits 5 minutes before it will make another. Generate it again and use it at once."},
+        {"term": "4. A digit was misread", "text": "The last digit of an 11 digit code is a check digit. Paste the code into the [decoder](../matter-qr-code-decoder): if it fails the check, one digit is wrong, and 0 against 8, 1 against 7 and 3 against 8 are the usual swaps on a worn label."},
+        {"term": "5. No hub for a Thread device", "text": "A Matter over Thread device needs a Thread border router that the ecosystem can use. Apple lists HomePod mini, HomePod (2nd generation), Apple TV 4K (3rd generation, Wi-Fi and Ethernet) and compatible third party border routers, and says an iPhone 15 Pro or later on iOS 18 can control Thread accessories without one. Alexa needs a Thread enabled Echo, and Google Home a Thread border router from Google's list, which names specific models such as Nest Hub (2nd generation), Nest Wifi Pro, the Google TV Streamer and the Google Home Speaker, while Nest Audio and Nest Mini are listed without Thread; both makers publish the model lists, linked below. Amazon's advice when you have no Thread Echo is to set the device up in another Thread ecosystem first and share it to Alexa."},
+        {"term": "6. The device is not actually in pairing mode", "text": "Locks and bridges often need a button press or an app step first. Kwikset Halo Select converts to Matter from Lock Settings, Matter Integration in the Kwikset app before its label does anything. SwitchBot Hub 2 must be reset before Apple Home will take it. Check the maker's page for the step your device needs."}
+      ]
+    },
+    {
+      "id": "messages",
+      "heading": "What the messages mean",
+      "rows": [
+        {"term": "Setup code incorrect, or check the setup code and try again", "text": "Causes 1, 2 and 4. Rule out cause 4 with the decoder, then check whether the device is already paired somewhere, then power cycle."},
+        {"term": "Accessory already added, or already in another home", "text": "Cause 1. The device still belongs to another ecosystem or a previous owner. Share it from there. A factory reset is the other way, but only with the device's permanent code in hand: the printed one, or the replacement code a maker's upgrade generated, as Eve does. Without it the reset locks the device out of every ecosystem."},
+        {"term": "Could not find the accessory, or no accessory nearby", "text": "Causes 2, 5 and 6. The device is not advertising, or there is no Thread hub to hear it, or Bluetooth is off on the phone."},
+        {"term": "Pairing code expired", "text": "Cause 3. Make a new share code and use it within its window."}
+      ]
+    }
+  ],
+  "questions": [
+    {"q": "Can I use the printed code to add the device to a second app?", "a": "Not while it is paired to the first. The first app must share it. After a factory reset the permanent code works again, the printed one or a maker's replacement code, but every ecosystem loses the device and has to be set up afresh."},
+    {"q": "Why does Apple Home accept the code but Google Home refuse the same one?", "a": "Because the device was paired to Apple Home first. Google Home now needs the temporary code Apple Home issues under Turn On Pairing Mode, or the device has to be reset."},
+    {"q": "The lock's 15 minutes ran out while I was in the app", "a": "Kwikset: open the Kwikset app and press Resume Setup. Other locks: close and reopen pairing mode on the lock itself, then scan again."}
+  ],
+  "sources": [
+    {"label": "Amazon: share a Matter device with other assistants", "url": "https://www.amazon.com/gp/help/customer/display.html?nodeId=T6iLWTtbZygaBJnQhg"},
+    {"label": "Amazon: Matter and Thread on Alexa", "url": "https://www.amazon.com/gp/help/customer/display.html?nodeId=TSWevY1sX8ADH2LC20"},
+    {"label": "Google: link Matter devices to other apps", "url": "https://support.google.com/googlehome/answer/13127223?hl=en"},
+    {"label": "Apple: Matter accessories and home hubs", "url": "https://support.apple.com/en-us/102557"},
+    {"label": "Google: Thread border routers for Google Home", "url": "https://support.google.com/googlehome/answer/12391458?hl=en"},
+    {"label": "TP-Link: the 15 minute Matter setup window", "url": "https://www.tp-link.com/us/support/faq/3574/"},
+    {"label": "TP-Link: Matter code lifetimes", "url": "https://www.tp-link.com/us/support/faq/3564/"},
+    {"label": "Govee: Matter FAQ", "url": "https://us.govee.com/pages/matter-faq"},
+    {"label": "Kwikset: Halo Select Matter troubleshooting", "url": "https://www.kwikset.com/support/answers/how-can-i-troubleshoot-matter-connectivity-on-my-halo-select-smart-lock"},
+    {"label": "SwitchBot Hub 2 Matter setup on iOS", "url": "https://support.switch-bot.com/hc/en-us/articles/35214812208023-SwitchBot-Hub-2-Matter-Setup-iOS"},
+    {"label": "SmartThings and Matter", "url": "https://support.smartthings.com/hc/en-us/articles/11219700390804-SmartThings-x-Matter-Integration"}
+  ]
+}

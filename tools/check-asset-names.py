@@ -27,7 +27,8 @@ from pathlib import Path
 from urllib.parse import unquote, urljoin, urlsplit
 
 ROOT = Path(__file__).resolve().parent.parent
-PAGES = ["index.html", "privacy.html", "matter-qr-code-decoder.html", "style.css", "tools/og.html"]
+PAGES = ["index.html", "privacy.html", "matter-qr-code-decoder.html", "style.css", "tools/og.html"] + sorted(
+    str(p.relative_to(ROOT)) for p in (ROOT / "guides").glob("*.html"))
 SITE = "https://smarthomeqr.vishutdhar.com/"
 HOST = urlsplit(SITE).hostname
 HASHED = re.compile(r"^.+\.([0-9a-f]{8})\.[a-z0-9]+$")
@@ -140,7 +141,16 @@ class Collector(HTMLParser):
 
 def references(page):
     text = (ROOT / page).read_text(encoding="utf-8")
-    base = urljoin(SITE, page)
+    # The page's address as the site serves it: index.html is the folder, x.html is /x.
+    if page == "index.html":
+        served = ""
+    elif page.endswith("/index.html"):
+        served = page[:-len("/index.html")]
+    elif page.endswith(".html"):
+        served = page[:-5]
+    else:
+        served = page
+    base = urljoin(SITE, served)
     if page.endswith(".css"):
         found = list(css_urls(text))
     else:
@@ -174,7 +184,7 @@ def served_file(path):
     if path == "" or path.endswith("/"):
         candidates = [path + "index.html"]
     else:
-        candidates = [path, path + ".html"]
+        candidates = [path, path + ".html", path + "/index.html"]
     return next((c for c in candidates if exists_exactly(c)), None)
 
 

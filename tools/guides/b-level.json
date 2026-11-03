@@ -1,0 +1,17 @@
+{
+  "kind": "brand", "slug": "level-lock-homekit-code", "short": "Level",
+  "title": "Where the Level Lock HomeKit code is",
+  "description": "Level publishes no page on where its HomeKit or Matter code is printed. Owners report it on the back of the quick start guide for Level Bolt and Level Lock Plus, and on the underside of the original Level Lock.",
+  "lede": "Level is the one brand here without a maker page to cite. What follows is what owners report, marked as such.",
+  "published": "2026-11-03", "read": "3 November 2026", "about": "Level Lock HomeKit code",
+  "sections": [
+    {"id": "where", "heading": "Where owners find it", "rows": [
+      {"term": "Level Bolt and Level Lock Plus", "text": "Owners and reviews put the HomeKit code on the back of the quick start guide. Level's support site had no article on it when checked."},
+      {"term": "Original Level Lock", "text": "Reported on the underside of the lock body."},
+      {"term": "Matter over Thread", "text": "Level's app release notes list Matter over Thread setup. Whether the app shows a Matter code is not documented. If your lock is in the Level app, look in its settings before resetting anything."}
+    ]}
+  ],
+  "sources": [
+    {"label": "Level support articles", "url": "https://level.co/support/articles"}
+  ]
+}

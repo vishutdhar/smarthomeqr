@@ -1,0 +1,18 @@
+{
+  "kind": "brand", "slug": "switchbot-matter-code", "short": "SwitchBot",
+  "title": "Where the SwitchBot Matter code is",
+  "description": "SwitchBot Hub 2 has its Matter QR code on the side or back, and the SwitchBot app shows the code under Matter Setup. Matter over Wi-Fi devices get their code from the app after a reset step.",
+  "lede": "The SwitchBot app is the reliable source. The Hub 2 also has a printed QR code on its side or back.",
+  "published": "2026-11-03", "read": "3 November 2026", "about": "SwitchBot Matter code",
+  "sections": [
+    {"id": "where", "heading": "Where the code is", "rows": [
+      {"term": "Hub 2", "text": "Scan the QR code on the side or back of the Hub 2, or copy the code in the app under Hub 2, the gear, Matter Setup (Beta). Before adding it to Apple Home, SwitchBot says to reset the hub: hold the On and Off buttons for 15 seconds."},
+      {"term": "Matter over Wi-Fi devices", "text": "Open the SwitchBot app, go to the device's settings page, select Matter Setup, and follow the steps to reset the device and obtain the Matter pairing code."},
+      {"term": "Lost sticker", "text": "While the device is in the SwitchBot app, the code is recoverable from the app. Keep the device in the app until every ecosystem has it."}
+    ]}
+  ],
+  "sources": [
+    {"label": "SwitchBot: Hub 2 Matter setup on iOS", "url": "https://support.switch-bot.com/hc/en-us/articles/35214812208023-SwitchBot-Hub-2-Matter-Setup-iOS"},
+    {"label": "SwitchBot: Matter over Wi-Fi devices", "url": "https://support.switch-bot.com/hc/en-us/articles/35927129576599-How-to-Connect-SwitchBot-Devices-to-Third-Party-Platforms-Matter-over-Wi-Fi"}
+  ]
+}
