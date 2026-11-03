@@ -1,0 +1,166 @@
+{
+  "kind": "topic",
+  "order": 3,
+  "slug": "where-is-the-setup-code",
+  "short": "Where the code is printed",
+  "title": "Where the setup code is printed, brand by brand",
+  "description": "The exact spot each maker prints its HomeKit or Matter setup code: under battery covers, behind wall plates, on bulb necks, in apps and on screens. 28 brands, each checked against the maker's own pages.",
+  "lede": "One line per brand, from the maker's own support pages where they exist. Each name opens the full page with the sources.",
+  "published": "2026-11-03",
+  "read": "3 November 2026",
+  "about": "Setup code locations by brand",
+  "sections": [
+    {
+      "id": "shape",
+      "heading": "Know what you are looking for",
+      "rows": [
+        {
+          "term": "HomeKit",
+          "text": "Eight digits as XXX-XX-XXX beside a small house mark, usually with a QR code."
+        },
+        {
+          "term": "Matter",
+          "text": "A QR code with the Matter mark and an 11 digit code, usually printed as XXXX-XXX-XXXX. Works at first setup and after a reset; a second ecosystem gets a code from the first app instead."
+        },
+        {
+          "term": "Z Wave",
+          "text": "Groups of five digits. The first group, often underlined, is the PIN typed in during inclusion."
+        }
+      ]
+    },
+    {
+      "id": "brands",
+      "heading": "Brand by brand",
+      "rows": [
+        {
+          "term": "[Amazon Echo and Alexa](amazon-echo-alexa-matter-code)",
+          "text": "None on the Echo. The accessory's code, typed under Try Numeric Code Instead."
+        },
+        {
+          "term": "[Aqara](aqara-homekit-matter-code)",
+          "text": "Camera E1 code in the Aqara Home app; for other products, owners report the device, the box or the manual."
+        },
+        {
+          "term": "[August](august-homekit-code)",
+          "text": "Inside the front battery cover, on the serial number label; press the August logo to open it."
+        },
+        {
+          "term": "[Eve](eve-homekit-matter-code)",
+          "text": "Sticker on the accessory and in the quick start guide; after the Matter upgrade, in the Eve app."
+        },
+        {
+          "term": "[Google Nest](google-nest-matter-code)",
+          "text": "From Google Home: Linked Matter apps and services, a temporary code."
+        },
+        {
+          "term": "[Govee](govee-matter-code)",
+          "text": "On the product, and on the Device Settings page in the Govee Home app."
+        },
+        {
+          "term": "[HomePod and Apple TV](homepod-apple-tv-setup-code)",
+          "text": "None. HomePod pairs by proximity; Apple TV joins from its settings."
+        },
+        {
+          "term": "[IKEA DIRIGERA](ikea-dirigera-matter-homekit-code)",
+          "text": "Matter QR on the yellow cover in the box; the hub's HomeKit code in the IKEA Home smart app."
+        },
+        {
+          "term": "[Kwikset](kwikset-halo-matter-code)",
+          "text": "Matter QR on the lock after converting it in the Kwikset app; first platform only."
+        },
+        {
+          "term": "[LIFX](lifx-homekit-matter-code)",
+          "text": "Below the serial number, marked HK:; Beam and Lightstrip on the controller; Matter lights beside the Matter mark."
+        },
+        {
+          "term": "[Level](level-lock-homekit-code)",
+          "text": "Owner reports: back of the quick start guide (Bolt, Lock Plus), underside of the original Level Lock."
+        },
+        {
+          "term": "[Leviton Decora Smart](leviton-decora-smart-homekit-matter-code)",
+          "text": "Lower right corner of the device behind the wall plate; after the Matter update, in the My Leviton app."
+        },
+        {
+          "term": "[Lutron Caseta](lutron-caseta-homekit-code)",
+          "text": "Bottom of the Smart Hub. Dimmers and switches have no code."
+        },
+        {
+          "term": "[Meross](meross-homekit-code)",
+          "text": "In the Meross app under Device Settings, Device Info, HomeKit setup code."
+        },
+        {
+          "term": "[Nanoleaf](nanoleaf-pairing-code)",
+          "text": "Back of the controller or bulb base, and on the welcome card."
+        },
+        {
+          "term": "[Philips Hue](philips-hue-homekit-matter-code)",
+          "text": "Matter bulbs: on the bulb and in the installation guide. With a bridge: from the Hue app."
+        },
+        {
+          "term": "[Ring](ring-qr-code-zwave-pin)",
+          "text": "Ring QR and 5 digit code on the back, for the Ring app. No HomeKit code; no Matter support found."
+        },
+        {
+          "term": "[SONOFF](sonoff-matter-code)",
+          "text": "In the quick guide; and in the eWeLink app under Device Settings."
+        },
+        {
+          "term": "[Schlage](schlage-homekit-code)",
+          "text": "Inside the interior assembly, under the battery cover; backup label on the quick start guide."
+        },
+        {
+          "term": "[Sengled](sengled-matter-code)",
+          "text": "On the quick start guide."
+        },
+        {
+          "term": "[SmartThings](smartthings-matter-zwave-code)",
+          "text": "Matter digits under Enter setup code; Z Wave PIN is the first five DSK digits; hub QR on the hub."
+        },
+        {
+          "term": "[SwitchBot](switchbot-matter-code)",
+          "text": "Hub 2: side or back; and in the SwitchBot app under Matter Setup."
+        },
+        {
+          "term": "[TP-Link Tapo and Kasa](tp-link-tapo-kasa-matter-code)",
+          "text": "Side of a plug, neck of a bulb, beside a switch button; backup sticker in the box; in the app under Device Info."
+        },
+        {
+          "term": "[Tuya and Smart Life](tuya-smart-life-matter-code)",
+          "text": "Varies by brand; the app pairs with the printed code and shares with a temporary one."
+        },
+        {
+          "term": "[Wemo](wemo-homekit-code)",
+          "text": "Back of the device and in the quick install guide. New HomeKit setups ended January 31, 2026."
+        },
+        {
+          "term": "[Yale](yale-homekit-matter-code)",
+          "text": "Side of the battery compartment under the cover; setup QR also on the quick start guide."
+        },
+        {
+          "term": "[ecobee](ecobee-homekit-code)",
+          "text": "On the thermostat's screen under Main Menu, General, Settings, HomeKit. No sticker."
+        },
+        {
+          "term": "[eufy](eufy-homekit-code)",
+          "text": "Bottom of HomeBase 2; or HomeBase Settings, HomeKit Setup in the eufy app."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "q": "My brand is not here",
+      "a": "Write to support@freedom-terminal.com with the product name and a photo of its label, and it will be added with its source."
+    },
+    {
+      "q": "The sticker is gone",
+      "a": "See [Lost your HomeKit code](lost-homekit-code) or [Lost your Matter pairing code](lost-matter-pairing-code). Matter devices still paired somewhere are usually recoverable; HomeKit codes usually are not."
+    }
+  ],
+  "sources": [
+    {
+      "label": "Each brand page lists its own sources",
+      "url": "https://smarthomeqr.vishutdhar.com/guides"
+    }
+  ]
+}

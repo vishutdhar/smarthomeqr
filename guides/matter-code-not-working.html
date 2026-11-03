@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Matter pairing code not working: the six causes | SmartHomeQR</title>
+  <meta name="description" content="Setup code incorrect, pairing code expired, accessory already added, no Thread hub: why a correct Matter code is refused and what fixes each case.">
+  <link rel="canonical" href="https://smarthomeqr.vishutdhar.com/guides/matter-code-not-working">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#F2F2F7" media="(prefers-color-scheme: light)">
+  <meta name="color-scheme" content="dark light">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="icon" type="image/png" sizes="64x64" href="../images/favicon-64.18bc72ef.png">
+  <link rel="apple-touch-icon" href="../images/apple-touch-icon.4c9713b6.png">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="SmartHomeQR">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="Matter pairing code not working: the six causes">
+  <meta property="og:description" content="Setup code incorrect, pairing code expired, accessory already added, no Thread hub: why a correct Matter code is refused and what fixes each case.">
+  <meta property="og:url" content="https://smarthomeqr.vishutdhar.com/guides/matter-code-not-working">
+  <meta property="og:image" content="https://smarthomeqr.vishutdhar.com/images/og.fa189b3f.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="A HomeKit style setup code sticker beside the line Lost a HomeKit or Matter setup code?">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Matter pairing code not working: the six causes">
+  <meta name="twitter:description" content="Setup code incorrect, pairing code expired, accessory already added, no Thread hub: why a correct Matter code is refused and what fixes each case.">
+  <meta name="twitter:image" content="https://smarthomeqr.vishutdhar.com/images/og.fa189b3f.png">
+  <link rel="preload" href="../fonts/schibsted-grotesk-700-latin.519f310a.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../fonts/schibsted-grotesk-400-latin.a1b49272.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="guide-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap header-row">
+      <a class="wordmark" href="../">
+        <img src="../images/icon-56.9eebb22e.webp" alt="" width="28" height="28">
+        <span>SmartHomeQR</span>
+      </a>
+      <nav aria-label="Site">
+        <ul class="nav-links">
+          <li><a href="../guides">Guides</a></li>
+          <li><a href="../matter-qr-code-decoder">Decoder</a></li>
+          <li><a href="../#pricing">The app</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="hero guide-hero" aria-labelledby="hero-title">
+      <div class="wrap">
+        <p class="crumb"><a href="../guides">Guides</a></p>
+        <h1 id="hero-title">Matter pairing code not working: the six causes</h1>
+        <p class="lede">A Matter code that is read correctly can still be refused. The makers&#x27; own pages point at these six causes, and each has its own fix.</p>
+        <p class="fine">Checked against the makers&#x27; own pages on 3 November 2026.</p>
+      </div>
+    </section>
+
+
+    <section class="section" id="causes" aria-labelledby="causes-title">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="causes-title">Work down the list</h2>
+        </div>
+        <dl class="rows">
+          <div class="row">
+            <dt class="row-term">1. The device is already paired to another ecosystem</dt>
+            <dd>The printed code works at first setup and after a factory reset only. Once Google Home has the device, Apple Home needs a share code from Google Home, not the sticker. Open the first app and look for Linked Matter apps and services (Google), Turn On Pairing Mode (Apple), Other Assistants and Apps (Alexa) or Share with other services (SmartThings).</dd>
+          </div>
+          <div class="row">
+            <dt class="row-term">2. The pairing window closed</dt>
+            <dd>A new device waits for its first pairing for a limited time, then stops advertising; TP-Link, Govee, Kwikset and Sengled each quote about 15 minutes. Power it off and on, or for a Kwikset Halo Select press Resume Setup in the Kwikset app, and try again straight away.</dd>
+          </div>
+          <div class="row">
+            <dt class="row-term">3. The share code expired</dt>
+            <dd>A code shown by an app to add a second ecosystem lasts minutes: 15 for Alexa, about 3 for Google Home per TP-Link. Apple Home waits 5 minutes before it will make another. Generate it again and use it at once.</dd>
+          </div>
+          <div class="row">
+            <dt class="row-term">4. A digit was misread</dt>
+            <dd>The last digit of an 11 digit code is a check digit. Paste the code into the <a href="../matter-qr-code-decoder" rel="noopener">decoder</a>: if it fails the check, one digit is wrong, and 0 against 8, 1 against 7 and 3 against 8 are the usual swaps on a worn label.</dd>
+          </div>
+          <div class="row">
+            <dt class="row-term">5. No hub for a Thread device</dt>
+            <dd>A Matter over Thread device needs a Thread border router that the ecosystem can use. Apple lists HomePod mini, HomePod (2nd generation), Apple TV 4K (3rd generation, Wi-Fi and Ethernet) and compatible third party border routers, and says an iPhone 15 Pro or later on iOS 18 can control Thread accessories without one. Alexa needs a Thread enabled Echo, and Google Home a Thread border router from Google&#x27;s list, which names specific models such as Nest Hub (2nd generation), Nest Wifi Pro, the Google TV Streamer and the Google Home Speaker, while Nest Audio and Nest Mini are listed without Thread; both makers publish the model lists, linked below. Amazon&#x27;s advice when you have no Thread Echo is to set the device up in another Thread ecosystem first and share it to Alexa.</dd>
+          </div>
+          <div class="row">
+            <dt class="row-term">6. The device is not actually in pairing mode</dt>
+            <dd>Locks and bridges often need a button press or an app step first. Kwikset Halo Select converts to Matter from Lock Settings, Matter Integration in the Kwikset app before its label does anything. SwitchBot Hub 2 must be reset before Apple Home will take it. Check the maker&#x27;s page for the step your device needs.</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="section" id="messages" aria-labelledby="messages-title">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="messages-title">What the messages mean</h2>
+        </div>
+        <dl class="rows">
+          <div class="row">
+            <dt class="row-term">Setup code incorrect, or check the setup code and try again</dt>
+            <dd>Causes 1, 2 and 4. Rule out cause 4 with the decoder, then check whether the device is already paired somewhere, then power cycle.</dd>
+          </div>
+          <div class="row">
+            <dt class="row-term">Accessory already added, or already in another home</dt>
+            <dd>Cause 1. The device still belongs to another ecosystem or a previous owner. Share it from there. A factory reset is the other way, but only with the device&#x27;s permanent code in hand: the printed one, or the replacement code a maker&#x27;s upgrade generated, as Eve does. Without it the reset locks the device out of every ecosystem.</dd>
+          </div>
+          <div class="row">
+            <dt class="row-term">Could not find the accessory, or no accessory nearby</dt>
+            <dd>Causes 2, 5 and 6. The device is not advertising, or there is no Thread hub to hear it, or Bluetooth is off on the phone.</dd>
+          </div>
+          <div class="row">
+            <dt class="row-term">Pairing code expired</dt>
+            <dd>Cause 3. Make a new share code and use it within its window.</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="section" id="questions" aria-labelledby="faq-title">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="faq-title">Questions</h2>
+        </div>
+        <dl class="rows">
+          <div class="row">
+            <dt class="row-term">Can I use the printed code to add the device to a second app?</dt>
+            <dd>Not while it is paired to the first. The first app must share it. After a factory reset the permanent code works again, the printed one or a maker&#x27;s replacement code, but every ecosystem loses the device and has to be set up afresh.</dd>
+          </div>
+          <div class="row">
+            <dt class="row-term">Why does Apple Home accept the code but Google Home refuse the same one?</dt>
+            <dd>Because the device was paired to Apple Home first. Google Home now needs the temporary code Apple Home issues under Turn On Pairing Mode, or the device has to be reset.</dd>
+          </div>
+          <div class="row">
+            <dt class="row-term">The lock&#x27;s 15 minutes ran out while I was in the app</dt>
+            <dd>Kwikset: open the Kwikset app and press Resume Setup. Other locks: close and reopen pairing mode on the lock itself, then scan again.</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="section sources" id="sources" aria-labelledby="sources-title">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="sources-title">Sources</h2>
+          <p class="lede">Each page below was read on 3 November 2026. Makers move their pages; if one is gone, their support site has the current one.</p>
+        </div>
+        <ul class="source-list">
+          <li><a href="https://www.amazon.com/gp/help/customer/display.html?nodeId=T6iLWTtbZygaBJnQhg" rel="noopener">Amazon: share a Matter device with other assistants</a></li>
+          <li><a href="https://www.amazon.com/gp/help/customer/display.html?nodeId=TSWevY1sX8ADH2LC20" rel="noopener">Amazon: Matter and Thread on Alexa</a></li>
+          <li><a href="https://support.google.com/googlehome/answer/13127223?hl=en" rel="noopener">Google: link Matter devices to other apps</a></li>
+          <li><a href="https://support.apple.com/en-us/102557" rel="noopener">Apple: Matter accessories and home hubs</a></li>
+          <li><a href="https://support.google.com/googlehome/answer/12391458?hl=en" rel="noopener">Google: Thread border routers for Google Home</a></li>
+          <li><a href="https://www.tp-link.com/us/support/faq/3574/" rel="noopener">TP-Link: the 15 minute Matter setup window</a></li>
+          <li><a href="https://www.tp-link.com/us/support/faq/3564/" rel="noopener">TP-Link: Matter code lifetimes</a></li>
+          <li><a href="https://us.govee.com/pages/matter-faq" rel="noopener">Govee: Matter FAQ</a></li>
+          <li><a href="https://www.kwikset.com/support/answers/how-can-i-troubleshoot-matter-connectivity-on-my-halo-select-smart-lock" rel="noopener">Kwikset: Halo Select Matter troubleshooting</a></li>
+          <li><a href="https://support.switch-bot.com/hc/en-us/articles/35214812208023-SwitchBot-Hub-2-Matter-Setup-iOS" rel="noopener">SwitchBot Hub 2 Matter setup on iOS</a></li>
+          <li><a href="https://support.smartthings.com/hc/en-us/articles/11219700390804-SmartThings-x-Matter-Integration" rel="noopener">SmartThings and Matter</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section cta" aria-labelledby="cta-title">
+      <div class="wrap pricing-grid">
+        <div class="pricing-lead">
+          <h2 id="cta-title">Next time, have the code on your phone</h2>
+          <p class="lede">SmartHomeQR scans each label once and keeps every HomeKit, Matter and Z Wave code, by home and room, on iPhone, iPad, Apple Watch and Android. Offline, no account. Free for 5 devices.</p>
+          <div class="actions">
+            <a class="button button-primary" href="https://apps.apple.com/app/smarthomeqr/id6756529233">Download on the App Store</a>
+            <a class="button button-secondary" href="https://play.google.com/store/apps/details?id=com.vishutdhar.smarthomeqr">Get it on Google Play</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p class="footer-support">A fact on this page that is out of date, or a brand it should cover: write to <a href="mailto:support@freedom-terminal.com">support@freedom-terminal.com</a>.</p>
+      <div class="footer-row">
+        <ul class="footer-links">
+          <li><a href="../">SmartHomeQR</a></li>
+          <li><a href="../guides">Guides</a></li>
+          <li><a href="../matter-qr-code-decoder">Decoder</a></li>
+          <li><a href="../privacy">Privacy</a></li>
+          <li><a href="mailto:support@freedom-terminal.com">Support</a></li>
+          <li><a href="https://freedom-terminal.com/">A Freedom Terminal product</a></li>
+        </ul>
+        <div class="badges">
+          <a class="badge" href="https://apps.apple.com/app/smarthomeqr/id6756529233"><img src="../images/app-store-badge.6c5c68cc.svg" alt="Download on the App Store" width="120" height="40"></a>
+          <a class="badge" href="https://play.google.com/store/apps/details?id=com.vishutdhar.smarthomeqr"><img src="../images/google-play-badge.446c2320.png" alt="Get it on Google Play" width="135" height="40"></a>
+        </div>
+      </div>
+      <p class="fine">SmartHomeQR is an independent app and is not affiliated with Apple Inc., Google LLC, Amazon.com, Inc., Samsung Electronics, the Connectivity Standards Alliance or any device maker named on this page. Brand names belong to their owners and are used only to identify their products. App Store and HomeKit are trademarks of Apple Inc. Google Play is a trademark of Google LLC. Matter is a trademark of the Connectivity Standards Alliance.</p>
+      <p class="fine">&copy; 2026 Vishut Dhar</p>
+    </div>
+  </footer>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://smarthomeqr.vishutdhar.com/guides/matter-code-not-working#article",
+      "headline": "Matter pairing code not working: the six causes",
+      "description": "Setup code incorrect, pairing code expired, accessory already added, no Thread hub: why a correct Matter code is refused and what fixes each case.",
+      "url": "https://smarthomeqr.vishutdhar.com/guides/matter-code-not-working",
+      "datePublished": "2026-11-03",
+      "dateModified": "2026-11-03",
+      "author": {
+        "@type": "Organization",
+        "name": "Freedom Terminal",
+        "url": "https://freedom-terminal.com/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Freedom Terminal",
+        "url": "https://freedom-terminal.com/"
+      },
+      "isPartOf": {
+        "@id": "https://smarthomeqr.vishutdhar.com/#website"
+      },
+      "about": "Matter pairing problems"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "SmartHomeQR",
+          "item": "https://smarthomeqr.vishutdhar.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://smarthomeqr.vishutdhar.com/guides"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Matter code not working",
+          "item": "https://smarthomeqr.vishutdhar.com/guides/matter-code-not-working"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Can I use the printed code to add the device to a second app?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Not while it is paired to the first. The first app must share it. After a factory reset the permanent code works again, the printed one or a maker's replacement code, but every ecosystem loses the device and has to be set up afresh."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why does Apple Home accept the code but Google Home refuse the same one?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Because the device was paired to Apple Home first. Google Home now needs the temporary code Apple Home issues under Turn On Pairing Mode, or the device has to be reset."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "The lock's 15 minutes ran out while I was in the app",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Kwikset: open the Kwikset app and press Resume Setup. Other locks: close and reopen pairing mode on the lock itself, then scan again."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</body>
+</html>

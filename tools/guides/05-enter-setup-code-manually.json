@@ -1,0 +1,46 @@
+{
+  "kind": "topic", "order": 5,
+  "slug": "enter-setup-code-manually",
+  "short": "Type the code in",
+  "title": "QR code will not scan? Type the setup code in",
+  "description": "Where the manual code entry is in Apple Home, Google Home, Amazon Alexa and SmartThings, and which codes each one takes: 8 digit HomeKit, 11 or 21 digit Matter, Z Wave PIN.",
+  "lede": "A scratched, curled or badly lit label does not have to stop a setup. Every Home app has a place to type the code, a few taps deeper than the camera.",
+  "published": "2026-11-03", "read": "3 November 2026",
+  "about": "Manual setup code entry",
+  "sections": [
+    {
+      "id": "apps",
+      "heading": "Where the typed entry is",
+      "rows": [
+        {"term": "Apple Home", "text": "Add Accessory, then More options. Pick the accessory if it is listed; if not, My Accessory Isn't Shown Here, then Enter Code. It takes the 8 digit HomeKit code and the 11 or 21 digit Matter code, with or without the dashes. For ecobee, choosing the thermostat here puts the code on its screen."},
+        {"term": "Google Home", "text": "Add, then Device. When the scanner opens, Google's page says to tap Add a different way and search the brand; maker guides call the same step Set up without QR code. Paste the 11 digit Matter code. Google Home does not take HomeKit codes."},
+        {"term": "Amazon Alexa", "text": "Devices, the plus, Add Device, the Matter icon, Yes, then Try Numeric Code Instead. Type the 11 digit Matter code. Alexa does not take HomeKit codes."},
+        {"term": "Samsung SmartThings", "text": "Add, Add Device, then Enter under Enter setup code for the 11 or 21 digit Matter code. For a Z Wave device, Add device manually and type the first five digits of the DSK, the group printed first and often underlined."}
+      ]
+    },
+    {
+      "id": "reading",
+      "heading": "Reading a worn label",
+      "rows": [
+        {"term": "Know the shape first", "text": "HomeKit: eight digits as XXX-XX-XXX beside a house mark. Matter: eleven digits, usually printed as XXXX-XXX-XXXX beside the Matter mark, or twenty one. Z Wave: groups of five digits, the first group is the PIN. If the digits you see do not fit one of those, you are reading the serial number or the MAC address."},
+        {"term": "Let the check digit decide", "text": "A Matter code's last digit checks the other ten. Paste what you read into the [decoder](../matter-qr-code-decoder); if it passes, type that. If it fails, swap the doubtful digit (0 and 8, 1 and 7, 3 and 8, 5 and 6) and try again."},
+        {"term": "Photograph it before it gets worse", "text": "A phone photo in good light, from straight above, usually reads better than the eye. It is also the copy you keep. [SmartHomeQR](../) scans the QR code from the camera or a photo and reads supported printed codes from the label text, then saves them together."}
+      ]
+    }
+  ],
+  "questions": [
+    {"q": "Does typing the code pair the device the same way as scanning?", "a": "For Matter, yes: the Home app finds the device by the short discriminator and proves possession with the passcode, both of which are in the 11 digits. For HomeKit, the eight digits are the whole secret."},
+    {"q": "The Home app turned my 482-19-735 into 4821-9735", "a": "An owner on Apple's forum saw the same display change. A respondent there said both groupings mean the same eight digits and suggested typing the code in by hand; the change itself is not a sign of a wrong code."},
+    {"q": "Can I scan the QR code from a photo instead?", "a": "The Home apps want the camera on the label. SmartHomeQR can read a QR code from a photo you already took, then show it fullscreen for the Home app to scan."}
+  ],
+  "sources": [
+    {"label": "Apple: set up accessories in the Home app", "url": "https://support.apple.com/guide/iphone/set-up-accessories-iph125110541/ios"},
+    {"label": "Google: set up a Matter device", "url": "https://support.google.com/googlehome/answer/13127223?hl=en"},
+    {"label": "Amazon: add a Matter device to Alexa", "url": "https://www.amazon.com/gp/help/customer/display.html?nodeId=THb8haIG2r14WuNOCU"},
+    {"label": "SmartThings and Matter", "url": "https://support.smartthings.com/hc/en-us/articles/11219700390804-SmartThings-x-Matter-Integration"},
+    {"label": "SmartThings: Z Wave general information", "url": "https://support.smartthings.com/hc/en-us/articles/204392790-Z-Wave-General-Info"},
+    {"label": "SwitchBot: Hub 2 Matter setup on iOS (typed code steps)", "url": "https://support.switch-bot.com/hc/en-us/articles/35214812208023-SwitchBot-Hub-2-Matter-Setup-iOS"},
+    {"label": "ecobee: setting up Apple HomeKit", "url": "https://support.ecobee.com/s/articles/Setting-up-Apple-HomeKit-with-your-ecobee-Thermostat"},
+    {"label": "Apple Community: code reformatted to four and four", "url": "https://discussions.apple.com/thread/255083562"}
+  ]
+}

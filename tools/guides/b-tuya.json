@@ -1,0 +1,19 @@
+{
+  "kind": "brand", "slug": "tuya-smart-life-matter-code", "short": "Tuya and Smart Life",
+  "title": "Where a Tuya or Smart Life Matter code is",
+  "description": "Tuya based devices pair with the QR code on the device or the 11 digit pairing code, and share from the Tuya or Smart Life app with a one time, time limited sharing code. Zigbee devices behind a Tuya gateway share through the gateway.",
+  "lede": "Tuya powers many white label brands, so the sticker's spot varies by product. What stays the same is the app: it pairs with the printed code and shares with a temporary one.",
+  "published": "2026-11-03", "read": "3 November 2026", "about": "Tuya Matter codes",
+  "sections": [
+    {"id": "where", "heading": "Where the code is", "rows": [
+      {"term": "Adding in the Tuya app", "text": "Plus, Scan, then scan the QR code on the device or enter the 11 digit pairing code."},
+      {"term": "Sharing out", "text": "The device, the three dot menu, Share Device, then Share over Matter for a code or Share with QR Code. Tuya: the sharing code is one time use and time limited, and the pairing code and sharing code are different; the pairing code is used for the initial activation."},
+      {"term": "Zigbee behind a gateway", "text": "Those devices have no Matter code of their own. Share the gateway instead, with Share via Matter Gateway."},
+      {"term": "On the device", "text": "Because the label belongs to the white label brand, the printed location varies per product. Check the device, its box and its leaflet."}
+    ]}
+  ],
+  "sources": [
+    {"label": "Tuya developer: Matter interoperability", "url": "https://developer.tuya.com/en/docs/iot-device-dev/interoperability?id=Kd307fzbmfsij"},
+    {"label": "Tuya help center: share a Matter device", "url": "https://support.tuya.com/en/help/_detail/Kcf94vuqhpl53"}
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "kind": "topic", "order": 1,
+  "slug": "lost-homekit-code",
+  "short": "Lost HomeKit code",
+  "title": "Lost your HomeKit setup code? What still works",
+  "description": "Apple has no screen that shows a paired accessory's HomeKit code. Where to look, which makers' apps show the code, and when a reset or a replacement is the only way.",
+  "lede": "The eight digit code beside the house mark is the only key to a HomeKit accessory, and Apple keeps no copy you can read. Before you give up on a device, work through the places it can still be.",
+  "published": "2026-11-03", "read": "3 November 2026",
+  "about": "HomeKit setup codes",
+  "sections": [
+    {
+      "id": "first",
+      "heading": "First, what the code looks like and where it hides",
+      "lede": "A HomeKit setup code is eight digits printed as XXX-XX-XXX next to a small house mark, usually under or beside a QR code. Every unit has its own.",
+      "rows": [
+        {"term": "On the accessory", "text": "Often somewhere you have not looked: inside a battery cover (August, Yale, Schlage, Wemo Stage), on the underside of a hub (Lutron, eufy HomeBase), behind a wall plate (Leviton), on the neck of a bulb, or on a mounting plate. The [brand pages](where-is-the-setup-code) list the exact spot for each maker."},
+        {"term": "On the box and the quick start card", "text": "Most makers print a second copy on the packaging or the leaflet. Schlage even leaves a box on its guide marked Place label here. If you kept the box, check every face, including inside the lid."},
+        {"term": "Inside the maker's app", "text": "Some apps show the HomeKit code for a device that is set up in them: Meross (Device Settings, Device Info, HomeKit setup code), TP-Link Tapo and Kasa (an electronic QR code to save), Aqara Home for the Camera E1, the IKEA Home smart app for DIRIGERA. LIFX can recover a code only for lights that shipped without one."},
+        {"term": "On the device's own screen", "text": "ecobee thermostats never had a sticker. Main Menu, General, Settings, HomeKit, then Enable HomeKit pairing puts the QR code on the thermostat's screen. HomePod has no code at all: setup is by holding an iPhone near it, with a four digit passcode Siri speaks as the fallback."}
+      ]
+    },
+    {
+      "id": "paired",
+      "heading": "If the accessory is already in your home, you may not need it",
+      "rows": [
+        {"term": "Keep it paired and it keeps working", "text": "A paired accessory does not ask for its code again. Moving it to another room, renaming it, updating iOS, or adding people to your home needs nothing. The code is only needed to pair again."},
+        {"term": "Apple shows no code for a paired accessory", "text": "There is no place in the Home app or in Settings that reveals the eight digit code of an accessory you already paired. Apple's own lost code advice is to check the accessory, its manual, and to contact the maker."},
+        {"term": "Do not remove the accessory to fix a problem", "text": "Removing it from the Home app, resetting it, or deleting the home all put it back to the state where the code is required. Try restarting the accessory and the home hub first."},
+        {"term": "Accessory already in another home", "text": "That message means the accessory still holds a pairing from a previous home or owner. It needs a reset on the accessory itself, after which the printed code is required to pair it again."}
+      ]
+    },
+    {
+      "id": "gone",
+      "heading": "When the code is truly gone",
+      "rows": [
+        {"term": "Ask the maker, with the serial number", "text": "Makers differ. Nanoleaf takes a ticket with the serial number. Meross lists a factory mode route and then support with the purchase invoice. Aqara asks for the device id or serial. Eve says the code is not retrievable and the device has to be replaced."},
+        {"term": "Check whether the device has moved to Matter", "text": "Leviton Decora Smart Wi-Fi after firmware 2.1.0 and Eve devices after their Matter upgrade no longer accept the HomeKit sticker. Their Matter code lives in the maker's app and is the one to use."},
+        {"term": "Wemo", "text": "Belkin ended Wemo cloud and app support on January 31, 2026, and says no new HomeKit setups are possible after that date for the Wi-Fi models. Already paired Wemo devices and the Thread based ones keep working."},
+        {"term": "A replacement is sometimes the honest answer", "text": "For an accessory with no app route and no maker recovery, the printed code is the only key. If it is gone, the accessory cannot be paired with any Home again."}
+      ]
+    },
+    {
+      "id": "next-time",
+      "heading": "So it does not happen again",
+      "paragraphs": [
+        "Scan or photograph every label before the device goes on the wall, in the ceiling or behind the cabinet. Keep the quick start card in one folder. And save the code somewhere you will find it in three years: [SmartHomeQR](../) scans the label once and keeps the code, the maker and the model by home and room, offline, on iPhone, iPad, Apple Watch and Android."
+      ]
+    }
+  ],
+  "questions": [
+    {"q": "Can the Home app show me the code of an accessory I already paired?", "a": "No. Apple documents no such screen, and its lost code advice is to check the accessory, the manual and the maker. Keep the accessory paired and you will not need the code."},
+    {"q": "I typed the code and the Home app says the setup code is incorrect", "a": "Check 0 against 8, 1 against 7 and 3 against 8 on a worn label, type it with the dashes or without, and make sure the accessory is actually in pairing mode and not already paired elsewhere. If it keeps failing, the maker can check the label from a clear photo."},
+    {"q": "The Home app reformatted my code to four and four digits", "a": "An owner on Apple's forum saw the same. A respondent there said both groupings mean the same eight digits and suggested typing the code in by hand; the display change itself is not a sign of a wrong code."},
+    {"q": "Is a Matter code the same thing?", "a": "No. Matter codes are 11 or 21 digits and work differently once a device is paired. See [Lost your Matter pairing code](lost-matter-pairing-code)."}
+  ],
+  "sources": [
+    {"label": "Apple: set up accessories in the Home app", "url": "https://support.apple.com/guide/iphone/set-up-accessories-iph125110541/ios"},
+    {"label": "Apple: if you cannot add an accessory", "url": "https://support.apple.com/en-us/126198"},
+    {"label": "Apple HomeKit ADK: setup code format and prohibited codes", "url": "https://github.com/apple/HomeKitADK/blob/master/HAP/HAPAccessorySetup.c"},
+    {"label": "Apple: set up HomePod", "url": "https://support.apple.com/en-us/111110"},
+    {"label": "Apple Community: code reformatted to four and four", "url": "https://discussions.apple.com/thread/255083562"},
+    {"label": "Meross: find the HomeKit setup code", "url": "https://www.meross.com/en-gc/FAQ/363.html"},
+    {"label": "TP-Link: HomeKit electronic QR code", "url": "https://www.tp-link.com/us/support/faq/3390/"},
+    {"label": "LIFX: HomeKit code recovery", "url": "https://support.lifx.com/hc/en-us/articles/14509142777367-HomeKit-Code-Recovery"},
+    {"label": "Nanoleaf: pairing code help", "url": "https://support.nanoleaf.me/hc/en-us/articles/32896455578132-FAQ-Technical-Pairing-Code-Help"},
+    {"label": "Eve: lost HomeKit code reply", "url": "https://www.evehome.com/en-us/comment/reply/node/5906/field_comments/25226"},
+    {"label": "ecobee: setting up Apple HomeKit", "url": "https://support.ecobee.com/s/articles/Setting-up-Apple-HomeKit-with-your-ecobee-Thermostat"},
+    {"label": "Leviton: Matter update for Decora Smart Wi-Fi", "url": "https://leviton.com/support/resources/product-support/decora-smart-support/decora-smart-wi-fi/how-do-i-update-my-decora-smart-wi-fi-2nd-gen-device-to-support-matter"},
+    {"label": "Belkin: Wemo end of support", "url": "https://www.belkin.com/support-article/?articleNum=335419"}
+  ]
+}

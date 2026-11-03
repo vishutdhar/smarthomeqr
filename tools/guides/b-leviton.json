@@ -1,0 +1,19 @@
+{
+  "kind": "brand", "slug": "leviton-decora-smart-homekit-matter-code", "short": "Leviton Decora Smart",
+  "title": "Where the Leviton Decora Smart HomeKit and Matter codes are",
+  "description": "Leviton prints the Gen 2 HomeKit QR code in the lower right corner behind the wall plate. After the Matter firmware update the sticker stops working and the Matter code comes from the My Leviton app.",
+  "lede": "Take the wall plate off. Leviton prints the code in the lower right corner of the device, and after the Matter update it moves into the app.",
+  "published": "2026-11-03", "read": "3 November 2026", "about": "Leviton Decora Smart setup codes",
+  "sections": [
+    {"id": "where", "heading": "Where the code is", "rows": [
+      {"term": "Gen 2 Wi-Fi, lost box and manual", "text": "Leviton: a QR code can be found in the lower right corner. Remove the wall plate, scan the code, replace the wall plate."},
+      {"term": "Gen 1 HomeKit (DH1KD, DH6HD, DH15S)", "text": "Or when a Gen 2 code will not scan: choose Use the HomeKit Setup Code in the Home app and type the 8 digit code from the lower right corner of the device, with the wall plate removed."},
+      {"term": "After the Matter update (firmware 2.1.0 and later)", "text": "The old HomeKit QR cannot be used. The device must be re-added to Apple Home with the Matter code from the My Leviton app."},
+      {"term": "The Matter code in the app", "text": "You can always retrieve your Matter QR pairing code using Device Settings in the My Leviton app. It is unique per device, can be saved as an image, and is used with any Matter enabled controller for the first setup."}
+    ]}
+  ],
+  "sources": [
+    {"label": "Leviton: enroll HomeKit without the box and manual", "url": "https://leviton.com/support/resources/product-support/decora-smart-support/decora-smart-with-homekit-technology/i-lost-my-box-and-manual-how-do-i-enroll-homekit-without-the-qr-code"},
+    {"label": "Leviton: update Decora Smart Wi-Fi 2nd gen to Matter", "url": "https://leviton.com/support/resources/product-support/decora-smart-support/decora-smart-wi-fi/how-do-i-update-my-decora-smart-wi-fi-2nd-gen-device-to-support-matter"}
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "kind": "brand", "slug": "yale-homekit-matter-code", "short": "Yale",
+  "title": "Where the Yale Assure Lock HomeKit and Matter codes are",
+  "description": "Yale Assure Lock 2 keeps its QR code and HomeKit code on the side of the battery compartment, with the setup QR on the quick start guide. The Matter module's printed QR pairs the first ecosystem only.",
+  "lede": "Take the battery cover off. Yale puts the codes on the side of the battery compartment, and repeats the setup QR on the quick start guide.",
+  "published": "2026-11-03", "read": "3 November 2026", "about": "Yale Assure Lock setup codes",
+  "sections": [
+    {"id": "where", "heading": "Where the code is printed", "rows": [
+      {"term": "Assure Lock 2", "text": "Remove the battery cover. The QR code and the serial number are on the side of the battery compartment. Yale locks with a Smart Module use the code on the module instead."},
+      {"term": "Assure Lock 2 Touch (YRD450)", "text": "The manual calls it the 8 digit HomeKit accessory code located on the side of the lock under the battery cover, and says the setup QR code can also be found on the quick start guide. HomeKit is switched on from the Yale Access app, under the lock's settings, HomeKit."},
+      {"term": "No QR, no serial", "text": "The Yale Access app lets you pick the model with Use Product Selector instead of typing a serial number."}
+    ]},
+    {"id": "matter", "heading": "Matter module", "rows": [
+      {"term": "First ecosystem only", "text": "Yale's Matter Module FAQ: the lock is only paired using the QR code and enrollment menu for the first ecosystem. For a second one, follow the first ecosystem's own sharing steps."},
+      {"term": "Where the Matter label is", "text": "Yale does not state which face of the Assure Lock 2 Matter models carries the Matter code, or whether the Yale app shows it. Check the battery compartment side and the quick start guide first."}
+    ]}
+  ],
+  "sources": [
+    {"label": "Yale: find your device's serial number and QR code", "url": "https://support.shopyalehome.com/how-do-i-find-my-device-s-serial-number-and-qr-code-B1uDpCy0n"},
+    {"label": "Yale Assure Lock 2 Touch manual (PDF)", "url": "https://images.thdstatic.com/catalog/pdfImages/c5/c53e1a7b-4095-4be8-96a9-dceb3e326147.pdf"},
+    {"label": "Yale: Matter Module FAQ", "url": "https://support.shopyalehome.com/faq-matter-module-rJzK0Ro"}
+  ]
+}

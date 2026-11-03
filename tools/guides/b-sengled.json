@@ -1,0 +1,19 @@
+{
+  "kind": "brand", "slug": "sengled-matter-code", "short": "Sengled",
+  "title": "Where the Sengled Matter code is",
+  "description": "Sengled Matter Wi-Fi bulbs ship with the Matter QR code on the quick start guide. The code works for the first ecosystem only; pairing mode closes after 15 minutes and reopens with a power cycle.",
+  "lede": "Keep the quick start guide. Sengled's own Q and A points Alexa users at the QR code on that guide, and the bulb pairs without the Sengled app.",
+  "published": "2026-11-03", "read": "3 November 2026", "about": "Sengled Matter code",
+  "sections": [
+    {"id": "where", "heading": "Where the code is", "rows": [
+      {"term": "On the quick start guide", "text": "Sengled's Matter Q and A: if prompted, scan the QR code on the quick start guide. The bulb is not compatible with the Sengled Home app, so there is no in-app copy. Whether the code is also printed on the bulb body is not stated."},
+      {"term": "First ecosystem only", "text": "The Matter setup code can only be used to add the device to the first ecosystem. For others, generate a new code in the first ecosystem's app, for example Alexa, Other Assistants and Apps."},
+      {"term": "Pairing mode", "text": "Turns off by itself after 15 minutes. Turn the bulb off and on to reopen it."},
+      {"term": "Support", "text": "Sengled's support site was not reachable when this page was checked, so the quick start guide and the user guide are the references."}
+    ]}
+  ],
+  "sources": [
+    {"label": "Sengled Matter Wi-Fi bulb user guide (PDF)", "url": "https://m.media-amazon.com/images/I/A1i+X0zCC4L.pdf"},
+    {"label": "Sengled Matter Q and A (PDF)", "url": "https://m.media-amazon.com/images/I/61uLzY7+bKL.pdf"}
+  ]
+}

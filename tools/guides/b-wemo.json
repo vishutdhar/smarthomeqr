@@ -1,0 +1,23 @@
+{
+  "kind": "brand", "slug": "wemo-homekit-code", "short": "Wemo",
+  "title": "Where the Wemo HomeKit code is, and the January 2026 cutoff",
+  "description": "Wemo prints the HomeKit code on the back of the device and in the quick install guide. Belkin ended Wemo app support on January 31, 2026, and says no new HomeKit setups are possible after that for Wi-Fi models; Thread models are exempt.",
+  "lede": "Wemo's code is on the back of the device and in the guide. The bigger fact is the date: after January 31, 2026, Belkin says a Wi-Fi Wemo cannot be set up with HomeKit again.",
+  "published": "2026-11-03", "read": "3 November 2026", "about": "Wemo HomeKit code",
+  "sections": [
+    {"id": "where", "heading": "Where the code is", "rows": [
+      {"term": "On the device and in the guide", "text": "Belkin: the Apple HomeKit code is provided in the Quick Install Guide and can also be found at the back of the Wemo device. Each unit's code is unique."},
+      {"term": "Wemo Mini", "text": "The 2nd generation Mini has the code on a sticker on the back and in the quick start guide. The 1st generation Mini has no HomeKit label and had to be connected through the Wemo app."},
+      {"term": "Wemo Stage (Thread)", "text": "The code is in the quick start guide and on the back of the unit after removing the battery cover."}
+    ]},
+    {"id": "cutoff", "heading": "The cutoff", "paragraphs": [
+      "Belkin ended Wemo cloud and app support on January 31, 2026. Its notice says that after that date you will no longer be able to set up a Wemo device with Apple HomeKit. Devices already paired keep working locally, and Thread based Wemo devices are not affected. So for a Wi-Fi Wemo, do not remove it from the Home app or reset it: the printed code will not bring it back."
+    ]}
+  ],
+  "sources": [
+    {"label": "Belkin: Wemo HomeKit code location", "url": "https://www.belkin.com/support-article/?articleNum=278428"},
+    {"label": "Belkin: Wemo Mini HomeKit", "url": "https://www.belkin.com/support-article/?articleNum=283241"},
+    {"label": "Belkin: Wemo Stage", "url": "https://www.belkin.com/support-article/?articleNum=318298"},
+    {"label": "Belkin: Wemo end of support", "url": "https://www.belkin.com/support-article/?articleNum=335419"}
+  ]
+}

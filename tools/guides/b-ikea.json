@@ -1,0 +1,18 @@
+{
+  "kind": "brand", "slug": "ikea-dirigera-matter-homekit-code", "short": "IKEA DIRIGERA",
+  "title": "Where the IKEA DIRIGERA and Matter codes are",
+  "description": "IKEA Matter devices carry the QR code on the yellow cover in the packaging and an 11 digit code on the device or packaging. DIRIGERA's HomeKit code is shown in the IKEA Home smart app, not on a sticker.",
+  "lede": "Find the yellow cover in the box for the Matter QR. For the hub itself, the HomeKit code lives in the IKEA Home smart app.",
+  "published": "2026-11-03", "read": "3 November 2026", "about": "IKEA DIRIGERA setup codes",
+  "sections": [
+    {"id": "where", "heading": "Where the code is", "rows": [
+      {"term": "Matter devices from IKEA", "text": "Scan the QR code from the yellow cover in the packaging. If it will not scan, use the 11 digit numeric Matter code printed on the device or packaging."},
+      {"term": "DIRIGERA into Apple Home", "text": "In the IKEA Home smart app open the hub settings, choose Add to Apple Home, then scan the HomeKit code displayed in the app. The code is shown in the app, not read off a sticker."},
+      {"term": "As a Matter bridge", "text": "DIRIGERA acts as a Matter bridge for older Zigbee TRÅDFRI devices, so they reach Matter ecosystems through the hub."}
+    ]}
+  ],
+  "sources": [
+    {"label": "IKEA: Matter compatible system", "url": "https://www.ikea.com/us/en/product-guides/ikea-home-smart-system/ikea-matter-compatible-system-pub7ab815e0/"},
+    {"label": "IKEA: add DIRIGERA to Apple Home", "url": "https://www.ikea.com/se/en/customer-service/knowledge/articles/c84ba9dd-93e4-4975-9810-67fd69b9dd75.html"}
+  ]
+}

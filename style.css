@@ -1447,3 +1447,52 @@ h3 {
     color: #000000;
   }
 }
+
+/* Guide pages. The same rows as the home page, plus a breadcrumb, running text and a source list. */
+
+.guide-hero .lede {
+  margin-top: 24px;
+}
+
+.guide-hero .fine {
+  margin-top: 16px;
+}
+
+.crumb {
+  margin-bottom: 16px;
+  color: var(--muted);
+  font-size: var(--fs-fine);
+}
+
+.crumb a {
+  color: var(--link);
+}
+
+.prose {
+  margin-top: 32px;
+  max-width: var(--measure-body);
+}
+
+.prose p + p {
+  margin-top: 1em;
+}
+
+.source-list {
+  margin-top: 32px;
+  max-width: var(--measure-body);
+}
+
+.source-list li {
+  padding-block: 8px;
+  border-top: 1px solid var(--hairline);
+  overflow-wrap: anywhere;
+}
+
+.source-list li:first-child {
+  border-top: 0;
+}
+
+.rows a,
+.prose a {
+  color: var(--link);
+}

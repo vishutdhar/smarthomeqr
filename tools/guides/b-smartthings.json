@@ -1,0 +1,21 @@
+{
+  "kind": "brand", "slug": "smartthings-matter-zwave-code", "short": "SmartThings",
+  "title": "SmartThings: Matter codes, Z Wave DSK and the hub QR",
+  "description": "SmartThings adds Matter devices by QR or the 11 or 21 digit code, Z Wave devices by QR or the first five DSK digits, and shares Matter devices with a code that differs from the label. Hubs are added by QR or Scan Nearby.",
+  "lede": "SmartThings takes every kind of code and says which: Matter digits, the Z Wave PIN, the hub's own QR. Its share code is never the one on the sticker.",
+  "published": "2026-11-03", "read": "3 November 2026", "about": "SmartThings setup codes",
+  "sections": [
+    {"id": "where", "heading": "Which code goes where", "rows": [
+      {"term": "Matter devices", "text": "Matter QR codes include an 11 or 21 digit setup code that can be used if the QR code cannot be scanned: Add, Add Device, then Enter under Enter setup code."},
+      {"term": "Z Wave devices", "text": "Scan the QR code on the device, or Add device manually and enter the first 5 digits of the DSK, the PIN. S2 unauthenticated devices join without a QR."},
+      {"term": "Sharing a Matter device", "text": "The device, More, Share with other services, Share device. SmartThings: this code is generated for the sharing process specifically and is different than the QR code physically on your device."},
+      {"term": "Hubs", "text": "Devices, Add, Scan QR Code, or Scan Nearby. 2015 hubs use Add without QR Code. Where the Station's QR is printed is no longer on a Samsung page; owners point to the bottom of the unit."}
+    ]}
+  ],
+  "sources": [
+    {"label": "SmartThings and Matter", "url": "https://support.smartthings.com/hc/en-us/articles/11219700390804-SmartThings-x-Matter-Integration"},
+    {"label": "SmartThings: Z Wave general information", "url": "https://support.smartthings.com/hc/en-us/articles/204392790-Z-Wave-General-Info"},
+    {"label": "SmartThings enabled hubs", "url": "https://support.smartthings.com/hc/en-us/articles/360052390151-SmartThings-Enabled-Hubs"},
+    {"label": "SmartThings community: where to find the activation code", "url": "https://community.smartthings.com/t/where-to-find-activation-code/74923"}
+  ]
+}
