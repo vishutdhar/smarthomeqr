@@ -310,6 +310,8 @@ h3 {
 .button {
   display: inline-flex;
   align-items: center;
+  font: inherit;
+  cursor: pointer;
   justify-content: center;
   min-height: 48px;
   padding: 0 20px;
@@ -328,7 +330,12 @@ h3 {
 
 .button-secondary {
   border: 1px solid var(--button-line);
+  background: transparent;
   color: var(--ink);
+}
+
+.button[hidden] {
+  display: none;
 }
 
 .button-secondary:hover {
@@ -1199,5 +1206,244 @@ h3 {
 
   .actions .button {
     flex: 1 1 100%;
+  }
+}
+
+/* The decoder page. One field, then the label the page regenerates beside what it read. The label
+   reuses the hero sticker's paper and ink. */
+
+.tool-hero .lede {
+  margin-top: 32px;
+}
+
+.tool-form {
+  margin-top: 40px;
+  max-width: 44em;
+}
+
+.field-label {
+  display: block;
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.field-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.field {
+  flex: 1 1 18em;
+  min-width: 0;
+  min-height: 48px;
+  padding: 0 16px;
+  border: 1px solid var(--button-line);
+  border-radius: var(--radius);
+  background: var(--surface-1);
+  color: var(--ink);
+  font: inherit;
+  font-size: var(--fs-lede);
+  font-feature-settings: "tnum" 1;
+  letter-spacing: 0.01em;
+}
+
+.field::placeholder {
+  color: var(--muted);
+  opacity: 1;
+}
+
+.field:focus-visible {
+  outline-offset: 0;
+  border-color: var(--link);
+}
+
+.field[aria-invalid="true"] {
+  border-color: #FF453A;
+}
+
+.tool-form .fine {
+  margin-top: 12px;
+  max-width: var(--measure-body);
+}
+
+.field-error {
+  margin-top: 12px;
+  max-width: var(--measure-body);
+  color: var(--ink);
+  font-weight: 700;
+  text-wrap: pretty;
+}
+
+.examples {
+  margin-top: 16px;
+  color: var(--muted);
+  font-size: var(--fs-fine);
+}
+
+.example {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--link);
+  font: inherit;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+  cursor: pointer;
+}
+
+.example:hover {
+  text-decoration-thickness: 2px;
+}
+
+.result {
+  scroll-margin-top: 24px;
+}
+
+.result-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  column-gap: var(--col-gap);
+  row-gap: 40px;
+  align-items: start;
+}
+
+.label-figure {
+  max-width: 340px;
+}
+
+.label-svg {
+  width: 100%;
+  height: auto;
+}
+
+.sticker-text {
+  fill: var(--print);
+  font-family: var(--font);
+  font-size: 40px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.sticker-text-wide {
+  font-size: 34px;
+}
+
+.sticker-note {
+  fill: var(--print);
+  font-family: var(--font);
+  font-size: 15px;
+}
+
+.label-figure .fine {
+  margin-top: 16px;
+}
+
+.label-actions {
+  margin-top: 16px;
+}
+
+.result-fields h2 {
+  color: var(--ink);
+  font-size: var(--fs-h2);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+}
+
+.result-fields .lede {
+  margin-top: 16px;
+}
+
+.rows-compact {
+  margin-top: 24px;
+}
+
+.rows-compact .row {
+  grid-template-columns: minmax(0, 4fr) minmax(0, 8fr);
+  padding-block: 16px;
+}
+
+.rows-compact .row-term {
+  font-size: var(--fs-body);
+}
+
+.rows-compact .code-sample {
+  margin-top: 0;
+  color: var(--ink);
+  font-size: var(--fs-lede);
+  overflow-wrap: anywhere;
+}
+
+.row-note {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: var(--fs-fine);
+  line-height: 1.5;
+}
+
+@media (max-width: 700px) {
+  .result-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .rows-compact .row {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 4px;
+  }
+}
+
+/* Printing: the label alone, at the size of a real one. */
+
+@media print {
+  .tool-page {
+    background: #FFFFFF;
+  }
+
+  .tool-page .site-header,
+  .tool-page .skip-link,
+  .tool-page .tool-hero,
+  .tool-page .result-fields,
+  .tool-page .label-actions,
+  .tool-page #inside,
+  .tool-page #questions,
+  .tool-page .cta,
+  .tool-page .site-footer {
+    display: none;
+  }
+
+  .tool-page .result {
+    padding-top: 0;
+  }
+
+  .tool-page .result-grid {
+    display: block;
+  }
+
+  .tool-page .label-figure {
+    width: 2.4in;
+    max-width: none;
+  }
+
+  .tool-page .sticker-paper {
+    fill: #FFFFFF;
+    stroke: #000000;
+  }
+
+  .tool-page .sticker-line {
+    stroke: #000000;
+  }
+
+  .tool-page .sticker-ink,
+  .tool-page .sticker-text,
+  .tool-page .sticker-note {
+    fill: #000000;
+  }
+
+  .tool-page .label-figure .fine {
+    color: #000000;
   }
 }
