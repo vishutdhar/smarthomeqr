@@ -1,22 +1,55 @@
 {
-  "kind": "brand", "slug": "eve-homekit-matter-code", "short": "Eve",
+  "kind": "brand",
+  "slug": "eve-homekit-matter-code",
+  "short": "Eve",
   "title": "Where the Eve HomeKit code is, and what the Matter upgrade changes",
-  "description": "Eve prints the HomeKit code on a sticker on the accessory and in the quick start guide. After the Matter upgrade a new Matter setup code replaces it, stored in the Eve app.",
+  "description": "Eve prints the HomeKit code on the accessory and in the quick start guide. After the Matter upgrade a new Matter setup code replaces it, kept in the Eve app.",
   "lede": "Eve is plain about it: the HomeKit code is on the accessory and in the guide, it cannot be retrieved, and once an Eve device moves to Matter the sticker stops working.",
-  "published": "2026-11-03", "read": "3 November 2026", "about": "Eve HomeKit and Matter setup codes",
+  "published": "2026-11-03",
+  "read": "3 November 2026",
+  "about": "Eve HomeKit and Matter setup codes",
   "sections": [
-    {"id": "where", "heading": "Where the code is printed", "rows": [
-      {"term": "On the accessory and in the guide", "text": "Eve staff: the HomeKit code is on a sticker on the accessory and in the quick start guide. Eve Outdoor Cam has it on the mounting plate as well."},
-      {"term": "Lost", "text": "Eve's reply to a lost code: the setup code is available only to you and no one else and is not retrievable; if you have lost it, you need to replace the device."}
-    ]},
-    {"id": "matter", "heading": "After the Matter upgrade", "rows": [
-      {"term": "A new code replaces the sticker", "text": "Upgrading an Eve device to Matter generates a new Matter setup code that completely replaces the HomeKit setup code. The printed sticker no longer pairs the device."},
-      {"term": "The Eve app keeps it", "text": "The Eve app stores that Matter setup code. Eve also offers to send it by AirDrop or email, save it to Photos or Files, or print it. Do that at the upgrade: Eve's own fix for a failed re-add is to reset the device and retry with the Matter setup code provided at the beginning of the upgrade."},
-      {"term": "A second ecosystem", "text": "Eve sends you to Apple Home: Accessory Details, the gear, Turn on Pairing Mode, then use the setup code shown."}
-    ]}
+    {
+      "id": "where",
+      "heading": "Where the code is printed",
+      "rows": [
+        {
+          "term": "On the accessory and in the guide",
+          "text": "Eve staff: the HomeKit code is on a sticker on the accessory and in the quick start guide. Eve Outdoor Cam has it on the mounting plate as well."
+        },
+        {
+          "term": "Lost",
+          "text": "Eve's reply to a lost code: the setup code is available only to you and no one else and is not retrievable; if you have lost it, you need to replace the device."
+        }
+      ]
+    },
+    {
+      "id": "matter",
+      "heading": "After the Matter upgrade",
+      "rows": [
+        {
+          "term": "A new code replaces the sticker",
+          "text": "Upgrading an Eve device to Matter generates a new Matter setup code that completely replaces the HomeKit setup code. The printed sticker no longer pairs the device."
+        },
+        {
+          "term": "The Eve app keeps it",
+          "text": "The Eve app stores that Matter setup code. Eve also offers to send it by AirDrop or email, save it to Photos or Files, or print it. Do that at the upgrade: Eve's own fix for a failed re-add is to reset the device and retry with the Matter setup code provided at the beginning of the upgrade."
+        },
+        {
+          "term": "A second ecosystem",
+          "text": "Eve sends you to Apple Home: Accessory Details, the gear, Turn on Pairing Mode, then use the setup code shown."
+        }
+      ]
+    }
   ],
   "sources": [
-    {"label": "Eve: lost HomeKit code reply", "url": "https://www.evehome.com/en-us/comment/reply/node/5906/field_comments/25226"},
-    {"label": "Eve: upgrade to Matter", "url": "https://www.evehome.com/en/upgrade-to-matter"}
+    {
+      "label": "Eve: lost HomeKit code reply",
+      "url": "https://www.evehome.com/en-us/comment/reply/node/5906/field_comments/25226"
+    },
+    {
+      "label": "Eve: upgrade to Matter",
+      "url": "https://www.evehome.com/en/upgrade-to-matter"
+    }
   ]
 }

@@ -1,21 +1,53 @@
 {
-  "kind": "brand", "slug": "homepod-apple-tv-setup-code", "short": "HomePod and Apple TV",
+  "kind": "brand",
+  "slug": "homepod-apple-tv-setup-code",
+  "short": "HomePod and Apple TV",
   "title": "HomePod and Apple TV have no setup code",
-  "description": "HomePod sets up by holding an iPhone near it, with a four digit Siri passcode as the fallback. Apple TV becomes a home hub from its settings. Both are controllers, so the Matter code comes from the accessory, not from them.",
+  "description": "HomePod pairs by holding an iPhone near it, Apple TV joins from its settings. Neither has a code: Matter codes come from the accessory, not the hub.",
   "lede": "People search for a HomePod HomeKit code. There is none: HomePod pairs by proximity, and Apple TV joins a home from its own settings.",
-  "published": "2026-11-03", "read": "3 November 2026", "about": "HomePod and Apple TV setup",
+  "published": "2026-11-03",
+  "read": "3 November 2026",
+  "about": "HomePod and Apple TV setup",
   "sections": [
-    {"id": "where", "heading": "How they set up", "rows": [
-      {"term": "HomePod", "text": "Hold an unlocked iPhone next to it and centre the HomePod in the viewfinder. If the camera cannot be used, tap Enter Passcode Manually and Siri speaks a four digit passcode. No printed code, no sticker on the box."},
-      {"term": "Apple TV", "text": "Becomes a home hub when it is added to a room under Settings, AirPlay and Apple Home. Apple says a home hub is needed to add Matter accessories to the Home app; on iOS 18 and later an iPhone can add and control Matter accessories without one, though Apple recommends a hub."},
-      {"term": "Thread", "text": "Apple's home hub page names HomePod mini, HomePod (2nd generation) and Apple TV 4K (3rd generation, Wi-Fi and Ethernet) as Thread enabled hubs, and its Matter page adds compatible third party border routers and says an iPhone 15 Pro or later on iOS 18 can control Thread accessories without a hub. Apple TV 4K (2nd generation) also lists Thread in its specifications. Matter over Thread accessories need one of these; Apple's pages are the full list."},
-      {"term": "Matter codes", "text": "Come from the accessory, never from the hub. Apple lists every Matter accessory paired from an iPhone under Settings, General, Matter Accessories, and keeps their setup codes in iCloud Keychain."}
-    ]}
+    {
+      "id": "where",
+      "heading": "How they set up",
+      "rows": [
+        {
+          "term": "HomePod",
+          "text": "Hold an unlocked iPhone next to it and centre the HomePod in the viewfinder. If the camera cannot be used, tap Enter Passcode Manually and Siri speaks a four digit passcode. No printed code, no sticker on the box."
+        },
+        {
+          "term": "Apple TV",
+          "text": "Becomes a home hub when it is added to a room under Settings, AirPlay and Apple Home. Apple says a home hub is needed to add Matter accessories to the Home app; on iOS 18 and later an iPhone can add and control Matter accessories without one, though Apple recommends a hub."
+        },
+        {
+          "term": "Thread",
+          "text": "Apple's home hub page names HomePod mini, HomePod (2nd generation) and Apple TV 4K (3rd generation, Wi-Fi and Ethernet) as Thread enabled hubs, and its Matter page adds compatible third party border routers and says an iPhone 15 Pro or later on iOS 18 can control Thread accessories without a hub. Apple TV 4K (2nd generation) also lists Thread in its specifications. Matter over Thread accessories need one of these; Apple's pages are the full list."
+        },
+        {
+          "term": "Matter codes",
+          "text": "Come from the accessory, never from the hub. Apple lists every Matter accessory paired from an iPhone under Settings, General, Matter Accessories, and keeps their setup codes in iCloud Keychain."
+        }
+      ]
+    }
   ],
   "sources": [
-    {"label": "Apple: set up HomePod", "url": "https://support.apple.com/en-us/111110"},
-    {"label": "Apple: home hubs", "url": "https://support.apple.com/en-us/102557"},
-    {"label": "Apple: Matter accessories", "url": "https://support.apple.com/en-us/102135"},
-    {"label": "Apple TV 4K (2nd generation) specifications", "url": "https://support.apple.com/en-us/101605"}
+    {
+      "label": "Apple: set up HomePod",
+      "url": "https://support.apple.com/en-us/111110"
+    },
+    {
+      "label": "Apple: home hubs",
+      "url": "https://support.apple.com/en-us/102557"
+    },
+    {
+      "label": "Apple: Matter accessories",
+      "url": "https://support.apple.com/en-us/102135"
+    },
+    {
+      "label": "Apple TV 4K (2nd generation) specifications",
+      "url": "https://support.apple.com/en-us/101605"
+    }
   ]
 }

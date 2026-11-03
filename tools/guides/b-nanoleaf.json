@@ -1,19 +1,45 @@
 {
-  "kind": "brand", "slug": "nanoleaf-pairing-code", "short": "Nanoleaf",
+  "kind": "brand",
+  "slug": "nanoleaf-pairing-code",
+  "short": "Nanoleaf",
   "title": "Where the Nanoleaf pairing code is",
-  "description": "Nanoleaf prints the 8 digit HomeKit code, or the 11 digit Matter code, on the back of the controller or bulb base and on the quick start guide. Lost codes go to support with the serial number.",
+  "description": "Nanoleaf prints the 8 digit HomeKit or 11 digit Matter code on the back of the controller or bulb base and on the welcome card. Lost codes go to support.",
   "lede": "Turn the controller over. Nanoleaf prints the pairing code on the back of the controller or the base of the bulb, and again on the welcome card.",
-  "published": "2026-11-03", "read": "3 November 2026", "about": "Nanoleaf pairing code",
+  "published": "2026-11-03",
+  "read": "3 November 2026",
+  "about": "Nanoleaf pairing code",
   "sections": [
-    {"id": "where", "heading": "Where the code is printed", "rows": [
-      {"term": "Controller or bulb base", "text": "Nanoleaf: the 8 digit pairing code, or the 11 digit pairing code on Matter devices, is found on the back of your controller or bulb base, or on the quick start guide or welcome card. Some products also pair by an NFC tap."},
-      {"term": "Lost", "text": "Each controller or bulb base carries a QR code and or 8 digit code. If none can be found, submit a ticket with the serial number, which usually starts with S1 or S2, under Software Support, Pairing or Setup Issues, Misplaced or Lost Pairing Code."},
-      {"term": "Matter over Wi-Fi", "text": "For a device the Nanoleaf app already has, the app can create a pairing code to copy, or a QR code to scan from another phone, from Device Settings, under Connections. A device already commissioned by another ecosystem must be shared from that ecosystem instead. Nanoleaf strongly recommends pairing in the Nanoleaf app first, and resetting the device after a failed attempt."}
-    ]}
+    {
+      "id": "where",
+      "heading": "Where the code is printed",
+      "rows": [
+        {
+          "term": "Controller or bulb base",
+          "text": "Nanoleaf: the 8 digit pairing code, or the 11 digit pairing code on Matter devices, is found on the back of your controller or bulb base, or on the quick start guide or welcome card. Some products also pair by an NFC tap."
+        },
+        {
+          "term": "Lost",
+          "text": "Each controller or bulb base carries a QR code and or 8 digit code. If none can be found, submit a ticket with the serial number, which usually starts with S1 or S2, under Software Support, Pairing or Setup Issues, Misplaced or Lost Pairing Code."
+        },
+        {
+          "term": "Matter over Wi-Fi",
+          "text": "For a device the Nanoleaf app already has, the app can create a pairing code to copy, or a QR code to scan from another phone, from Device Settings, under Connections. A device already commissioned by another ecosystem must be shared from that ecosystem instead. Nanoleaf strongly recommends pairing in the Nanoleaf app first, and resetting the device after a failed attempt."
+        }
+      ]
+    }
   ],
   "sources": [
-    {"label": "Nanoleaf: pairing with the Nanoleaf app on iOS", "url": "https://support.nanoleaf.me/hc/en-us/articles/32905910147476-Pairing-Nanoleaf-App-iOS"},
-    {"label": "Nanoleaf: pairing code help", "url": "https://support.nanoleaf.me/hc/en-us/articles/32896455578132-FAQ-Technical-Pairing-Code-Help"},
-    {"label": "Nanoleaf: Matter over Wi-Fi", "url": "https://support.nanoleaf.me/hc/en-us/articles/36058317437588-Connecting-How-To-Matter-over-Wifi"}
+    {
+      "label": "Nanoleaf: pairing with the Nanoleaf app on iOS",
+      "url": "https://support.nanoleaf.me/hc/en-us/articles/32905910147476-Pairing-Nanoleaf-App-iOS"
+    },
+    {
+      "label": "Nanoleaf: pairing code help",
+      "url": "https://support.nanoleaf.me/hc/en-us/articles/32896455578132-FAQ-Technical-Pairing-Code-Help"
+    },
+    {
+      "label": "Nanoleaf: Matter over Wi-Fi",
+      "url": "https://support.nanoleaf.me/hc/en-us/articles/36058317437588-Connecting-How-To-Matter-over-Wifi"
+    }
   ]
 }

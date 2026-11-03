@@ -1,17 +1,37 @@
 {
-  "kind": "brand", "slug": "sonoff-matter-code", "short": "SONOFF",
+  "kind": "brand",
+  "slug": "sonoff-matter-code",
+  "short": "SONOFF",
   "title": "Where the SONOFF Matter code is",
-  "description": "SONOFF prints the Matter QR code in the product's quick guide and shows the numeric setup code in the eWeLink app under Device Settings, where Enable Pairing Mode also makes a QR code or a code to copy.",
+  "description": "SONOFF prints the Matter QR code in the quick guide and shows the numeric setup code in the eWeLink app under Device Settings, with Enable Pairing Mode.",
   "lede": "SONOFF answers the lost sticker question in one line: find the QR code in the quick guide, or the numeric code in the eWeLink app.",
-  "published": "2026-11-03", "read": "3 November 2026", "about": "SONOFF Matter code",
+  "published": "2026-11-03",
+  "read": "3 November 2026",
+  "about": "SONOFF Matter code",
   "sections": [
-    {"id": "where", "heading": "Where the code is", "rows": [
-      {"term": "Missing or damaged QR", "text": "SONOFF: find the QR code in the product quick guide, or use the numeric setup code in the app under Device Settings."},
-      {"term": "From the eWeLink app", "text": "Device Settings, Enable Pairing Mode generates a QR code or a code to copy. The M5 Matter enters pairing mode when its button is held 5 to 10 seconds until the LED blinks rapidly."},
-      {"term": "On the device", "text": "SONOFF does not state the exact printed spot per product. Check the device body and the quick guide."}
-    ]}
+    {
+      "id": "where",
+      "heading": "Where the code is",
+      "rows": [
+        {
+          "term": "Missing or damaged QR",
+          "text": "SONOFF: find the QR code in the product quick guide, or use the numeric setup code in the app under Device Settings."
+        },
+        {
+          "term": "From the eWeLink app",
+          "text": "Device Settings, Enable Pairing Mode generates a QR code or a code to copy. The M5 Matter enters pairing mode when its button is held 5 to 10 seconds until the LED blinks rapidly."
+        },
+        {
+          "term": "On the device",
+          "text": "SONOFF does not state the exact printed spot per product. Check the device body and the quick guide."
+        }
+      ]
+    }
   ],
   "sources": [
-    {"label": "SONOFF: Matter and Home Assistant setup", "url": "https://help.sonoff.tech/docs/matter-home-assistant"}
+    {
+      "label": "SONOFF: Matter and Home Assistant setup",
+      "url": "https://help.sonoff.tech/docs/matter-home-assistant"
+    }
   ]
 }

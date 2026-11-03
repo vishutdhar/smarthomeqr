@@ -1,18 +1,41 @@
 {
-  "kind": "brand", "slug": "ring-qr-code-zwave-pin", "short": "Ring",
+  "kind": "brand",
+  "slug": "ring-qr-code-zwave-pin",
+  "short": "Ring",
   "title": "Ring: the QR code and the 5 digit code, and no HomeKit code",
-  "description": "Ring Alarm and most Ring devices carry a Ring QR code and a 5 digit code, usually on the back, scanned in the Ring app; on alarm devices the digits are the Z Wave PIN. Ring publishes no HomeKit code, and no Matter support was found.",
+  "description": "Ring Alarm and most Ring devices carry a Ring QR code and a 5 digit code, usually on the back, for the Ring app. No HomeKit code, and no Matter was found.",
   "lede": "Ring's label is for the Ring app. There is no HomeKit code to find and, as of this check, no Matter support was found to pair with.",
-  "published": "2026-11-03", "read": "3 November 2026", "about": "Ring device codes",
+  "published": "2026-11-03",
+  "read": "3 November 2026",
+  "about": "Ring device codes",
   "sections": [
-    {"id": "where", "heading": "What the label is", "rows": [
-      {"term": "The Ring QR and the 5 digit code", "text": "Ring: Ring Alarm devices, along with most other Ring devices, come labelled with a unique QR code and 5 digit code, usually on the back of the device. On the Z Wave alarm devices the 5 digits are the Z Wave PIN, the first group of the device's DSK."},
-      {"term": "If the phone will not scan", "text": "In the Ring app tap Set up a Ring Alarm Base Station or Z Wave Sensor and continue manually."},
-      {"term": "HomeKit and Matter", "text": "No Ring page describes a HomeKit code, and no primary source shows Ring supporting Matter. Alexa can act as a bridge for Ring Smart Lighting, which is not Matter."}
-    ]}
+    {
+      "id": "where",
+      "heading": "What the label is",
+      "rows": [
+        {
+          "term": "The Ring QR and the 5 digit code",
+          "text": "Ring: Ring Alarm devices, along with most other Ring devices, come labelled with a unique QR code and 5 digit code, usually on the back of the device. On the Z Wave alarm devices the 5 digits are the Z Wave PIN, the first group of the device's DSK."
+        },
+        {
+          "term": "If the phone will not scan",
+          "text": "In the Ring app tap Set up a Ring Alarm Base Station or Z Wave Sensor and continue manually."
+        },
+        {
+          "term": "HomeKit and Matter",
+          "text": "No Ring page describes a HomeKit code, and no primary source shows Ring supporting Matter. Alexa can act as a bridge for Ring Smart Lighting, which is not Matter."
+        }
+      ]
+    }
   ],
   "sources": [
-    {"label": "Ring: about QR codes on Ring Alarm devices", "url": "https://ring.com/support/articles/gt530/About-QR-Codes-on-Ring-Alarm-Devices"},
-    {"label": "Amazon: Matter and Thread on Alexa", "url": "https://www.amazon.com/gp/help/customer/display.html?nodeId=TSWevY1sX8ADH2LC20"}
+    {
+      "label": "Ring: about QR codes on Ring Alarm devices",
+      "url": "https://ring.com/support/articles/gt530/About-QR-Codes-on-Ring-Alarm-Devices"
+    },
+    {
+      "label": "Amazon: Matter and Thread on Alexa",
+      "url": "https://www.amazon.com/gp/help/customer/display.html?nodeId=TSWevY1sX8ADH2LC20"
+    }
   ]
 }

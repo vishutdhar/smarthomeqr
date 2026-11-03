@@ -1,26 +1,71 @@
 {
-  "kind": "brand", "slug": "tp-link-tapo-kasa-matter-code", "short": "TP-Link Tapo and Kasa",
+  "kind": "brand",
+  "slug": "tp-link-tapo-kasa-matter-code",
+  "short": "TP-Link Tapo and Kasa",
   "title": "Where the TP-Link Tapo and Kasa Matter and HomeKit codes are",
-  "description": "TP-Link prints the Matter code on the side of a plug, the neck of a bulb or beside a switch button, adds a backup sticker in the box, and shows the code again in the Tapo or Kasa app under Device Info.",
+  "description": "TP-Link prints the Matter code on the side of a plug, the neck of a bulb or beside a switch, adds a backup sticker in the box, and shows it in the Tapo app.",
   "lede": "TP-Link is the model citizen: a code on the device, a backup sticker in the box, and the same code in the app after setup.",
-  "published": "2026-11-03", "read": "3 November 2026", "about": "TP-Link Tapo and Kasa setup codes",
+  "published": "2026-11-03",
+  "read": "3 November 2026",
+  "about": "TP-Link Tapo and Kasa setup codes",
   "sections": [
-    {"id": "where", "heading": "Where the code is", "rows": [
-      {"term": "On the device", "text": "Plugs carry the Matter code on the side. Bulbs have it in the middle of the casing, just below the light sphere and above the base. Switches have it on the side near the button."},
-      {"term": "In the box", "text": "A backup Matter code sticker is included inside the product box in case the code on the device becomes damaged or unreadable."},
-      {"term": "In the app", "text": "After setup: Device Settings, Device Info, Matter Setup Code. TP-Link suggests saving it to the phone's photo album. For a lost sticker, set the device up in the Tapo or Kasa app first, then retrieve the code there."},
-      {"term": "HomeKit models", "text": "Download and save the HomeKit electronic QR code in the Tapo or Kasa app, then scan it from the screen in the Home app. For a persistent setup code incorrect error, TP-Link support asks for a clear picture of the QR label."}
-    ]},
-    {"id": "windows", "heading": "Timing", "rows": [
-      {"term": "First setup", "text": "Matter setup is available for 15 minutes after power on. Longer than that, power cycle the device."},
-      {"term": "Sharing", "text": "A Google Home pairing code expires in 3 minutes. Apple Home needs 5 minutes between new codes, and shows Copy Code in the pairing sheet."}
-    ]}
+    {
+      "id": "where",
+      "heading": "Where the code is",
+      "rows": [
+        {
+          "term": "On the device",
+          "text": "Plugs carry the Matter code on the side. Bulbs have it in the middle of the casing, just below the light sphere and above the base. Switches have it on the side near the button."
+        },
+        {
+          "term": "In the box",
+          "text": "A backup Matter code sticker is included inside the product box in case the code on the device becomes damaged or unreadable."
+        },
+        {
+          "term": "In the app",
+          "text": "After setup: Device Settings, Device Info, Matter Setup Code. TP-Link suggests saving it to the phone's photo album. For a lost sticker, set the device up in the Tapo or Kasa app first, then retrieve the code there."
+        },
+        {
+          "term": "HomeKit models",
+          "text": "Download and save the HomeKit electronic QR code in the Tapo or Kasa app, then scan it from the screen in the Home app. For a persistent setup code incorrect error, TP-Link support asks for a clear picture of the QR label."
+        }
+      ]
+    },
+    {
+      "id": "windows",
+      "heading": "Timing",
+      "rows": [
+        {
+          "term": "First setup",
+          "text": "Matter setup is available for 15 minutes after power on. Longer than that, power cycle the device."
+        },
+        {
+          "term": "Sharing",
+          "text": "A Google Home pairing code expires in 3 minutes. Apple Home needs 5 minutes between new codes, and shows Copy Code in the pairing sheet."
+        }
+      ]
+    }
   ],
   "sources": [
-    {"label": "TP-Link: where is the Matter code", "url": "https://www.tp-link.com/us/support/faq/4411/"},
-    {"label": "TP-Link: lost or unreadable Matter code", "url": "https://www.tp-link.com/us/support/faq/3520/"},
-    {"label": "TP-Link: HomeKit electronic QR code", "url": "https://www.tp-link.com/us/support/faq/3390/"},
-    {"label": "TP-Link: the 15 minute Matter window", "url": "https://www.tp-link.com/us/support/faq/3574/"},
-    {"label": "TP-Link: Matter code lifetimes", "url": "https://www.tp-link.com/us/support/faq/3564/"}
+    {
+      "label": "TP-Link: where is the Matter code",
+      "url": "https://www.tp-link.com/us/support/faq/4411/"
+    },
+    {
+      "label": "TP-Link: lost or unreadable Matter code",
+      "url": "https://www.tp-link.com/us/support/faq/3520/"
+    },
+    {
+      "label": "TP-Link: HomeKit electronic QR code",
+      "url": "https://www.tp-link.com/us/support/faq/3390/"
+    },
+    {
+      "label": "TP-Link: the 15 minute Matter window",
+      "url": "https://www.tp-link.com/us/support/faq/3574/"
+    },
+    {
+      "label": "TP-Link: Matter code lifetimes",
+      "url": "https://www.tp-link.com/us/support/faq/3564/"
+    }
   ]
 }
