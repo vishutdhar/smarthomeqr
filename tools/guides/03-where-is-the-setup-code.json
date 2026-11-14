@@ -25,6 +25,10 @@
         {
           "term": "Z Wave",
           "text": "Groups of five digits. The first group, often underlined, is the PIN typed in during inclusion."
+        },
+        {
+          "term": "Behind a bridge or hub",
+          "text": "A device that reaches Apple Home through a bridge has no HomeKit code of its own; pairing the bridge adds it. That covers Hue lights on a Hue Bridge, Lutron Caseta dimmers, and the Zigbee devices on an Aqara hub or IKEA DIRIGERA. For those, keep the bridge's code. Matter devices that join on their own still carry their own code."
         }
       ]
     },
@@ -43,6 +47,14 @@
         {
           "term": "[August](august-homekit-code)",
           "text": "Inside the front battery cover, on the serial number label; press the August logo to open it."
+        },
+        {
+          "term": "[ecobee](ecobee-homekit-code)",
+          "text": "On the thermostat's screen under Main Menu, General, Settings, HomeKit. No sticker."
+        },
+        {
+          "term": "[eufy](eufy-homekit-code)",
+          "text": "Bottom of HomeBase 2; or HomeBase Settings, HomeKit Setup in the eufy app."
         },
         {
           "term": "[Eve](eve-homekit-matter-code)",
@@ -69,16 +81,16 @@
           "text": "Matter QR on the lock after converting it in the Kwikset app; first platform only."
         },
         {
-          "term": "[LIFX](lifx-homekit-matter-code)",
-          "text": "Below the serial number, marked HK:; Beam and Lightstrip on the controller; Matter lights beside the Matter mark."
-        },
-        {
           "term": "[Level](level-lock-homekit-code)",
           "text": "Owner reports: back of the quick start guide (Bolt, Lock Plus), underside of the original Level Lock."
         },
         {
           "term": "[Leviton Decora Smart](leviton-decora-smart-homekit-matter-code)",
           "text": "Lower right corner of the device behind the wall plate; after the Matter update, in the My Leviton app."
+        },
+        {
+          "term": "[LIFX](lifx-homekit-matter-code)",
+          "text": "Below the serial number, marked HK:; Beam and Lightstrip on the controller; Matter lights beside the Matter mark."
         },
         {
           "term": "[Lutron Caseta](lutron-caseta-homekit-code)",
@@ -101,10 +113,6 @@
           "text": "Ring QR and 5 digit code on the back, for the Ring app. No HomeKit code; no Matter support found."
         },
         {
-          "term": "[SONOFF](sonoff-matter-code)",
-          "text": "In the quick guide; and in the eWeLink app under Device Settings."
-        },
-        {
           "term": "[Schlage](schlage-homekit-code)",
           "text": "Inside the interior assembly, under the battery cover; backup label on the quick start guide."
         },
@@ -115,6 +123,10 @@
         {
           "term": "[SmartThings](smartthings-matter-zwave-code)",
           "text": "Matter digits under Enter setup code; Z Wave PIN is the first five DSK digits; hub QR on the hub."
+        },
+        {
+          "term": "[SONOFF](sonoff-matter-code)",
+          "text": "In the quick guide; and in the eWeLink app under Device Settings."
         },
         {
           "term": "[SwitchBot](switchbot-matter-code)",
@@ -135,14 +147,6 @@
         {
           "term": "[Yale](yale-homekit-matter-code)",
           "text": "Side of the battery compartment under the cover; setup QR also on the quick start guide."
-        },
-        {
-          "term": "[ecobee](ecobee-homekit-code)",
-          "text": "On the thermostat's screen under Main Menu, General, Settings, HomeKit. No sticker."
-        },
-        {
-          "term": "[eufy](eufy-homekit-code)",
-          "text": "Bottom of HomeBase 2; or HomeBase Settings, HomeKit Setup in the eufy app."
         }
       ]
     }

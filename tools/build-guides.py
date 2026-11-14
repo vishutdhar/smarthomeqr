@@ -288,7 +288,7 @@ def render_index(pages):
         out.append(f'          <h2 id="{sid}-title">{heading}</h2>')
         out.append('        </div>')
         out.append('        <dl class="rows">')
-        for p in sorted(group, key=lambda p: p.get("order", 0) if p.get("kind") == "topic" else p["short"]):
+        for p in sorted(group, key=lambda p: p.get("order", 0) if p.get("kind") == "topic" else p["short"].casefold()):
             out.append('          <div class="row">')
             out.append(f'            <dt class="row-term"><a href="/guides/{esc(p["slug"])}">{esc(p["short"])}</a></dt>')
             out.append(f'            <dd>{esc(p["description"])}</dd>')
