@@ -34,7 +34,7 @@
   };
 
   var FLOW_NAMES = ["Standard", "User intent", "Custom"];
-  var DISCOVERY_NAMES = ["Soft-AP", "Bluetooth LE", "On the network", "Wi-Fi PAF", "NFC"];
+  var DISCOVERY_NAMES = ["Soft-AP", "Bluetooth LE", "On the network", "Wi-Fi PAF", "NFC", "Thread"];
   var MAX_INPUT = 600;
 
   function isForbidden(code) { return FORBIDDEN.indexOf(code) !== -1; }
