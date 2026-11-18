@@ -275,6 +275,12 @@ t("NFC discovery is named, as the 2025 Matter SDK defines it", () => {
   assert.deepStrictEqual(S.decode(p).discoveryNames, ["NFC"]);
 });
 
+t("Thread discovery is named, as the 2026 Matter SDK defines it (bit 5)", () => {
+  const base = { vendorID: 0xFFF1, productID: 0x8001, commissioningFlow: 0, discriminator: 3840, passcode: 20202021 };
+  assert.deepStrictEqual(S.decode(S.encodeMatter(Object.assign({ discoveryCapabilities: 32 }, base))).discoveryNames, ["Thread"]);
+  assert.deepStrictEqual(S.decode(S.encodeMatter(Object.assign({ discoveryCapabilities: 34 }, base))).discoveryNames, ["Bluetooth LE", "Thread"]);
+});
+
 t("a HomeKit payload flagged as already paired is refused with its own reason", () => {
   const p = S.encodeHomeKit({ category: 5, ip: true, ble: false, paired: true, setupCode: "03145154", setupID: "HSPN" });
   assert.strictEqual(S.decode(p).reason, "homekit-paired");
