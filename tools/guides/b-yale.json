@@ -3,6 +3,7 @@
   "slug": "yale-homekit-matter-code",
   "short": "Yale",
   "title": "Where the Yale Assure Lock HomeKit and Matter codes are",
+  "search_title": "Yale Assure Lock: HomeKit and Matter codes",
   "description": "Yale Assure Lock 2 keeps its QR code and HomeKit code on the side of the battery compartment, with the setup QR on the quick start guide.",
   "lede": "Take the battery cover off. Yale puts the codes on the side of the battery compartment, and repeats the setup QR on the quick start guide.",
   "published": "2026-11-03",

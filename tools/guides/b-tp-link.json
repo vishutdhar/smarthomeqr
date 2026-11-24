@@ -3,6 +3,7 @@
   "slug": "tp-link-tapo-kasa-matter-code",
   "short": "TP-Link Tapo and Kasa",
   "title": "Where the TP-Link Tapo and Kasa Matter and HomeKit codes are",
+  "search_title": "Where the TP-Link Tapo and Kasa codes are",
   "description": "TP-Link prints the Matter code on the side of a plug, the neck of a bulb or beside a switch, adds a backup sticker in the box, and shows it in the Tapo app.",
   "lede": "TP-Link is the model citizen: a code on the device, a backup sticker in the box, and the same code in the app after setup.",
   "published": "2026-11-03",

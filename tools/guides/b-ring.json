@@ -3,6 +3,7 @@
   "slug": "ring-qr-code-zwave-pin",
   "short": "Ring",
   "title": "Ring: the QR code and the 5 digit code, and no HomeKit code",
+  "search_title": "Ring: QR code, 5 digit code, no HomeKit code",
   "description": "Ring Alarm and most Ring devices carry a Ring QR code and a 5 digit code, usually on the back, for the Ring app. No HomeKit code, and no Matter was found.",
   "lede": "Ring's label is for the Ring app. There is no HomeKit code to find and, as of this check, no Matter support was found to pair with.",
   "published": "2026-11-03",

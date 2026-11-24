@@ -3,6 +3,7 @@
   "slug": "wemo-homekit-code",
   "short": "Wemo",
   "title": "Where the Wemo HomeKit code is, and the January 2026 cutoff",
+  "search_title": "Wemo HomeKit code and the January 2026 cutoff",
   "description": "Wemo prints the HomeKit code on the back of the device and in the quick install guide. Belkin says Wi-Fi Wemo devices cannot join HomeKit after January 2026.",
   "lede": "Wemo's code is on the back of the device and in the guide. The bigger fact is the date: after January 31, 2026, Belkin says a Wi-Fi Wemo cannot be set up with HomeKit again.",
   "published": "2026-11-03",

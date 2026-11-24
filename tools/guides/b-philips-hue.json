@@ -3,6 +3,7 @@
   "slug": "philips-hue-homekit-matter-code",
   "short": "Philips Hue",
   "title": "Where the Philips Hue HomeKit and Matter codes are",
+  "search_title": "Philips Hue: HomeKit and Matter code locations",
   "description": "Hue Matter bulbs print the 11 digit code on the bulb and the QR code in the installation guide. With a Hue Bridge, the codes come from the Hue app.",
   "lede": "Hue has two routes. Bulbs used without a bridge carry a Matter code printed on the bulb. With a bridge, the codes come out of the Hue app, and the old sticker on the bridge matters less than it used to.",
   "published": "2026-11-03",

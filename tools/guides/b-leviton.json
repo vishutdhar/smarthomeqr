@@ -3,6 +3,7 @@
   "slug": "leviton-decora-smart-homekit-matter-code",
   "short": "Leviton Decora Smart",
   "title": "Where the Leviton Decora Smart HomeKit and Matter codes are",
+  "search_title": "Leviton Decora Smart: HomeKit and Matter codes",
   "description": "Leviton prints the Gen 2 HomeKit QR code in the lower right corner behind the wall plate. After the Matter update the code comes from the My Leviton app.",
   "lede": "Take the wall plate off. Leviton prints the code in the lower right corner of the device, and after the Matter update it moves into the app.",
   "published": "2026-11-03",
