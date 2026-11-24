@@ -3,6 +3,7 @@
   "slug": "google-nest-matter-code",
   "short": "Google Nest",
   "title": "Google Nest and Matter: sharing from Google Home",
+  "search_title": "Google Nest and Matter: share via Google Home",
   "description": "Matter capable Nest devices reach Apple Home, Alexa and SmartThings from Google Home: device settings, Linked Matter apps and services, a temporary code.",
   "lede": "A Matter capable Nest device has no sticker you scan into Apple Home. The code comes out of the Google Home app, for a few minutes at a time. Which Nest models support Matter is on Google's own list; this page covers the sharing step only.",
   "published": "2026-11-03",

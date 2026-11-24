@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Render the guide pages from tools/guides/*.json into guides/<slug>.html and guides/index.html.
 
-Each JSON file is one page: title, slug, description, lede, sections (heading plus rows of term and
-text, or paragraphs), questions, sources and dates. The template is the site's own markup, so a
+Each JSON file is one page: title, an optional search_title (a shorter text for the title element),
+slug, description, lede, sections (heading plus rows of term and text, or paragraphs), questions,
+sources and dates. The template is the site's own markup, so a
 guide looks like the rest of the site and shares style.css. Run after editing a guide:
     python3 tools/build-guides.py && python3 tools/check-asset-names.py
 """
@@ -140,12 +141,67 @@ def json_ld(page):
     return json.dumps({"@context": "https://schema.org", "@graph": graph}, indent=2, ensure_ascii=False)
 
 
+TITLE_LIMIT_PX = 600
+# The table rounds each width to a thousandth of an em, so a title is held one pixel inside the limit.
+TITLE_MARGIN_PX = 1
+# The pages written by hand, whose titles are checked like the generated ones.
+STATIC_PAGES = ("index.html", "matter-qr-code-decoder.html", "privacy.html")
+# Arial advance widths in thousandths of an em, for the characters a title uses. A character not
+# listed counts as two ems, wider than any character Arial draws, so an unknown character can only
+# make a title read wider.
+UNKNOWN_WIDTH = 2000
+ARIAL_WIDTHS = {
+    191: "'", 222: "ijl", 260: "|", 278: " ftI.,:;!/",
+    333: "r-()", 355: '"', 500: "cksvxyzJ", 556: "abdeghnopquL0123456789?#$_",
+    584: "+", 611: "FTZ", 667: "ABEKPSVXY&", 722: "wCDHNRU", 778: "GOQ", 833: "mM", 889: "%", 944: "W",
+}
+CHAR_WIDTH = {ch: units for units, chars in ARIAL_WIDTHS.items() for ch in chars}
+
+
+def title_width(text):
+    """The width of a title in a desktop search result: Arial at 20 px."""
+    return sum(CHAR_WIDTH.get(ch, UNKNOWN_WIDTH) for ch in text) * 20 / 1000
+
+
+def head_title(text):
+    """The title element: the page's search title and the site name.
+
+    A search result shows about 600 pixels of a title and cuts the rest. A page whose own title is
+    wider carries a shorter "search_title"; the page heading keeps the full title.
+    """
+    text = " ".join(text.split())
+    if not text:
+        raise SystemExit("a title or search_title is empty")
+    full = f"{text} | SmartHomeQR"
+    check_title_width(full)
+    return full
+
+
+def check_title_width(full):
+    if any(ch in "\u2013\u2014" or ord(ch) > 0xFFFF for ch in full):
+        raise SystemExit(f"title element carries a dash or a symbol the site does not use: {full}")
+    width = title_width(full)
+    if width > TITLE_LIMIT_PX - TITLE_MARGIN_PX:
+        raise SystemExit(f"title element too wide for a search result ({width:.0f} of {TITLE_LIMIT_PX} px): {full}")
+
+
+def check_static_titles():
+    """The pages written by hand keep to the same width; their titles carry the site name already."""
+    for name in STATIC_PAGES:
+        source = re.sub(r"<!--.*?-->", "", (ROOT / name).read_text(), flags=re.S)
+        found = re.search(r"<title\b[^>]*>(.*?)</title\s*>", source, flags=re.S)
+        title = " ".join(html.unescape(found.group(1)).split()) if found else ""
+        if not title:
+            raise SystemExit(f"{name} has no title")
+        check_title_width(title)
+
+
 HEAD = """<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{title} | SmartHomeQR</title>
+  <title>{head_title}</title>
   <meta name="description" content="{description}">
   <link rel="canonical" href="{url}">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
@@ -254,7 +310,9 @@ TAIL = """
 def render(page):
     url = f"{SITE}/guides/{page['slug']}"
     dateline = f"Checked against the makers' own pages on {page['read']}."
-    body = [HEAD.format(title=esc(page["title"]), description=esc(page["description"]), url=url, site=SITE,
+    if not page["title"].strip():
+        raise SystemExit(f"{page['slug']} has an empty title")
+    body = [HEAD.format(head_title=esc(head_title(page.get("search_title", page["title"]))), title=esc(page["title"]), description=esc(page["description"]), url=url, site=SITE,
                         h1=inline(page["title"]), lede=inline(page["lede"]), dateline=esc(dateline))]
     for section in page["sections"]:
         body.append(render_section(section))
@@ -273,7 +331,7 @@ INDEX_HEAD = HEAD
 
 def render_index(pages):
     url = f"{SITE}/guides"
-    head = HEAD.format(title="Guides to HomeKit and Matter setup codes", description="These guides show where each brand prints its HomeKit or Matter code, what to do when the sticker is lost, how to type a code in, and why a code stops working.",
+    head = HEAD.format(head_title=esc(head_title("Guides to HomeKit and Matter setup codes")), title="Guides to HomeKit and Matter setup codes", description="These guides show where each brand prints its HomeKit or Matter code, what to do when the sticker is lost, how to type a code in, and why a code stops working.",
                        url=url, site=SITE, h1="Setup code guides", lede="Where the code is printed, brand by brand, and what still works when it is gone. Each page is checked against the maker's own support pages, with the sources listed.",
                        dateline="")
     head = head.replace('        <p class="crumb"><a href="../guides">Guides</a></p>\n', "").replace('        <p class="fine"></p>\n', "")
@@ -312,9 +370,13 @@ def render_index(pages):
 def main():
     OUT.mkdir(exist_ok=True)
     pages = [json.loads(p.read_text()) for p in sorted(DATA.glob("*.json"))]
-    for page in pages:
-        (OUT / f"{page['slug']}.html").write_text(render(page))
-    (OUT / "index.html").write_text(render_index(pages))
+    check_static_titles()
+    # Render everything first: a page that fails a check stops the run before any file is written.
+    rendered = {f"{page['slug']}.html": render(page) for page in pages}
+    rendered["index.html"] = render_index(pages)
+    encoded = {name: text.encode("utf-8") for name, text in rendered.items()}
+    for name, data in encoded.items():
+        (OUT / name).write_bytes(data)
     print(f"rendered {len(pages)} guides and the index")
 
 

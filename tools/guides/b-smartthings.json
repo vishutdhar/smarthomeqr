@@ -3,6 +3,7 @@
   "slug": "smartthings-matter-zwave-code",
   "short": "SmartThings",
   "title": "SmartThings: Matter codes, Z Wave DSK and the hub QR",
+  "search_title": "SmartThings: Matter code, Z Wave DSK, hub QR",
   "description": "SmartThings adds Matter devices by QR or the 11 or 21 digit code, Z Wave devices by the first five DSK digits, and shares Matter devices with its own code.",
   "lede": "SmartThings takes every kind of code and says which: Matter digits, the Z Wave PIN, the hub's own QR. Its share code is never the one on the sticker.",
   "published": "2026-11-03",

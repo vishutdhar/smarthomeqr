@@ -3,6 +3,7 @@
   "slug": "eve-homekit-matter-code",
   "short": "Eve",
   "title": "Where the Eve HomeKit code is, and what the Matter upgrade changes",
+  "search_title": "Where the Eve HomeKit and Matter codes are",
   "description": "Eve prints the HomeKit code on the accessory and in the quick start guide. After the Matter upgrade a new Matter setup code replaces it, kept in the Eve app.",
   "lede": "Eve is plain about it: the HomeKit code is on the accessory and in the guide, it cannot be retrieved, and once an Eve device moves to Matter the sticker stops working.",
   "published": "2026-11-03",
